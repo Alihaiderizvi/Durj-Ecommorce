@@ -20,7 +20,15 @@ import featuredCategory1 from "../../../assets/Featured-Category1.png";
 import featuredCategory2 from "../../../assets/Featured-Category2.png";
 import featuredCategory3 from "../../../assets/Featured-Category3.png";
 import cart1 from "../../../assets/cart1.jpeg";
+
 const TopSelling = () => {
+
+	const [cart, cartUpdate] = useState('0');
+
+	const addToCart = (() =>[
+		console.log(cartUpdate((cart) => cart+1))
+	])
+	
 	const [count, setCount] = useState(0);
 
 	const handleIncrement = () => {
@@ -34,6 +42,7 @@ const TopSelling = () => {
 		}
 	};
 
+	
 	const useStyles = makeStyles((_) => ({
 		gridList: {
 			flexWrap: "wrap",
@@ -116,7 +125,7 @@ const TopSelling = () => {
 					<Card className={classes.cartImage}>
 						<CardContent>
 							<Box className='box rightBox' component='span'>
-								<IconButton>
+								<IconButton onClick={addToCart}>
 									<ShoppingCartOutlinedIcon />
 								</IconButton>
 							</Box>

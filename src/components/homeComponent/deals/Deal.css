@@ -1,14 +1,14 @@
-.App {
+/* .App {
 	font-family: sans-serif;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 100vh;
-}
+	height: auto;
+} */
 
 .deal {
-	margin-top: 100px;
-	height: 50vh;
+	height: auto;
+	margin : 50px;
 }
 
 .deal__heading::after {

@@ -5,8 +5,7 @@ import { makeStyles } from "@material-ui/core";
 const SubBanner = () => {
 	const useStyles = makeStyles((_) => ({
 		root: {
-			marginTop: "50px",
-			marginBottom: "50px",
+			margin: "50px",
 			display: "flex",
 			justifyContent: "center",
 		},

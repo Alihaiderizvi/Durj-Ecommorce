@@ -1,12 +1,14 @@
+import { CssBaseline, Typography } from "@material-ui/core";
 import React from "react";
 import "./NavbarComp.css";
 
 const NavbarComp = () => {
 	return (
 		<div className='navbar__main'>
-			<h3>
-				Welcome To <span style={{ fontWeight: "800" }}>DURJ</span> Store!
-			</h3>
+	<CssBaseline/>
+			<Typography>
+				Welcome To <span style={{ fontWeight: "600" }}>DURJ</span> Store!
+			</Typography>
 		</div>
 	);
 };

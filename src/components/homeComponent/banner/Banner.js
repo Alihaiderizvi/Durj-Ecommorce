@@ -50,7 +50,6 @@ const Banner = () => {
 					{Categories.map((category) => (
 						<ListItemText>
 							<Link
-								Link
 								to={category.link}
 								className='bannerCategoryList__content'
 							>

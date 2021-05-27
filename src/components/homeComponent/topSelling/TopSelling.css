@@ -1,5 +1,6 @@
 .topSelling {
 	height: auto;
+	margin: 50px;
 }
 
 .topSelling__heading::after {
