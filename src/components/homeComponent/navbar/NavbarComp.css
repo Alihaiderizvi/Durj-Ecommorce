@@ -1,0 +1,12 @@
+.navbar__main {
+	background-color: #16243e;
+	text-align: center;
+	color: #fff;
+	height: 35px;
+	padding-top: 15px;
+	font-weight: 300;
+}
+
+span {
+	font-weight: bold;
+}

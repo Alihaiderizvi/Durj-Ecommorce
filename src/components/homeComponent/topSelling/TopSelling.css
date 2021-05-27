@@ -1,0 +1,72 @@
+.topSelling {
+	height: auto;
+}
+
+.topSelling__heading::after {
+	display: block;
+	content: "";
+	width: 13%;
+	height: 3px;
+	background: #fa5051;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.topSelling__heading {
+	margin-left: 40px !important;
+	position: relative;
+	font-size: 35px !important;
+	padding-bottom: 2px;
+	margin-bottom: 19px !important;
+	font-weight: 500 !important;
+}
+
+.topSelling__btn {
+	background-color: #16243e !important;
+}
+
+.box {
+	height: 100;
+	display: flex;
+	padding: 8;
+}
+
+.rightBox {
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+/* item cart background */
+.makeStyles-root-1 {
+	/* background-color: #fafafa !important; */
+	justify-content: center !important;
+}
+
+/* .makeStyles-root-9 {
+	background-color: #fafafa !important;
+}
+.makeStyles-root-30,
+.makeStyles-root-37 {
+	background-color: #fafafa !important;
+} */
+.MuiCardContent-root {
+	padding: 4px !important;
+}
+.MuiPaper-elevation1 {
+	width: auto !important;
+	margin: 10px !important;
+	/* height: auto !important; */
+}
+.quantity__btn:active {
+	vertical-align: top;
+	padding-top: 8px;
+}
+
+.MuiGridList-root {
+	height: 100% !important;
+	width: 100% !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center;
+}

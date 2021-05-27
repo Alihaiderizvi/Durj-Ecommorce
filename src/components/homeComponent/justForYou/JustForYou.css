@@ -1,0 +1,41 @@
+.justForYou {
+	height: auto;
+	margin-top: 50px;
+}
+
+.justForYou__heading {
+	margin-left: 40px !important;
+	position: relative;
+	font-size: 35px !important;
+	padding-bottom: 2px;
+	margin-bottom: 19px !important;
+	font-weight: 500 !important;
+}
+
+.justForYou__heading::after {
+	display: block;
+	content: "";
+	width: 13%;
+	height: 3px;
+	background: #fa5051;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.justForYouCart_info {
+	color: #fff;
+	background-color: #16243e;
+}
+
+.justForYouCart_info:hover {
+	background-color: #fff;
+	color: #16243e;
+	/* border: 1px solid #16243e; */
+	opacity: 0.6;
+	transition: 0.3s;
+}
+
+.justForYou__btn {
+	background-color: #16243e !important;
+}

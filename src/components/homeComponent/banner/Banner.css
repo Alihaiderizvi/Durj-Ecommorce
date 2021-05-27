@@ -1,0 +1,45 @@
+.banner {
+	display: flex;
+	background-color: #fff !important;
+}
+
+.image__carousel {
+	display: flex;
+	flex: 0.8;
+}
+
+.image__slider > img {
+	height: auto;
+	max-height: 350px;
+	width: fit-content;
+	width: 100%;
+}
+
+.banner__category {
+	display: flex;
+	flex: 0.2;
+	flex-wrap: wrap;
+	justify-content: center;
+	height: auto !important;
+	max-height: 200px !important;
+	border-top: 5px solid #16243e !important;
+	align-items: center;
+}
+
+.bannerCategoryList__content {
+	text-decoration: none !important;
+	color: #16243e !important;
+}
+
+.MuiListItemText-root {
+	padding-left: 40px;
+	padding-bottom: 2px;
+	cursor: pointer;
+	color: #a4a6a4;
+	margin-top: 23px !important;
+}
+
+.MuiListItemText-root:hover {
+	color: #1a9cb7;
+	background-color: #eceff1;
+}
