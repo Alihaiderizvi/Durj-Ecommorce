@@ -6,7 +6,7 @@ import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { Typography } from "@material-ui/core";
 
-const Header = (props) => {
+const Header = () => {
 
 
 	const [user, newUser] = useState('Ali Test');
@@ -39,7 +39,7 @@ const Header = (props) => {
 
 				<div className='header__optionBasket'>
 					<ShoppingBasketIcon />
-					<Typography className='header__optionLineTwo header__basketCount'>{props.addToCart}</Typography>
+					<Typography className='header__optionLineTwo header__basketCount'>0</Typography>
 				</div>
 			</div>
 		</div>
