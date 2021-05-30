@@ -107,6 +107,7 @@ const Footer = () => {
 					</Typography>
 					{Categories.map((cart) => (
 						<Button
+							key={cart.id}
 							style={{ display: "flex" }}
 							fullWidth='false'
 							size='small'
@@ -128,6 +129,7 @@ const Footer = () => {
 					</Typography>
 					{Policy.map((cart) => (
 						<Button
+							key={cart.id}
 							style={{ display: "flex" }}
 							fullWidth='false'
 							size='small'
@@ -149,6 +151,7 @@ const Footer = () => {
 					</Typography>
 					{About.map((cart) => (
 						<Button
+							key={cart.id}
 							style={{ display: "flex" }}
 							fullWidth='false'
 							size='small'
@@ -175,6 +178,7 @@ const Footer = () => {
 					</Typography>
 					{Contact.map((cart) => (
 						<Button
+							key={cart.id}
 							style={{ display: "flex" }}
 							fullWidth='false'
 							size='small'

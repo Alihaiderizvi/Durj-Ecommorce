@@ -1,10 +1,19 @@
 import React from "react";
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+import NavbarComp from "../../components/homeComponent/navbar/NavbarComp";
+import LoginComp from "../../components/loginComponent/LoginComp";
+import SubFotter from "../../components/subFooter/SubFotter";
 
 const Login = () => {
 	return (
-		<div>
-			<h1>login</h1>
-		</div>
+		<>
+			<NavbarComp />
+			<Header />
+			<LoginComp />
+			<SubFotter />
+			<Footer />
+		</>
 	);
 };
 

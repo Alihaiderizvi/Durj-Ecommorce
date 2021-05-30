@@ -1,0 +1,40 @@
+.loginForm {
+	height: auto;
+	background-image: url("../../assets/Login__bg.jpg");
+	min-height: 90vh;
+	margin-bottom: 50px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+
+.loginForm__container {
+	position: absolute;
+	top: 60px;
+	right: 50px;
+	box-shadow: 0;
+	/* max-width: 300px; */
+	/* margin: 20px; */
+}
+
+.loginForm__mainHeading {
+	margin: 0.5rem 0 2rem 0 !important;
+	color: #626b77 !important;
+	font-weight: 600 !important;
+
+	letter-spacing: 0ch;
+}
+
+.loginForm__btn {
+	margin-bottom: 10px !important;
+}
+.loginFormBtn__register {
+	margin-top: 5px !important;
+	background-color: #5e6b7b !important;
+	color: #fff !important;
+}
+
+.loginFormBtn__facebook {
+	margin-top: 5px !important;
+}

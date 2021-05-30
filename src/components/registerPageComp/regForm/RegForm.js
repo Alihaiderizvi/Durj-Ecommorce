@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import {
 	Box,
 	Button,
-	ButtonGroup,
 	Checkbox,
 	FormControl,
 	FormControlLabel,
 	FormGroup,
 	FormLabel,
-	Grid,
 	makeStyles,
 	Paper,
 	Radio,
@@ -27,23 +25,20 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 import "../regForm/RegForm.css";
 
-
 const RegForm = () => {
 	const [selectedDate, setDate] = useState(moment());
-  const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
+	const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
 
 	const onDateChange = (date, value) => {
-    setDate(date);
-    setInputValue(value);
-  };
-
+		setDate(date);
+		setInputValue(value);
+	};
 
 	const useStyles = makeStyles((theme) => ({
-		root:{
+		root: {
 			// display:'flex',
 			// width: 'auto',
 			// flexDirection: 'column',
-
 		},
 		formControl: {
 			maxWidth: "100%",
@@ -67,33 +62,38 @@ const RegForm = () => {
 
 	const classes = useStyles();
 	const onSubmit = (data) => {
-		console.log(data)
-		alert("Form Submitted!")
+		console.log(data);
+		alert("Form Submitted!");
 	};
 
 	const { handleSubmit, reset, control } = useForm({ defaultValues });
 	const formData = [
 		{
+			id: 1,
 			label: "Full Name",
 			placeholder: "Enter Full Name",
 			name: "fullName",
 		},
 		{
+			id: 2,
 			label: "Phone Number",
 			placeholder: "Enter Phone Number",
 			name: "phoneNumber",
 		},
 		{
+			id: 3,
 			label: "Email",
 			placeholder: "Enter email address",
 			name: "email",
 		},
 		{
+			id: 4,
 			label: "Password",
 			placeholder: "Enter new password",
 			name: "password",
 		},
 		{
+			id: 5,
 			label: "Confirm Password",
 			placeholder: "Re-enter password",
 			name: "confirmPass",
@@ -110,6 +110,7 @@ const RegForm = () => {
 					</Typography>
 					{formData.map((data) => (
 						<Controller
+							key={data.id}
 							control={control}
 							name={data.name}
 							render={({ onChange, onBlur, value, name, ref }) => (
@@ -187,23 +188,40 @@ const RegForm = () => {
 							/>
 						</FormControl>
 					</FormGroup>
-					
+
 					<div className='form__btn'>
-					<Button type='submit' variant='contained' color='secondary' style={{textAlign: 'center'}} fullWidth>
-					<Typography align='center'>Register</Typography>
-										</Button>
+						<Button
+							type='submit'
+							variant='contained'
+							color='secondary'
+							style={{ textAlign: "center" }}
+							fullWidth
+						>
+							<Typography align='center'>Register</Typography>
+						</Button>
 					</div>
 					<div className='form__btn'>
-					<Button type='submit' variant='contained' color='primary' style={{textAlign: 'center'}} fullWidth>
-						<Typography>Login With Facebook</Typography>
-					</Button>
+						<Button
+							type='submit'
+							variant='contained'
+							color='primary'
+							style={{ textAlign: "center" }}
+							fullWidth
+						>
+							<Typography>Login With Facebook</Typography>
+						</Button>
 					</div>
 					<div className='form__btn'>
-					<Button type='submit' variant='contained' color='secondary' style={{textAlign: 'center'}} fullWidth>
-					<Typography>Login With Google+</Typography>
-										</Button>
+						<Button
+							type='submit'
+							variant='contained'
+							color='secondary'
+							style={{ textAlign: "center" }}
+							fullWidth
+						>
+							<Typography>Login With Google+</Typography>
+						</Button>
 					</div>
-					
 				</Paper>
 			</form>
 		</div>
