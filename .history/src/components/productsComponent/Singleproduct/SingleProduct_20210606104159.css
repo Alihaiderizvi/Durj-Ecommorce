@@ -1,0 +1,14 @@
+.singleProduct__cart {
+	max-width: 200px !important;
+	max-height: 250px;
+}
+
+.singleProduct_IconBtnDiv {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.quickView__btn {
+	text-align: center;
+}

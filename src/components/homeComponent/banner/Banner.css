@@ -10,7 +10,7 @@
 
 .image__slider > img {
 	height: auto;
-	max-height: 350px;
+	max-height: 450px;
 	width: fit-content;
 	width: 100%;
 }

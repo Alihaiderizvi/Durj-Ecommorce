@@ -1,0 +1,6 @@
+.MuiAppBar-positionFixed {
+	top: unset;
+	left: auto;
+	right: 0;
+	position: absolute;
+}

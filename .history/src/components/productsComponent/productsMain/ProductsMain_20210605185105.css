@@ -1,0 +1,17 @@
+.MuiAppBar-positionFixed {
+	top: unset !important;
+	position: absolute !important;
+}
+
+.productsMain__list {
+	padding: unset !important;
+}
+.productsMainCategory__heading {
+	text-align: center;
+}
+.productsMain__content {
+	text-decoration: none !important;
+	color: #16243e !important;
+	display: flex;
+	justify-content: center !important;
+}

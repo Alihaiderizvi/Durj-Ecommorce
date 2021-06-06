@@ -1,0 +1,178 @@
+import React from "react";
+import PropTypes from "prop-types";
+import AppBar from "@material-ui/core/AppBar";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Divider from "@material-ui/core/Divider";
+import Drawer from "@material-ui/core/Drawer";
+import Hidden from "@material-ui/core/Hidden";
+import IconButton from "@material-ui/core/IconButton";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import List from "@material-ui/core/List";
+
+import SwipeableViews from "react-swipeable-views";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import MailIcon from "@material-ui/icons/Mail";
+import MenuIcon from "@material-ui/icons/Menu";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+
+// custom css
+import "../productsMain/ProductsMain.css";
+import { Tab, Tabs } from "@material-ui/core";
+
+const drawerWidth = 240;
+
+const useStyles = makeStyles((theme) => ({
+	root: {
+		display: "flex",
+	},
+	drawer: {
+		[theme.breakpoints.up("sm")]: {
+			width: drawerWidth,
+			flexShrink: 0,
+		},
+	},
+	appBar: {
+		[theme.breakpoints.up("sm")]: {
+			width: `calc(100% - ${drawerWidth}px)`,
+			marginLeft: drawerWidth,
+			// zIndex: "0 !important",
+			// position: "absolute",
+			// top: "unset",
+		},
+	},
+	menuButton: {
+		marginRight: theme.spacing(2),
+		[theme.breakpoints.up("sm")]: {
+			display: "none",
+		},
+	},
+	// necessary for content to be below app bar
+	toolbar: theme.mixins.toolbar,
+	drawerPaper: {
+		width: drawerWidth,
+		overflowY: "hidden",
+		position: "unset !important",
+	},
+	content: {
+		flexGrow: 1,
+		padding: theme.spacing(3),
+	},
+}));
+
+const ProductsMain = (props) => {
+	const [value, setValue] = React.useState(0);
+
+	const handleChange = (event, newValue) => {
+		setValue(newValue);
+	};
+
+	const handleChangeIndex = (index) => {
+		setValue(index);
+	};
+
+	const { window } = props;
+	const classes = useStyles();
+	const theme = useTheme();
+	const [mobileOpen, setMobileOpen] = React.useState(false);
+
+	const handleDrawerToggle = () => {
+		setMobileOpen(!mobileOpen);
+	};
+
+	const drawer = (
+		<div>
+			<div className={classes.toolbar} />
+			<Divider />
+			<List></List>
+		</div>
+	);
+
+	const container =
+		window !== undefined ? () => window().document.body : undefined;
+
+	return (
+		<div className={classes.root}>
+			<CssBaseline />
+			<AppBar position='fixed' className={classes.appBar}>
+				<Toolbar>
+					<IconButton
+						color='inherit'
+						aria-label='open drawer'
+						edge='start'
+						onClick={handleDrawerToggle}
+						className={classes.menuButton}
+					>
+						<MenuIcon />
+					</IconButton>
+					<Tabs
+						value={value}
+						onChange={handleChange}
+						indicatorColor='primary'
+						textColor='primary'
+						variant='fullWidth'
+						aria-label='full width tabs example'
+					>
+						<Tab label='Item One' {...a11yProps(0)} />
+						<Tab label='Item Two' {...a11yProps(1)} />
+						<Tab label='Item Three' {...a11yProps(2)} />
+					</Tabs>
+					<SwipeableViews
+						axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+						index={value}
+						onChangeIndex={handleChangeIndex}
+					>
+						<TabPanel value={value} index={0} dir={theme.direction}>
+							Item One
+						</TabPanel>
+						<TabPanel value={value} index={1} dir={theme.direction}>
+							Item Two
+						</TabPanel>
+						<TabPanel value={value} index={2} dir={theme.direction}>
+							Item Three
+						</TabPanel>
+					</SwipeableViews>
+				</Toolbar>
+			</AppBar>
+			<nav className={classes.drawer} aria-label='mailbox folders'>
+				{/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+				<Hidden smUp implementation='css'>
+					<Drawer
+						container={container}
+						variant='temporary'
+						anchor={theme.direction === "rtl" ? "right" : "left"}
+						open={mobileOpen}
+						onClose={handleDrawerToggle}
+						classes={{
+							paper: classes.drawerPaper,
+						}}
+						ModalProps={{
+							keepMounted: true, // Better open performance on mobile.
+						}}
+					>
+						{drawer}
+					</Drawer>
+				</Hidden>
+				<Hidden xsDown implementation='css'>
+					<Drawer
+						classes={{
+							paper: classes.drawerPaper,
+						}}
+						variant='permanent'
+						open
+					>
+						{drawer}
+					</Drawer>
+				</Hidden>
+			</nav>
+			<main className={classes.content}>
+				<div className={classes.toolbar} />
+			</main>
+		</div>
+	);
+};
+
+export default ProductsMain;
