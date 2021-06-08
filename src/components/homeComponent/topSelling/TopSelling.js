@@ -22,13 +22,10 @@ import featuredCategory3 from "../../../assets/Featured-Category3.png";
 import cart1 from "../../../assets/cart1.jpeg";
 
 const TopSelling = () => {
+	const [cart, cartUpdate] = useState("0");
 
-	const [cart, cartUpdate] = useState('0');
+	const addToCart = () => [console.log(cartUpdate((cart) => cart + 1))];
 
-	const addToCart = (() =>[
-		console.log(cartUpdate((cart) => cart+1))
-	])
-	
 	const [count, setCount] = useState(0);
 
 	const handleIncrement = () => {
@@ -42,7 +39,6 @@ const TopSelling = () => {
 		}
 	};
 
-	
 	const useStyles = makeStyles((_) => ({
 		gridList: {
 			flexWrap: "wrap",
@@ -114,7 +110,10 @@ const TopSelling = () => {
 			</Typography>
 			<Box className='box rightBox' component='span' m={1}>
 				<Button className='topSelling__btn' variant='contained' size='medium'>
-					<Link to='/' style={{ textDecoration: "none", color: "#fff" }}>
+					<Link
+						to='/products'
+						style={{ textDecoration: "none", color: "#fff" }}
+					>
 						See More
 					</Link>
 				</Button>

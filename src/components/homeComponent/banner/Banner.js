@@ -38,7 +38,7 @@ const Banner = () => {
 		{
 			id: 1,
 			title: "Kitechen Appliances",
-			link: "/",
+			link: "/products",
 		},
 		{
 			id: 2,

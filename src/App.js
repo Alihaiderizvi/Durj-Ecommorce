@@ -8,6 +8,7 @@ import Checkout from "./pages/checkout/Checkout";
 import Error from "./components/error/Error";
 import Register from "./pages/register/Register";
 import Products from "./pages/products/Products";
+import Product from "./pages/product/Product";
 function App() {
 	return (
 		<>
@@ -16,6 +17,7 @@ function App() {
 				<Route path='/login' component={Login} />
 				<Route path='/register' component={Register} />
 				<Route path='/products' component={Products} />
+				<Route path='/productDetail' component={Product} />
 				<Route path='/checkout' component={Checkout} />
 				<Route component={Error} />
 			</Switch>

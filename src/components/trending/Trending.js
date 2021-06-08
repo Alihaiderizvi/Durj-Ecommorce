@@ -7,6 +7,7 @@ import deal1 from "../../assets/Deal1.png";
 import deal2 from "../../assets/deal2.png";
 import deal3 from "../../assets/deal3.png";
 
+import "../trending/Trending.css";
 const breakPoints = [
 	{ width: 1, itemsToShow: 1 },
 	{ width: 550, itemsToShow: 2 },
@@ -39,11 +40,16 @@ const carouselImages = [
 const Trending = () => {
 	return (
 		<div className='trending'>
-			<Typography variant='h4' gutterBottom className='shopByCategory__heading'>
-				Shop By Category
+			<Typography
+				variant='h4'
+				gutterBottom
+				className='trending__heading'
+				align='center'
+			>
+				You May Also Like
 			</Typography>
 
-			<Grid container direction='row' justify='center' alignItems='center'>
+			<Grid>
 				<Carousel breakPoints={breakPoints}>
 					{carouselImages.map((item) => (
 						<Item key={item.id}>

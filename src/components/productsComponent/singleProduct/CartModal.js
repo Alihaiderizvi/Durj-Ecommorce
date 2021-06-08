@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {
 	Box,
+	Button,
 	Card,
 	CardActions,
 	CardContent,
@@ -15,6 +16,7 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Backdrop from "@material-ui/core/Backdrop";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
 	modal: {
 		display: "flex",
@@ -65,7 +67,9 @@ const CartModal = () => {
 						<div className={classes.modalPaper}>
 							<h2 id='transition-modal-title'>Transition modal</h2>
 							<p id='transition-modal-description'>
-								react-transition-group animates me.
+								<Button>
+									<Link to='/productDetail'>View Full Details</Link>
+								</Button>
 							</p>
 						</div>
 					</Fade>

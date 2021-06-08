@@ -1,0 +1,13 @@
+.trending {
+	height: auto;
+	margin: 50px;
+}
+
+.trending {
+	margin-left: 40px !important;
+	position: relative;
+	font-size: 35px !important;
+	padding-bottom: 2px;
+	margin-bottom: 19px !important;
+	font-weight: 500 !important;
+}
