@@ -1,0 +1,147 @@
+.cart__table {
+	padding: 30px;
+	background-color: #fff;
+	margin-top: 50px;
+}
+
+.cartTable__image {
+	width: 150px;
+	height: 100%;
+}
+
+.cartTable__imageTd {
+	display: flex;
+	margin-bottom: 30px;
+
+	align-items: center;
+}
+
+.cartTable__imageTd > p {
+	margin-left: 45px;
+}
+
+.pivoted {
+	text-align: center;
+}
+.MuiDivider-root {
+	height: 3px !important;
+	background-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+.divider {
+	display: none !important;
+}
+
+.cartLeftDiv_buttons {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 20px auto;
+	width: 80%;
+	flex-wrap: wrap;
+}
+
+.cartLeftDiv_buttons > Button {
+	margin-top: 20px;
+}
+/* Right Div Section  */
+
+.cart__rightDiv {
+	height: auto;
+}
+.cartRightDiv_global {
+	background-color: #fff;
+	height: auto;
+	width: 100%;
+	margin: 50px 0px 0px 20px;
+	padding: 40px 0;
+}
+
+.cartRightDivCoupon_child {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.cartRightDivCoupon_child > Button {
+	margin-left: 20px;
+}
+
+.cartRightDivSummary_child {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: space-around;
+	margin: 10px 0;
+}
+
+.cartRightDivSummary_lastChild {
+	background-color: #f50057;
+	height: 30px;
+	width: 90%;
+	margin: 10px auto;
+	color: white;
+}
+/* Media Query */
+
+@media screen and (max-width: 40em) {
+	.cartRightDiv_global {
+		margin: 50px 0px 0px 0px;
+	}
+
+	.responsiveTable tbody tr {
+		border: none;
+		padding: 2.25em 0em;
+	}
+
+	.responsiveTable td.pivoted {
+		border: none !important;
+		position: relative;
+		padding-left: calc(50% + 10px) !important;
+		text-align: left !important;
+		padding: 10px 0px;
+		white-space: pre-wrap;
+		overflow-wrap: break-word;
+	}
+
+	.responsiveTable td .tdBefore {
+		position: absolute;
+		color: black;
+		display: block;
+		left: 1rem;
+		width: calc(50% - 20px);
+		white-space: pre-wrap;
+		overflow-wrap: break-word;
+		text-align: left !important;
+		font-weight: 600;
+	}
+
+	.cartTable__imageTd {
+		margin-bottom: 0;
+	}
+
+	br {
+		display: none;
+	}
+
+	.cartTable__image {
+		width: 100%;
+		height: 100%;
+	}
+
+	.cartTable__delBtn {
+		width: 100%;
+		display: flex !important;
+		justify-content: flex-end !important;
+		margin-top: -25px;
+	}
+
+	.cartTable__imageTd > p {
+		margin: 10px auto;
+		margin-left: 0px;
+	}
+
+	.divider {
+		display: block !important;
+	}
+}

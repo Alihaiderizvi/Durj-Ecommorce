@@ -25,6 +25,7 @@
 		"react-responsive-sidebar": "^0.1.16",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "4.0.3",
+		"react-super-responsive-table": "^5.2.0",
 		"react-swipeable-views": "^0.14.0",
 		"styled-components": "^5.3.0",
 		"web-vitals": "^1.1.2"

@@ -11,6 +11,7 @@ import mainImage from "../../assets/product1.jpg";
 import "../productDetail/ProductDetail.css";
 import { withStyles } from "@material-ui/styles";
 import DetailTabBar from "./DetailTabBar";
+import { Link } from "react-router-dom";
 
 const ProductDetail = () => {
 	const StyledRating = withStyles({
@@ -130,13 +131,23 @@ const ProductDetail = () => {
 							color='secondary'
 							startIcon={<ShopIcon />}
 						>
-							Buy Now
+							<Link
+								to='/cart'
+								style={{
+									textDecoration: "none",
+									fontWeight: "500",
+									color: "#fff",
+								}}
+							>
+								Buy Now
+							</Link>
 						</Button>
 						<Button
 							variant='contained'
 							style={{
 								backgroundColor: "#16243e",
 								color: "#fff",
+								fontWeight: "500",
 								marginLeft: "15px",
 							}}
 							startIcon={<AddShoppingCartIcon />}
