@@ -3,7 +3,6 @@ import {
 	Divider,
 	Grid,
 	IconButton,
-	Paper,
 	TextField,
 	Typography,
 } from "@material-ui/core";
@@ -26,6 +25,7 @@ const data = [
 	{ id: 7, img: mainImage, price: "Rs.19.99 PKR", qty: 4, Subtotal: "10,000" },
 	{ id: 8, img: mainImage, price: "Rs.19.99 PKR", qty: 4, Subtotal: "10,000" },
 ];
+
 const MyCart = () => {
 	return (
 		<>
@@ -59,7 +59,11 @@ const MyCart = () => {
 								{data.map((item) => (
 									<Tr key={item.id}>
 										<Td className='cartTable__imageTd'>
-											<img className='cartTable__image' src={item.img} />
+											<img
+												className='cartTable__image'
+												alt='ProductImage'
+												src={item.img}
+											/>
 											<p>
 												PHILIPS BLENDER <br /> (HR2104/03)
 											</p>
@@ -95,7 +99,7 @@ const MyCart = () => {
 						</Button>
 						<Button variant='contained' color='secondary'>
 							<Link
-								to='/'
+								to='/checkout'
 								style={{
 									textDecoration: "none",
 									fontWeight: "600",

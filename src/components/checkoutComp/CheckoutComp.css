@@ -1,0 +1,144 @@
+/* Global Checkout component css */
+.checkout_headings {
+	text-align: center;
+	margin-bottom: 10px;
+	color: #fa5051;
+	font-weight: 550 !important;
+	margin-bottom: 10px !important;
+}
+
+.checkout__subHeading {
+	color: #21557c;
+	font-weight: 600 !important;
+}
+
+/* Checkout Main Div*/
+
+.checkout {
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+
+/* Checkout Main Title */
+
+.checkout__title {
+	width: 85%;
+	margin: 30px auto 10px auto;
+}
+
+.checkout__title > h1 {
+	color: #1b2c4d;
+	font-size: 2.2em;
+}
+
+.checkout__title > h1::after {
+	display: block;
+	content: "";
+	width: 10%;
+	height: 3px;
+	background: #fa5051;
+	position: absolute;
+}
+
+.checkout__title > p {
+	margin-top: 5px;
+	color: gray;
+}
+/* Checkout Form First Div */
+.checkoutForm {
+	background-color: #fff;
+	padding: 30px 0px;
+	height: 100%;
+	transform: scale(1, 1);
+	transition: transform 0.5s ease;
+}
+
+.checkoutForm:hover {
+	box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+	transform: scale(1, 1.02);
+	cursor: pointer;
+}
+
+.checkoutForm__subHeading {
+	color: #21557c;
+	font-weight: 600 !important;
+	margin: 5px 0 10px 0 !important;
+}
+
+.checkout__orderTotal {
+	padding-left: 90px;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Checkout Method Center Div */
+.checkoutMethod__main {
+	height: 100%;
+	width: 25%;
+	margin: 0px 10px;
+}
+
+.checkoutMethod__payment {
+	background-color: #fff;
+	height: 100%;
+	padding: 30px 0px;
+	transform: scale(1, 1);
+	transition: transform 0.5s ease;
+}
+
+.checkoutMethod__payment:hover {
+	box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+	transform: scale(1, 1.05);
+	cursor: pointer;
+}
+
+.checkoutMethod__shipping {
+	background-color: #fff;
+	padding: 30px 0px;
+	margin-bottom: 20px !important;
+	transform: scale(1, 1);
+	transition: transform 0.5s ease;
+}
+
+.checkoutMethod__shipping:hover {
+	box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+	transform: scale(1, 1.05);
+	cursor: pointer;
+}
+
+/* Checkout OverView Third Div */
+
+.checkout__overView {
+	background-color: #fff;
+	padding: 30px 0px;
+	margin: 0 0 20px 5px !important;
+	height: 100%;
+	transition: box-shadow 0.5s ease;
+}
+
+.checkout__overView:hover {
+	box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+
+.checkoutTable__image {
+	width: 150px;
+	height: 100%;
+	transform: scale(1, 1);
+	transition: transform 0.8s ease;
+}
+
+.checkoutTable__image:hover {
+	transform: scale(2, 2);
+	cursor: pointer;
+	z-index: 9999;
+}
+
+/* Media Quries */
+
+@media screen and (max-width: 960px) {
+	.checkoutMethod__main {
+		height: 100%;
+		width: 80%;
+		margin: 30px 8px;
+	}
+}

@@ -23,10 +23,10 @@
 .pivoted {
 	text-align: center;
 }
-.MuiDivider-root {
+/* .MuiDivider-root {
 	height: 3px !important;
 	background-color: rgba(0, 0, 0, 0.12) !important;
-}
+} */
 
 .divider {
 	display: none !important;
