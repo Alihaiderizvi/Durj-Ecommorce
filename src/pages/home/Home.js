@@ -10,11 +10,15 @@ import ShopByCategory from "../../components/homeComponent/shopByCategory/ShopBy
 import SubBanner from "../../components/homeComponent/subBanner/SubBanner";
 import TopSelling from "../../components/homeComponent/topSelling/TopSelling";
 import "../home/Home.css";
+import NavbarComponent from "../../components/navbarComponent/NavbarComponent";
+import logo from "../../assets/logo.png";
+
 const Home = () => {
 	return (
 		<div>
 			<NavbarComp />
 			<Header />
+			{/* <NavbarComponent backgorundColor='#fff' logo={logo} textColor='#16243e' /> */}
 			<Banner />
 			<Deal />
 			<TopSelling />
