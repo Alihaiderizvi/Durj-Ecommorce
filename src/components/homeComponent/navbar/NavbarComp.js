@@ -5,7 +5,7 @@ import "./NavbarComp.css";
 const NavbarComp = () => {
 	return (
 		<div className='navbar__main'>
-	<CssBaseline/>
+			<CssBaseline />
 			<Typography>
 				Welcome To <span style={{ fontWeight: "600" }}>DURJ</span> Store!
 			</Typography>

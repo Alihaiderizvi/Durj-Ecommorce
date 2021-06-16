@@ -79,3 +79,9 @@ input:focus {
 .header__basketCount {
 	margin: 0 10px !important;
 }
+
+@media screen and (max-width: 600px) {
+	.header {
+		z-index: 1;
+	}
+}

@@ -7,17 +7,17 @@ import { Link } from "react-router-dom";
 import { Typography } from "@material-ui/core";
 
 const Header = () => {
+	const [user, newUser] = useState("Ali Test");
 
-
-	const [user, newUser] = useState('Ali Test');
-
-	const handleUser =(()=>{
-		newUser('Ali Verified');
-	})
+	const handleUser = () => {
+		newUser("Ali Verified");
+	};
 
 	return (
 		<div className='header'>
-				<Link to='/'><img className='header__logo' src={logo} /></Link>
+			<Link to='/'>
+				<img className='header__logo' alt='headerLogo' src={logo} />
+			</Link>
 			<div className='header__search'>
 				<input
 					className='header__searchInput'
@@ -28,8 +28,14 @@ const Header = () => {
 			</div>
 			<div className='header__nav'>
 				<div className='header__option'>
-					<Typography className='header__optionLineOne' onChange={handleUser}>{user}</Typography>
-					<Typography className='header__optionLineTwo'><Link to ='/login' style={{textDecoration:'none'}}>Sign In</Link></Typography>
+					<Typography className='header__optionLineOne' onChange={handleUser}>
+						{user}
+					</Typography>
+					<Typography className='header__optionLineTwo'>
+						<Link to='/login' style={{ textDecoration: "none" }}>
+							Sign In
+						</Link>
+					</Typography>
 				</div>
 
 				<div className='header__option'>
@@ -39,7 +45,9 @@ const Header = () => {
 
 				<div className='header__optionBasket'>
 					<ShoppingBasketIcon />
-					<Typography className='header__optionLineTwo header__basketCount'>0</Typography>
+					<Typography className='header__optionLineTwo header__basketCount'>
+						0
+					</Typography>
 				</div>
 			</div>
 		</div>

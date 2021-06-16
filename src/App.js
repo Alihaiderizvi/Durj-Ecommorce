@@ -10,6 +10,7 @@ import Register from "./pages/register/Register";
 import Products from "./pages/products/Products";
 import Product from "./pages/product/Product";
 import Cart from "./pages/cart/Cart";
+import Wishlist from "./pages/wishlist/Wishlist";
 function App() {
 	return (
 		<>
@@ -20,6 +21,7 @@ function App() {
 				<Route path='/products' component={Products} />
 				<Route path='/productDetail' component={Product} />
 				<Route path='/cart' component={Cart} />
+				<Route path='/wishlist' component={Wishlist} />
 				<Route path='/checkout' component={Checkout} />
 				<Route component={Error} />
 			</Switch>

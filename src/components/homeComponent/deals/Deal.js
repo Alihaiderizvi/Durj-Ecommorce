@@ -43,7 +43,7 @@ const Deal = () => {
 			<Carousel breakPoints={breakPoints} className='deal__carousel'>
 				{carouselImages.map((item) => (
 					<Item key={item.id}>
-						<img src={item.image} />
+						<img src={item.image} alt='dealImage' />
 					</Item>
 				))}
 			</Carousel>
