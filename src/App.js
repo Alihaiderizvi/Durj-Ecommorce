@@ -8,9 +8,10 @@ import Checkout from "./pages/checkout/Checkout";
 import Error from "./components/error/Error";
 import Register from "./pages/register/Register";
 import Products from "./pages/products/Products";
-import Product from "./pages/product/Product";
+import ProductDetails from "./pages/productDetailsPage/ProductDetailsPage";
 import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
+
 function App() {
 	return (
 		<>
@@ -19,7 +20,7 @@ function App() {
 				<Route path='/login' component={Login} />
 				<Route path='/register' component={Register} />
 				<Route path='/products' component={Products} />
-				<Route path='/productDetail' component={Product} />
+				<Route path='/product/:productId' component={ProductDetails} />
 				<Route path='/cart' component={Cart} />
 				<Route path='/wishlist' component={Wishlist} />
 				<Route path='/checkout' component={Checkout} />

@@ -6,7 +6,7 @@ import ProductDetail from "../../components/productDetail/ProductDetail";
 import SubFotter from "../../components/subFooter/SubFotter";
 import Trending from "../../components/trending/Trending";
 
-const Product = () => {
+const ProductDetailPage = () => {
 	return (
 		<div>
 			<NavbarComp />
@@ -25,4 +25,4 @@ const Product = () => {
 	);
 };
 
-export default Product;
+export default ProductDetailPage;

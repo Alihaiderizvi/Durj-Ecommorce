@@ -1,8 +1,11 @@
 import WishlistAppbar from "./WishlistAppbar";
 
 import "../wishlistComp/WishlistComp.css";
-import { Grid } from "@material-ui/core";
+import { useSelector } from "react-redux";
+
 const WishlistComp = () => {
+	// const products = useSelector((state) => state);
+	// console.log(products);
 	return (
 		<div className='wishlist'>
 			{/* Wishlist Appbar  */}

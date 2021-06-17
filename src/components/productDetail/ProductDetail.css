@@ -5,6 +5,12 @@
 	flex-wrap: wrap;
 	height: auto;
 }
+
+.productDetail__mainImage {
+	height: 450px;
+	width: 300px;
+	margin-bottom: 20px;
+}
 .productDetail__mainImage > img {
 	height: 100%;
 	width: 100%;

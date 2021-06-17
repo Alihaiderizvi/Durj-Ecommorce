@@ -3,8 +3,31 @@ import { useEffect, useState } from "react";
 import Fade from "@material-ui/core/Fade";
 import Backdrop from "@material-ui/core/Backdrop";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import { setProducts } from "../../redux/actions/ProductActions";
 
 const WishlistMain = () => {
+	// Data Fetch from api
+
+	const products = useSelector((state) => state.allProducts.products);
+	const dispatch = useDispatch();
+
+	const fetchProducts = async () => {
+		const res = await axios
+			.get("https://fakestoreapi.com/products")
+			.catch((err) => {
+				console.log("Error", err);
+			});
+		// Once we get the res we need to add this to our store
+		// For this we need to Dispatch & Action(SET_PRODUCT)
+		dispatch(setProducts(res.data));
+	};
+
+	useEffect(() => {
+		fetchProducts();
+	}, []);
+
 	// Modal
 	const [open, setOpen] = useState(false);
 
@@ -22,21 +45,6 @@ const WishlistMain = () => {
 		return e.target.alt;
 	};
 
-	// Data Fetch from api
-
-	const [data, setData] = useState([]);
-
-	const fetchApi = async () => {
-		const res = await fetch("https://fakestoreapi.com/products");
-		setData(await res.json());
-		// const a = await res.json();
-		// console.log(a);
-	};
-
-	useEffect(() => {
-		fetchApi();
-	}, []);
-
 	return (
 		<>
 			<div className='wishlistMain'>
@@ -52,13 +60,13 @@ const WishlistMain = () => {
 					// backgroundColor: "transparent",
 				}}
 			>
-				{data.map((product) => (
-					<div className='wishlist__product' key={product.id}>
+				{products.map(({ id, title, image, price, category, description }) => (
+					<div className='wishlist__product' key={id}>
 						<div id='wrapper'>
 							<img
 								className='wishlistProduct__image'
-								src={product.image}
-								alt={product.title}
+								src={image}
+								alt={title}
 								onClick={handleOpen}
 								// onClick={getId}
 							/>
@@ -66,10 +74,8 @@ const WishlistMain = () => {
 						</div>
 						<hr />
 						<div className='wishlist__productContent'>
-							<h4 className='wishlistProduct__title'>{product.title}</h4>
-							<h4 className='wishlistProduct__price'>
-								Price:Rs.{product.price}
-							</h4>
+							<h4 className='wishlistProduct__title'>{title}</h4>
+							<h4 className='wishlistProduct__price'>Price:Rs.{price}</h4>
 						</div>
 						<Button
 							variant='contained'
@@ -79,6 +85,16 @@ const WishlistMain = () => {
 						>
 							<Link to='/cart' className='link'>
 								Add To Cart
+							</Link>
+						</Button>
+						<Button
+							variant='contained'
+							className='wishlist__productDetailBtn'
+							fullWidth
+							justify='center'
+						>
+							<Link to={`/product/${id}`} className='link'>
+								Product Details
 							</Link>
 						</Button>
 					</div>
@@ -97,33 +113,6 @@ const WishlistMain = () => {
 						<div className='wishlistModal__paper'>
 							<h2>Quick View Modal</h2>
 							<p>Some Dummy Text.</p>
-							<p style={{ width: "75ch" }}>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-								mollitia, molestiae quas vel sint commodi repudiandae
-								consequuntur voluptatum laborum numquam blanditiis harum
-								quisquam eius sed odit fugiat iusto fuga praesentium optio,
-								eaque rerum! Provident similique accusantium nemo autem.
-								Veritatis obcaecati tenetur iure eius earum ut molestias
-								architecto voluptate aliquam nihil, eveniet aliquid culpa
-								officia aut! Impedit sit sunt quaerat, odit, tenetur error,
-								harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia.
-								Quo neque error repudiandae fuga? Ipsa laudantium molestias eos
-								sapiente officiis modi at sunt excepturi expedita sint? Sed
-								quibusdam recusandae alias error harum maxime adipisci amet
-								laborum. Perspiciatis minima nesciunt dolorem! Officiis iure
-								rerum voluptates a cumque velit quibusdam sed amet tempora. Sit
-								laborum ab, eius fugit doloribus tenetur fugiat, temporibus enim
-								commodi iusto libero magni deleniti quod quam consequuntur!
-								Commodi minima excepturi repudiandae velit hic maxime
-								doloremque. Quaerat provident commodi consectetur veniam
-								similique ad earum omnis ipsum saepe, voluptas, hic voluptates
-								pariatur est explicabo fugiat, dolorum eligendi quam cupiditate
-								excepturi mollitia maiores labore suscipit quas? Nulla, placeat.
-								Voluptatem quaerat non architecto ab laudantium modi minima sunt
-								esse temporibus sint culpa, recusandae aliquam numquam totam
-								ratione voluptas quod exercitationem fuga. Possimus quis earum
-								veniam quasi aliquam eligendi, placeat qui corporis!
-							</p>
 						</div>
 					</Fade>
 				</Modal>

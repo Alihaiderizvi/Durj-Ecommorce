@@ -87,6 +87,11 @@
 	color: #fff;
 }
 
+.wishlist__productDetailBtn {
+	margin-top: 5px !important;
+	background-color: rgb(20 43 87) !important;
+	color: #fff;
+}
 /* --------Wishlist Modal--------  */
 
 .wishlist__modal {
