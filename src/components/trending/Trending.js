@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
 import Item from "./Item";
-import { CssBaseline, Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 import deal1 from "../../assets/Deal1.png";
 import deal2 from "../../assets/deal2.png";
@@ -53,7 +53,7 @@ const Trending = () => {
 				<Carousel breakPoints={breakPoints}>
 					{carouselImages.map((item) => (
 						<Item key={item.id}>
-							<img src={item.image} />
+							<img src={item.image} alt='img' />
 						</Item>
 					))}
 				</Carousel>

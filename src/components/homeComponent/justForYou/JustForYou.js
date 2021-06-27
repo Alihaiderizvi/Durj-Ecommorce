@@ -100,27 +100,22 @@ const JustForYou = () => {
 			</Typography>
 
 			<div className={classes.root}>
-				<Grid
-					container
-					className={classes.grid}
-					justify='center'
-					lg={10}
-					md={5}
-				>
+				<Grid container className={classes.grid} justify='center'>
 					{cartData.map((cart) => (
 						<Card
-							key={cart.image}
+							key={cart.id}
 							className='justForYou__cart'
 							style={{ margin: "10px !important" }}
 						>
 							<CardContent>
 								<img
 									src={cart.image}
+									alt={cart.title}
 									style={{ objectFit: "contain", height: "250px" }}
 								/>
 								<Typography
 									align='center'
-									gutterBottom='true'
+									gutterBottom
 									variant='h5'
 									style={{ color: "#16243e" }}
 								>

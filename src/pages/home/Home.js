@@ -17,8 +17,12 @@ const Home = () => {
 	return (
 		<div>
 			<NavbarComp />
-			<Header />
-			{/* <NavbarComponent backgorundColor='#fff' logo={logo} textColor='#16243e' /> */}
+			{/* <Header /> */}
+			<NavbarComponent
+				backgorundColor='#fff'
+				logo={logo}
+				navLinksColor='#16243e'
+			/>
 			<Banner />
 			<Deal />
 			<TopSelling />

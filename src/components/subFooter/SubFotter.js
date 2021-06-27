@@ -39,7 +39,7 @@ const SubFotter = () => {
 					<div className='subFotter__container' key={data.id}>
 						<img
 							src={data.image}
-							alt='SubFotter Image'
+							alt='SubFotter Img'
 							className='subFotter__img'
 						/>
 						<div>

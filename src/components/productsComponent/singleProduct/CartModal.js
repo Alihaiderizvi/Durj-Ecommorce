@@ -1,19 +1,5 @@
 import React, { useState } from "react";
-import {
-	Box,
-	Button,
-	Card,
-	CardActions,
-	CardContent,
-	CardMedia,
-	Divider,
-	Fade,
-	Grid,
-	IconButton,
-	Modal,
-	Paper,
-	Typography,
-} from "@material-ui/core";
+import { Button, Fade, Modal } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Backdrop from "@material-ui/core/Backdrop";
 import { Link } from "react-router-dom";

@@ -26,7 +26,7 @@ const FeatureCateogy = () => {
 				className='featureCategory__cartBanner'
 				style={{ display: "flex", margin: "auto 50px" }}
 			>
-				<img className='featureCategory__cartImage' src={addImage} />
+				<img className='featureCategory__cartImage' src={addImage} alt='img' />
 
 				<Carousel
 					breakPoints={breakPoints}
@@ -34,30 +34,35 @@ const FeatureCateogy = () => {
 				>
 					<Item>
 						<img
+							alt='img'
 							src={featuredCategory1}
 							className='featureCategoryCarousel__images'
 						/>
 					</Item>
 					<Item>
 						<img
+							alt='img'
 							src={featuredCategory2}
 							className='featureCategoryCarousel__images'
 						/>
 					</Item>
 					<Item>
 						<img
+							alt='img'
 							src={featuredCategory1}
 							className='featureCategoryCarousel__images'
 						/>
 					</Item>
 					<Item>
 						<img
+							alt='img'
 							src={featuredCategory3}
 							className='featureCategoryCarousel__images'
 						/>
 					</Item>
 					<Item>
 						<img
+							alt='img'
 							src={featuredCategory1}
 							className='featureCategoryCarousel__images'
 						/>

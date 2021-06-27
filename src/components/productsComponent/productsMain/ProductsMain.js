@@ -145,11 +145,6 @@ const ProductsMain = (props) => {
 		setState({ ...state, [event.target.name]: event.target.checked });
 	};
 
-	const { Karachi, faislabad, Islamabad, Lahore, Sukkur } = state;
-	const error =
-		[Karachi, faislabad, Islamabad, Lahore, Sukkur].filter((v) => v).length !==
-		2;
-
 	const { window } = props;
 	const classes = useStyles();
 	const theme = useTheme();
@@ -168,7 +163,7 @@ const ProductsMain = (props) => {
 						style={{ textAlign: "center", width: "80%", margin: "30px auto" }}
 					>
 						{Categories.map((category) => (
-							<ListItemText style={{ paddingLeft: 0 }}>
+							<ListItemText style={{ paddingLeft: 0 }} key={category.id}>
 								<Link to={category.link} className='productsMain__content'>
 									{category.title}
 								</Link>
@@ -193,8 +188,12 @@ const ProductsMain = (props) => {
 							"#FF9B3B",
 							"#F60300",
 							"#2CE4ED",
-						].map((item) => (
-							<span class='dot' style={{ backgroundColor: item }}></span>
+						].map((item, index) => (
+							<span
+								class='dot'
+								style={{ backgroundColor: item }}
+								key={index}
+							></span>
 						))}
 					</div>
 				</List>
@@ -208,8 +207,8 @@ const ProductsMain = (props) => {
 							margin: "50px auto",
 						}}
 					>
-						{[5, 4, 3, 2, 1].map((item) => (
-							<Box borderColor='transparent'>
+						{[5, 4, 3, 2, 1].map((item, index) => (
+							<Box borderColor='transparent' key={index}>
 								<StyledRating
 									name='customized-color'
 									defaultValue={item}
@@ -259,7 +258,7 @@ const ProductsMain = (props) => {
 								<FormControlLabel
 									control={
 										<Checkbox
-											checked={Karachi}
+											checked={state.Karachi}
 											onChange={handleChange}
 											name='Khi'
 										/>

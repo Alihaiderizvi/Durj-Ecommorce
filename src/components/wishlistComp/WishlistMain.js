@@ -1,13 +1,17 @@
-import { Paper, Button, Modal, Box } from "@material-ui/core";
+import { Paper, Button, Modal } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import Fade from "@material-ui/core/Fade";
 import Backdrop from "@material-ui/core/Backdrop";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { setProducts } from "../../redux/actions/ProductActions";
 
-const WishlistMain = () => {
+import {
+	addProductToCart,
+	setProducts,
+} from "../../redux/actions/ProductActions";
+
+const WishlistMain = (props) => {
 	// Data Fetch from api
 
 	const products = useSelector((state) => state.allProducts.products);
@@ -75,23 +79,27 @@ const WishlistMain = () => {
 						<hr />
 						<div className='wishlist__productContent'>
 							<h4 className='wishlistProduct__title'>{title}</h4>
-							<h4 className='wishlistProduct__price'>Price:Rs.{price}</h4>
+							<h4 className='wishlistProduct__price'>Price:${price}</h4>
 						</div>
 						<Button
 							variant='contained'
 							className='wishlist__addToCartBtn'
 							fullWidth
 							justify='center'
+							onClick={() => {
+								dispatch(addProductToCart({ ...props.products }));
+							}}
 						>
-							<Link to='/cart' className='link'>
-								Add To Cart
-							</Link>
+							<Link className='link'>Add To Cart</Link>
 						</Button>
 						<Button
 							variant='contained'
 							className='wishlist__productDetailBtn'
 							fullWidth
 							justify='center'
+							onClick={() => {
+								dispatch(addProductToCart({ ...props.product }));
+							}}
 						>
 							<Link to={`/product/${id}`} className='link'>
 								Product Details

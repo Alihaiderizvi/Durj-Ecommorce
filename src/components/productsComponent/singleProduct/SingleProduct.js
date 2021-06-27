@@ -4,20 +4,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
-import {
-	Box,
-	Card,
-	CardActions,
-	CardContent,
-	CardMedia,
-	Divider,
-	Fade,
-	Grid,
-	IconButton,
-	Modal,
-	Paper,
-	Typography,
-} from "@material-ui/core";
+import { Box, Card, IconButton, Typography } from "@material-ui/core";
 import c1 from "../../../assets/c1.jpg";
 import { Pagination } from "@material-ui/lab";
 import { ShoppingCart } from "@material-ui/icons";
@@ -80,43 +67,43 @@ const datas = [
 		price: "Rs 19.99$",
 	},
 	{
-		id: 8,
+		id: 9,
 		image: c1,
 		label: "Product Name",
 		price: "Rs 19.99$",
 	},
 	{
-		id: 8,
+		id: 10,
 		image: c1,
 		label: "Product Name",
 		price: "Rs 19.99$",
 	},
 	{
-		id: 8,
+		id: 11,
 		image: c1,
 		label: "Product Name",
 		price: "Rs 19.99$",
 	},
 	{
-		id: 8,
+		id: 12,
 		image: c1,
 		label: "Product Name",
 		price: "Rs 19.99$",
 	},
 	{
-		id: 8,
+		id: 13,
 		image: c1,
 		label: "Product Name",
 		price: "Rs 19.99$",
 	},
 	{
-		id: 8,
+		id: 14,
 		image: c1,
 		label: "Product Name",
 		price: "Rs 19.99$",
 	},
 	{
-		id: 8,
+		id: 15,
 		image: c1,
 		label: "Product Name",
 		price: "Rs 19.99$",
@@ -182,17 +169,9 @@ const firstIndex = 0;
 const SingleProduct = () => {
 	const classes = useStyles();
 
-	// ----------------------Cart
-
-	const [expanded, setExpanded] = useState(false);
-
-	const handleExpandClick = () => {
-		setExpanded(!expanded);
-	};
-
 	// -----------------------Pagination
 
-	const [pageSize, setPageSize] = useState(16);
+	const [pageSize] = useState(16);
 	const [page, setPage] = useState(1);
 	const [data, setData] = useState(datas.slice(firstIndex, pageSize));
 
@@ -205,11 +184,6 @@ const SingleProduct = () => {
 		setData(datas.slice(firstIndex + pageSize * (value - 1), pageSize * value));
 	};
 
-	// Pagination:/ Change width
-	const changeWidth = (e) => {
-		setPageSize(parseInt(e.target.value, 10));
-	};
-
 	// -----------------------Sort
 	const [sort, setSort] = useState("");
 
@@ -219,7 +193,7 @@ const SingleProduct = () => {
 
 	return (
 		<div className='singleProduct'>
-			<Box className='box rightBox' component='span' m={1}>
+			<Box className='box rightBox' m={1}>
 				<FormControl style={{ minWidth: 120 }}>
 					<InputLabel id='demo-simple-select-label'>Sort By</InputLabel>
 					<Select id='sort_selection' value={sort} onChange={handleChange}>
@@ -238,7 +212,7 @@ const SingleProduct = () => {
 				}}
 			>
 				{data.map((item) => (
-					<Card className='singleProduct__cart'>
+					<Card className='singleProduct__cart' key={item.id}>
 						<div className='singleProduct_IconBtnDiv'>
 							<IconButton style={{ zIndex: 1 }}>
 								<ShoppingCart />

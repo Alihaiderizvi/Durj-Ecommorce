@@ -19,7 +19,7 @@ const SubBanner = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			<img className={classes.bannerImg} src={bannerImage} />
+			<img className={classes.bannerImg} src={bannerImage} alt='bannerimg' />
 		</div>
 	);
 };

@@ -5,8 +5,9 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { Typography } from "@material-ui/core";
+import { connect } from "react-redux";
 
-const Header = () => {
+const Header = ({ cartLength }) => {
 	const [user, newUser] = useState("Ali Test");
 
 	const handleUser = () => {
@@ -46,7 +47,7 @@ const Header = () => {
 				<div className='header__optionBasket'>
 					<ShoppingBasketIcon />
 					<Typography className='header__optionLineTwo header__basketCount'>
-						0
+						{cartLength}
 					</Typography>
 				</div>
 			</div>
@@ -54,4 +55,10 @@ const Header = () => {
 	);
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+	return {
+		cartLength: state.shop.cart.length,
+	};
+};
+
+export default connect(mapStateToProps, null)(Header);

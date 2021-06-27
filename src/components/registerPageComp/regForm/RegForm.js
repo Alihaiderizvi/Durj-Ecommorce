@@ -66,7 +66,7 @@ const RegForm = () => {
 		alert("Form Submitted!");
 	};
 
-	const { handleSubmit, reset, control } = useForm({ defaultValues });
+	const { handleSubmit, control } = useForm({ defaultValues });
 	const formData = [
 		{
 			id: 1,

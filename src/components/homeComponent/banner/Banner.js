@@ -75,7 +75,7 @@ const Banner = () => {
 				<List className='bannerCategory__list'>
 					<h3>Categories</h3>
 					{Categories.map((category) => (
-						<ListItemText>
+						<ListItemText key={category.id}>
 							<Link to={category.link} className='bannerCategoryList__content'>
 								{category.title}
 							</Link>
@@ -95,7 +95,7 @@ const Banner = () => {
 			>
 				{images.map((item) => (
 					<div className='image__slider' key={item.id}>
-						<img src={item.img} />
+						<img src={item.img} alt='Carousel' />
 					</div>
 				))}
 			</Carousel>

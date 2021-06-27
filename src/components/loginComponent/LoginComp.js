@@ -7,7 +7,7 @@ import {
 	Typography,
 } from "@material-ui/core";
 import React from "react";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "../loginComponent/LoginComp.css";
 
@@ -34,7 +34,7 @@ const LoginComp = () => {
 	};
 
 	const classes = useStyles();
-	const { register, handleSubmit, control } = useForm({ defaultValues });
+	const { register, handleSubmit } = useForm({ defaultValues });
 	return (
 		<>
 			<div className='loginForm'>

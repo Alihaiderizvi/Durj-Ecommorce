@@ -66,7 +66,7 @@ const ProductsTab = (props) => {
 
 	return (
 		<Container className={classes.root}>
-			<AppBar position='static' color='black' elevation={0}>
+			<AppBar position='static' elevation={0}>
 				<Tabs
 					value={value}
 					onChange={handleChange}

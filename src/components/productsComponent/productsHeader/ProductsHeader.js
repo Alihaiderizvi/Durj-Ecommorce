@@ -46,7 +46,7 @@ const ProductsHeader = () => {
 			>
 				{images.map((item) => (
 					<div className='image__slider' key={item.id}>
-						<img src={item.img} />
+						<img src={item.img} alt='img' />
 					</div>
 				))}
 			</Carousel>

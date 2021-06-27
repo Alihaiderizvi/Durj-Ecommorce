@@ -10,7 +10,7 @@ const ProductDetailPage = () => {
 	return (
 		<div>
 			<NavbarComp />
-			{/* <Header /> */}
+			<Header />
 			<ProductDetail />
 			<Trending />
 			<br />

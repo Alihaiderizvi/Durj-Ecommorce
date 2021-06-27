@@ -41,22 +41,18 @@ const ShopByCategory = () => {
 	return (
 		<div className='shopByCategory'>
 			<CssBaseline />
-			<Typography
-				variant='h4'
-				gutterBottom='true'
-				className='shopByCategory__heading'
-			>
+			<Typography variant='h4' gutterBottom className='shopByCategory__heading'>
 				Shop By Category
 			</Typography>
 
-			<Grid justify='center'>
+			<Grid container justify='center'>
 				<Carousel
 					breakPoints={breakPoints}
 					className='shopByCategory__carousel'
 				>
 					{carouselImages.map((item) => (
 						<Item key={item.id}>
-							<img src={item.image} />
+							<img src={item.image} alt='Category Carousel' />
 						</Item>
 					))}
 				</Carousel>

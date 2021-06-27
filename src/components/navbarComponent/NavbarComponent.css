@@ -1,4 +1,95 @@
+html {
+	scroll-behavior: smooth;
+}
+/* Header  */
 .navbar {
 	font-family: "Poppins", sans-serif;
-	/* background-color: #fff; */
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+/*  Header Wrapper  */
+.headerNav__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 90%;
+	margin: auto;
+}
+
+/* Header Logo */
+
+.headerNav__logo {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: 7rem;
+}
+.headerNav__logo > img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	padding-top: 10px;
+}
+
+/* Header Search bar */
+.headerNav__SearchBar {
+	display: flex;
+}
+
+.headerNav__SearchBar > input {
+	border-radius: 0.4rem;
+	width: 35em;
+	height: 2.6em;
+	background: transparent;
+	border: 1px solid;
+	padding-left: 10px;
+}
+
+.headerNavSearchBar__icon {
+	/* background-color: #16243e; */
+	color: #fff !important;
+	cursor: pointer;
+}
+
+.headerNavSearchBar__btn {
+	position: relative;
+	right: 4.2rem;
+	background-color: #16243e !important;
+	border-top-left-radius: 0% !important;
+	border-bottom-left-radius: 0% !important;
+}
+
+textarea:focus,
+input:focus {
+	outline: none;
+}
+
+/* Header Links */
+.headerNav__Links > ul {
+	display: flex;
+	align-items: flex-end;
+	list-style-type: none;
+	font-size: 1.2rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.headerNav__Links > ul :nth-child(2) {
+	margin-right: 1rem;
+}
+
+.headerNavLinks__icon {
+	height: 1.5em !important;
+	width: 1.5em !important;
+}
+
+/* -------- Responsive Navbar---------- */
+
+.hamburger {
+	width: 30px;
+	height: 3px;
+	background-color: black;
+	margin: 4px 0 4px 10px;
 }

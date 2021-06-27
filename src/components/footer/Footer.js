@@ -99,7 +99,7 @@ const Footer = () => {
 		<div className='footer'>
 			<Grid container justify='space-around'>
 				<div className='footer__div footer__logo'>
-					<img src={footerlogo} />
+					<img src={footerlogo} alt='Durj Logo' />
 				</div>
 				<div className='footer__div footer__categories'>
 					<Typography className='footer__heading footerCategories_heading'>
@@ -109,7 +109,6 @@ const Footer = () => {
 						<Button
 							key={cart.id}
 							style={{ display: "flex" }}
-							fullWidth='false'
 							size='small'
 							variant='text'
 						>
@@ -131,15 +130,10 @@ const Footer = () => {
 						<Button
 							key={cart.id}
 							style={{ display: "flex" }}
-							fullWidth='false'
 							size='small'
 							variant='text'
 						>
-							<Typography
-								className='footer__content footerCategories_content'
-								component={Link}
-								to={cart.link}
-							>
+							<Typography className='footer__content footerCategories_content'>
 								{cart.title}
 							</Typography>
 						</Button>
@@ -153,15 +147,10 @@ const Footer = () => {
 						<Button
 							key={cart.id}
 							style={{ display: "flex" }}
-							fullWidth='false'
 							size='small'
 							variant='text'
 						>
-							<Typography
-								className='footer__content footerCategories_content'
-								component={Link}
-								to={cart.link}
-							>
+							<Typography className='footer__content footerCategories_content'>
 								{cart.title}
 							</Typography>
 						</Button>
@@ -170,7 +159,6 @@ const Footer = () => {
 				<div className='footer__div footer__contact'>
 					<Typography
 						className='footer__heading footerContact_heading'
-						inline
 						variant='body1'
 						align='left'
 					>
@@ -180,15 +168,10 @@ const Footer = () => {
 						<Button
 							key={cart.id}
 							style={{ display: "flex" }}
-							fullWidth='false'
 							size='small'
 							variant='text'
 						>
-							<Typography
-								className='footer__content footerCategories_content'
-								component={Link}
-								to={cart.link}
-							>
+							<Typography className='footer__content footerCategories_content'>
 								{cart.logo}
 								{cart.title}
 							</Typography>

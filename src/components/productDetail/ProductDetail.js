@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
-import { Box, Button, Grid, Paper, Typography } from "@material-ui/core";
+import { Box, Button, Grid, Typography } from "@material-ui/core";
 import Rating from "@material-ui/lab/Rating";
 import RemoveIcon from "@material-ui/icons/Remove";
 import AddIcon from "@material-ui/icons/Add";
@@ -9,7 +9,6 @@ import AddIcon from "@material-ui/icons/Add";
 import ShopIcon from "@material-ui/icons/Shop";
 import StarOutlineIcon from "@material-ui/icons/StarOutline";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
-import mainImage from "../../assets/product1.jpg";
 import "../productDetail/ProductDetail.css";
 import { withStyles } from "@material-ui/styles";
 import DetailTabBar from "./DetailTabBar";
@@ -23,10 +22,10 @@ import {
 const ProductDetail = () => {
 	// Fetching product
 	const product = useSelector((state) => state.product);
-	const { image, title, price, category, description } = product;
+	const { image, title, price, description } = product;
 	const { productId } = useParams();
 	const dispatch = useDispatch();
-	console.log(product);
+	// console.log(product);
 
 	const fetchProductDetail = async (id) => {
 		const res = await axios
@@ -74,7 +73,7 @@ const ProductDetail = () => {
 	return (
 		<>
 			{Object.keys(product).length === 0 ? (
-				<div>...Loading</div>
+				<div>Loading</div>
 			) : (
 				<Grid container className='productDetail'>
 					<div item className='productDetail_leftSection'>
@@ -108,7 +107,7 @@ const ProductDetail = () => {
 						>
 							<StyledRating
 								name='customized-color'
-								defaultValue='3'
+								defaultValue={3}
 								precision={0.5}
 								emptyIcon={
 									<StarOutlineIcon
@@ -126,7 +125,7 @@ const ProductDetail = () => {
 						<Typography gutterBottom>Color:</Typography>
 						<div style={{ margin: "10px auto" }}>
 							{["black", "#2C6193", "#B73A49", "#F60300"].map((item) => (
-								<span class='dot' style={{ backgroundColor: item }}></span>
+								<span className='dot' style={{ backgroundColor: item }}></span>
 							))}
 						</div>
 
