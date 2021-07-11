@@ -11,7 +11,7 @@ const Login = () => {
 			<HomeTop />
 			<Header />
 			<LoginComp />
-			<SubFotter />
+			{/* <SubFotter /> */}
 			<Footer />
 		</>
 	);
