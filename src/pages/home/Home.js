@@ -11,6 +11,7 @@ import NavbarComponent from "../../components/navbarComponent/NavbarComponent";
 import logo from "../../assets/logo.png";
 import HomeTop from "../../components/homeComponent/homeTop/HomeTop";
 import TopSellingComp from "../../components/homeComponent/TopSellingSection/TopSellingComp";
+import DealSection from "../../components/homeComponent/dealSection/DealSection";
 
 const Home = () => {
 	return (
@@ -22,7 +23,8 @@ const Home = () => {
 				navLinksColor='#16243e'
 			/>
 			<Banner />
-			<Deal />
+			{/* <Deal /> */}
+			<DealSection />
 			<TopSellingComp />
 			<FeatureCateogy />
 			<SubBanner />

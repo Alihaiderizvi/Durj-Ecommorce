@@ -1,4 +1,5 @@
-import { CssBaseline, Typography } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import { Button, CssBaseline, Typography } from "@material-ui/core";
 import React from "react";
 import Carousel from "react-elastic-carousel";
 import Item from "./Item";
@@ -15,6 +16,27 @@ const FeatureCateogy = () => {
 		{ width: 350, itemsToShow: 3 },
 	];
 
+	const Products = [
+		{
+			image: featuredCategory1,
+		},
+		{
+			image: featuredCategory2,
+		},
+		{
+			image: featuredCategory3,
+		},
+		{
+			image: featuredCategory1,
+		},
+		{
+			image: featuredCategory3,
+		},
+		{
+			image: featuredCategory2,
+		},
+	];
+
 	return (
 		<div className='featureCategory'>
 			<CssBaseline />
@@ -22,51 +44,32 @@ const FeatureCateogy = () => {
 				Feature Cateogy
 			</Typography>
 
-			<div
-				className='featureCategory__cartBanner'
-				style={{ display: "flex", margin: "auto 50px" }}
-			>
-				<img className='featureCategory__cartImage' src={addImage} alt='img' />
+			<div className='featureCategory__cartBanner'>
+				<div className='featureCategory__cartImage'>
+					<img className src={addImage} alt='img' />
+				</div>
 
 				<Carousel
 					breakPoints={breakPoints}
 					className='featureCategory__carousel'
 				>
-					<Item>
-						<img
-							alt='img'
-							src={featuredCategory1}
-							className='featureCategoryCarousel__images'
-						/>
-					</Item>
-					<Item>
-						<img
-							alt='img'
-							src={featuredCategory2}
-							className='featureCategoryCarousel__images'
-						/>
-					</Item>
-					<Item>
-						<img
-							alt='img'
-							src={featuredCategory1}
-							className='featureCategoryCarousel__images'
-						/>
-					</Item>
-					<Item>
-						<img
-							alt='img'
-							src={featuredCategory3}
-							className='featureCategoryCarousel__images'
-						/>
-					</Item>
-					<Item>
-						<img
-							alt='img'
-							src={featuredCategory1}
-							className='featureCategoryCarousel__images'
-						/>
-					</Item>
+					{Products.map((product) => (
+						<div className='featuredCat__Images'>
+							<img
+								alt='img'
+								src={product.image}
+								className='featureCategoryCarousel__images'
+							/>
+							<Button fullWidth className='featuredCat__btn'>
+								<Link
+									to='/products'
+									style={{ textDecoration: "none", color: "#fff" }}
+								>
+									Shop Now
+								</Link>
+							</Button>
+						</div>
+					))}
 				</Carousel>
 			</div>
 		</div>

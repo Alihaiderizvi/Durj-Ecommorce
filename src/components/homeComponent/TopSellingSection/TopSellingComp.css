@@ -65,13 +65,11 @@
 .topSellingCart__Icon {
 	position: absolute !important;
 	z-index: 1;
-	/* left: 16rem;
-	top: 3rem; */
 }
 /* Top Selling Product Image */
 .topSellingProduct__Image {
 	width: 320px;
-	height: 277px;
+	height: 281px;
 	position: relative;
 }
 .topSellingProduct__Image > img {
@@ -100,8 +98,9 @@
 /* -----------------Top Selling Product Info----------- */
 
 .topSelling__ProductDetails {
+	border: 2px solid;
 	max-width: 23em;
-	margin-right: 1rem;
+	/* margin-right: 1rem; */
 	margin-bottom: 1rem;
 	padding: 1rem 0;
 	background: #fff;
