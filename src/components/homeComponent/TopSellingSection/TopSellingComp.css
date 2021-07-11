@@ -1,0 +1,177 @@
+/* Top Selling Main */
+.topSellingComp {
+	width: 100%;
+	margin: auto;
+	font-family: "Poppins", sans-serif;
+}
+
+/* Top Selling Heading */
+
+.topSellings__heading {
+	width: 90%;
+	margin: auto;
+	font-weight: 500;
+	font-size: 2.5rem;
+	position: relative;
+	padding-bottom: 0.2rem;
+	margin-bottom: 19px;
+}
+
+.topSellings__heading::after {
+	display: block;
+	content: "";
+	width: 15rem;
+	height: 3px;
+	background: #fa5051;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+/* Top Selling Button */
+
+.box {
+	display: flex;
+}
+
+.rightBox {
+	justify-content: flex-end;
+	width: 90%;
+	margin: auto !important;
+	margin: 1.5rem auto !important;
+}
+/* Top Selling Products */
+
+.topSelling__Products {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+/* Top Selling Product Wrapper */
+
+.topSelling__ProductWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+/* Top Selling Product  */
+.topSelling__Product {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.topSellingCart__Icon {
+	position: absolute !important;
+	z-index: 1;
+	/* left: 16rem;
+	top: 3rem; */
+}
+/* Top Selling Product Image */
+.topSellingProduct__Image {
+	width: 320px;
+	height: 277px;
+	position: relative;
+}
+.topSellingProduct__Image > img {
+	height: 100%;
+	width: 100%;
+}
+/* Top Selling Product Quick View Button */
+
+.topSelling__QucikView {
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	width: 100%;
+	position: relative;
+	bottom: 15px;
+	background-color: #16243e;
+	margin: auto;
+	margin-top: -5px;
+}
+
+.topSellingQuickView__Btn {
+	cursor: pointer;
+	color: #fff !important;
+}
+
+/* -----------------Top Selling Product Info----------- */
+
+.topSelling__ProductDetails {
+	max-width: 23em;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+	padding: 1rem 0;
+	background: #fff;
+}
+
+/* Top Selling Details Wrapper */
+
+.topSellingProductDetails__wrapper {
+	padding-top: 1rem;
+	width: 85%;
+	margin: auto;
+}
+/* Top Selling Product Info Ratings */
+/* Top Selling Product Info Size Box */
+
+.topSellingProductDetails__sizeBox {
+	display: flex;
+}
+
+.topSellingProductDetails__sizeBoxText {
+	margin-right: 6px;
+	border: 1px solid black;
+	padding: 0.3rem 0.2rem;
+}
+
+/* Top Selling Product Info Quantity */
+.topSellingProductDetails__Qty {
+	width: 76%;
+	display: inline-block;
+}
+.topSellingProductDetailsQty__bar {
+	display: flex;
+	flex-wrap: wrap;
+	width: auto;
+	overflow: hidden;
+	justify-content: space-evenly;
+	border: 1px solid black;
+}
+
+.topSellingProductDetailsQty__btn {
+	border: none;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+/* Top Selling product Description */
+
+.topSellingProduct__description {
+	width: 100%;
+}
+
+/* Top Selling Product Price */
+
+.topSellingProduct__QuantityPrice {
+	display: inline-block;
+	border: 1px solid #16243e;
+	color: #16243e;
+	padding: 0.4rem 0;
+	text-align: center;
+	width: 50%;
+	margin-left: 7.5rem;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 638px) {
+	.topSelling__ProductDetails {
+		margin: auto;
+		margin-bottom: 1rem;
+	}
+}

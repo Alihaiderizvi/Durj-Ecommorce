@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-import NavbarComp from "../../components/homeComponent/navbar/NavbarComp";
+import HomeTop from "../../components/homeComponent/homeTop/HomeTop";
 import ProductsHeader from "../../components/productsComponent/productsHeader/ProductsHeader";
 import ProductsMain from "../../components/productsComponent/productsMain/ProductsMain";
 import Trending from "../../components/trending/Trending";
@@ -9,7 +9,7 @@ import Trending from "../../components/trending/Trending";
 const Products = () => {
 	return (
 		<div>
-			<NavbarComp />
+			<HomeTop />
 			<Header />
 			<ProductsHeader />
 			<ProductsMain />

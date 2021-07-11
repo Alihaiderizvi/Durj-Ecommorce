@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-import NavbarComp from "../../components/homeComponent/navbar/NavbarComp";
+import HomeTop from "../../components/homeComponent/homeTop/HomeTop";
 import ProductDetail from "../../components/productDetail/ProductDetail";
 import SubFotter from "../../components/subFooter/SubFotter";
 import Trending from "../../components/trending/Trending";
@@ -9,7 +9,7 @@ import Trending from "../../components/trending/Trending";
 const ProductDetailPage = () => {
 	return (
 		<div>
-			<NavbarComp />
+			<HomeTop />
 			<Header />
 			<ProductDetail />
 			<Trending />

@@ -6,14 +6,19 @@ html {
 	font-family: "Poppins", sans-serif;
 	position: sticky;
 	top: 0;
-	z-index: 1;
+	z-index: 2;
+	box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+.headerNav__HamburgerMenu {
+	display: none !important;
 }
 
 /*  Header Wrapper  */
 .headerNav__wrapper {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
 	width: 90%;
 	margin: auto;
 }
@@ -26,9 +31,9 @@ html {
 	height: 100%;
 	width: 7rem;
 }
-.headerNav__logo > img {
-	height: 100%;
-	width: 100%;
+.headerNav__logoImg {
+	/* height: 100%;
+	width: 100%; */
 	object-fit: cover;
 	padding-top: 10px;
 }
@@ -36,11 +41,14 @@ html {
 /* Header Search bar */
 .headerNav__SearchBar {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: calc(100% + 200px) !important;
 }
 
 .headerNav__SearchBar > input {
-	border-radius: 0.4rem;
-	width: 35em;
+	/* border-radius: 0.4rem; */
+	width: 60%;
 	height: 2.6em;
 	background: transparent;
 	border: 1px solid;
@@ -55,10 +63,15 @@ html {
 
 .headerNavSearchBar__btn {
 	position: relative;
-	right: 4.2rem;
+	/* right: 4.2rem; */
 	background-color: #16243e !important;
 	border-top-left-radius: 0% !important;
 	border-bottom-left-radius: 0% !important;
+}
+
+.headerNavSearchBar__ResBtn,
+.headerNavSearchBar__Resicon {
+	display: none !important;
 }
 
 textarea:focus,
@@ -85,6 +98,10 @@ input:focus {
 	width: 1.5em !important;
 }
 
+.headerNav__ResUserInfo {
+	display: none !important;
+}
+
 /* -------- Responsive Navbar---------- */
 
 .hamburger {
@@ -92,4 +109,72 @@ input:focus {
 	height: 3px;
 	background-color: black;
 	margin: 4px 0 4px 10px;
+}
+
+/* Media Quries */
+
+@media (max-width: 998px) {
+	.headerNav__HamburgerMenu {
+		display: block !important;
+	}
+}
+
+@media (max-width: 648px) {
+	.headerNav__wrapper {
+		width: 95%;
+		margin: auto;
+	}
+	.headerNav__Links > ul {
+		display: none;
+	}
+	.headerNav__SearchBar {
+		margin-right: 1rem;
+	}
+	.headerNav__ResUserInfo {
+		display: block !important;
+	}
+	.userInfo__wrapper {
+		display: flex;
+		align-items: center;
+	}
+	.HeaderNav__UserAvatar {
+		width: 54px !important;
+		height: 54px !important;
+	}
+
+	.headerNav__userInfo {
+		display: none !important;
+	}
+}
+
+@media (max-width: 488px) {
+	.headerNav__logoImg {
+		height: 100%;
+		width: 100%;
+	}
+	.headerNav__SearchBar {
+		display: none;
+	}
+
+	.headerNavSearchBar__ResBtn,
+	.headerNavSearchBar__Resicon {
+		display: flex !important;
+		display: block !important;
+	}
+
+	.headerNavSearchBar__ResBtn {
+		background-color: #16243e !important;
+		margin-right: 1rem !important;
+	}
+
+	.MuiButton-label {
+		width: 100%;
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+	}
+	.headerNavSearchBar__Resicon {
+		color: #fff !important;
+		cursor: pointer;
+	}
 }

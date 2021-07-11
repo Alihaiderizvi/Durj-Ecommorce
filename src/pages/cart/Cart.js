@@ -1,12 +1,12 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
+import HomeTop from "../../components/homeComponent/homeTop/HomeTop";
 // import Header from "../../components/header/Header";
-import NavbarComp from "../../components/homeComponent/navbar/NavbarComp";
 import MyCart from "../../components/myCart/MyCart";
 const Cart = () => {
 	return (
 		<>
-			<NavbarComp />
+			<HomeTop />
 			{/* <Header /> */}
 			<MyCart />
 			<Footer />

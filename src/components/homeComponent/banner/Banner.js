@@ -33,44 +33,43 @@ const images = [
 		img: "https://laz-img-cdn.alicdn.com/images/ims-web/TB18bZYWlr0gK0jSZFnXXbRRXXa.jpg_1200x1200.jpg",
 	},
 ];
-const Banner = () => {
-	const Categories = [
-		{
-			id: 1,
-			title: "Kitechen Appliances",
-			link: "/products",
-		},
-		{
-			id: 2,
-			title: "Electronic Devices",
-			link: "/",
-		},
-		{
-			id: 3,
-			title: "Home & Lifestyle",
-			link: "/",
-		},
-		{
-			id: 4,
-			title: "Womens Collection",
-			link: "/",
-		},
-		{
-			id: 5,
-			title: "Mens Collection",
-			link: "/",
-		},
-		{
-			id: 6,
-			title: "Kids Collection",
-			link: "/login",
-		},
-	];
 
+const Categories = [
+	{
+		id: 1,
+		title: "Kitechen Appliances",
+		link: "/products",
+	},
+	{
+		id: 2,
+		title: "Electronic Devices",
+		link: "/",
+	},
+	{
+		id: 3,
+		title: "Home & Lifestyle",
+		link: "/",
+	},
+	{
+		id: 4,
+		title: "Womens Collection",
+		link: "/",
+	},
+	{
+		id: 5,
+		title: "Mens Collection",
+		link: "/",
+	},
+	{
+		id: 6,
+		title: "Kids Collection",
+		link: "/login",
+	},
+];
+
+const Banner = () => {
 	return (
 		<div className='banner'>
-			{/* <div className='banner__heading'>
-			</div> */}
 			<div className='banner__category'>
 				<List className='bannerCategory__list'>
 					<h3>Categories</h3>

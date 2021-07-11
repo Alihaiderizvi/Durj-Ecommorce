@@ -1,13 +1,13 @@
 import React from "react";
-import NavbarComp from "../../components/homeComponent/navbar/NavbarComp";
 import Header from "../../components/header/Header";
 import RegForm from "../../components/registerPageComp/regForm/RegForm";
 import Footer from "../../components/footer/Footer";
+import HomeTop from "../../components/homeComponent/homeTop/HomeTop";
 
 const Register = () => {
 	return (
 		<div>
-			<NavbarComp />
+			<HomeTop />
 			<Header />
 			<RegForm />
 			<Footer />

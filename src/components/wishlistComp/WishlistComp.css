@@ -43,6 +43,7 @@
 	position: relative;
 	left: 0px;
 	visibility: hidden;
+	cursor: pointer;
 }
 
 #wrapper:hover .quickViewModal__txt {

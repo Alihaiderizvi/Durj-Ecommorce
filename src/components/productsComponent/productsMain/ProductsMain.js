@@ -198,6 +198,7 @@ const ProductsMain = (props) => {
 					</div>
 				</List>
 				<Divider />
+				{/* Ratings */}
 				<List className='productsMain__list'>
 					<h3 className='productsMain__heading'>RATING</h3>
 					<div
