@@ -30,7 +30,6 @@ const NavbarRes = () => {
 									vertical: "top",
 									horizontal: "right",
 								}}
-								max='10'
 							>
 								<ShoppingCartIcon style={{ color: "Black" }} />
 							</Badge>

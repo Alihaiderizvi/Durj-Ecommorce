@@ -6,7 +6,7 @@ html {
 	font-family: "Poppins", sans-serif;
 	position: sticky;
 	top: 0;
-	z-index: 2;
+	z-index: 99;
 	box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
 }
 
@@ -111,9 +111,19 @@ input:focus {
 	margin: 4px 0 4px 10px;
 }
 
+/* Hamburger Content */
+
+.bannerCategoryList__Hamburger {
+	position: absolute;
+	left: 4rem;
+}
+
+.bannerCategoryList__MobileView {
+	/* display: block; */
+}
 /* Media Quries */
 
-@media (max-width: 998px) {
+@media (max-width: 1165px) {
 	.headerNav__HamburgerMenu {
 		display: block !important;
 	}

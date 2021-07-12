@@ -1,21 +1,21 @@
 .dealSection__Carousel {
 	width: 90%;
-	margin: 2rem auto;
+	margin: 4rem auto;
 }
 
 .dealSection__heading {
-	width: 90%;
-	font-weight: 500;
-	font-size: 2.5rem;
 	position: relative;
-	padding-bottom: 0.2rem;
+	font-size: 35px;
+	padding-bottom: 2px;
 	margin-bottom: 19px;
+	font-weight: 500;
+	font-family: "Oswald";
 }
 
 .dealSection__heading:after {
 	display: block;
 	content: "";
-	width: 6rem;
+	width: 5rem;
 	height: 3px;
 	background: #fa5051;
 	position: absolute;
@@ -31,6 +31,7 @@
 
 .dealCarousel__Images > img {
 	object-fit: cover;
+	margin-right: 0 1rem;
 	width: 320px;
 }
 

@@ -14,13 +14,14 @@
 	font-size: 2.5rem;
 	position: relative;
 	padding-bottom: 0.2rem;
-	margin-bottom: 19px;
+	margin-bottom: 3rem;
+	font-family: "Oswald";
 }
 
 .topSellings__heading::after {
 	display: block;
 	content: "";
-	width: 15rem;
+	width: 12rem;
 	height: 3px;
 	background: #fa5051;
 	position: absolute;
@@ -40,12 +41,19 @@
 	margin: auto !important;
 	margin: 1.5rem auto !important;
 }
+
+.topSelling__rightbox {
+	margin: 0px auto !important;
+}
+
 /* Top Selling Products */
 
 .topSelling__Products {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-between;
+	width: 90%;
+	margin: auto;
 }
 /* Top Selling Product Wrapper */
 
@@ -68,7 +76,7 @@
 }
 /* Top Selling Product Image */
 .topSellingProduct__Image {
-	width: 320px;
+	width: 350px;
 	height: 281px;
 	position: relative;
 }
@@ -172,5 +180,10 @@
 	.topSelling__ProductDetails {
 		margin: auto;
 		margin-bottom: 1rem;
+	}
+}
+@media screen and (max-width: 621px) {
+	.topSelling__ProductDetails {
+		max-width: 21.5rem;
 	}
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import Banner from "../../components/homeComponent/banner/Banner";
-import Deal from "../../components//homeComponent/deals/Deal";
 import FeatureCateogy from "../../components//homeComponent/featureCategory/FeatureCateogy";
 import Footer from "../../components/footer/Footer";
 import JustForYou from "../../components/homeComponent/justForYou/JustForYou";
@@ -23,7 +22,6 @@ const Home = () => {
 				navLinksColor='#16243e'
 			/>
 			<Banner />
-			{/* <Deal /> */}
 			<DealSection />
 			<TopSellingComp />
 			<FeatureCateogy />

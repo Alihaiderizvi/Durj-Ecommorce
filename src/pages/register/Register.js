@@ -1,5 +1,6 @@
 import React from "react";
-import Header from "../../components/header/Header";
+import NavbarComponent from "../../components/navbarComponent/NavbarComponent";
+import logo from "../../assets/logo.png";
 import RegForm from "../../components/registerPageComp/regForm/RegForm";
 import Footer from "../../components/footer/Footer";
 import HomeTop from "../../components/homeComponent/homeTop/HomeTop";
@@ -8,7 +9,11 @@ const Register = () => {
 	return (
 		<div>
 			<HomeTop />
-			<Header />
+			<NavbarComponent
+				backgorundColor='#fff'
+				logo={logo}
+				navLinksColor='#16243e'
+			/>
 			<RegForm />
 			<Footer />
 		</div>

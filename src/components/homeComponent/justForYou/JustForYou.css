@@ -1,23 +1,38 @@
 .justForYou {
 	height: auto;
-	margin: 50px;
+	margin: auto;
+	margin-bottom: 1rem;
+	width: 90%;
+}
+.justForYou__cart {
+	margin: 1rem 1rem 0 0;
+}
+
+.justForYouCart__ProductsWrapper {
+	height: 220px;
+	width: 250px;
+}
+
+.justForYouCart__ProductsWrapper > img {
+	height: 100%;
+	width: 100%;
 }
 
 .justForYou__heading {
-	margin-left: 40px !important;
 	position: relative;
 	font-size: 35px !important;
 	padding-bottom: 2px;
 	margin-bottom: 19px !important;
 	font-weight: 500 !important;
+	font-family: "Oswald";
 }
 
 .justForYou__heading::after {
 	display: block;
 	content: "";
-	width: 13%;
+	width: 11rem;
 	height: 3px;
-	background: #fa5051;
+	background: #ff4f4f;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -26,16 +41,18 @@
 .justForYouCart_info {
 	color: #fff;
 	background-color: #16243e;
-}
-
-.justForYouCart_info:hover {
-	background-color: #fff;
-	color: #16243e;
-	/* border: 1px solid #16243e; */
-	opacity: 0.6;
-	transition: 0.3s;
+	padding: 8px 0 !important;
+	border-radius: 15px;
 }
 
 .justForYou__btn {
 	background-color: #16243e !important;
+}
+
+/* Carousel Side Arrow Button Builtin Class */
+
+.cGKbZh,
+.ehkxHv {
+	background-color: #16243e !important;
+	color: #fff !important;
 }

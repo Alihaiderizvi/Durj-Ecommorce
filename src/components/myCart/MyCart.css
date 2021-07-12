@@ -1,7 +1,7 @@
 .cart__table {
 	padding: 30px;
 	background-color: #fff;
-	margin-top: 50px;
+	margin-top: 40px;
 }
 
 .cartTable__image {
@@ -12,8 +12,12 @@
 .cartTable__imageTd {
 	display: flex;
 	margin-bottom: 30px;
-
 	align-items: center;
+}
+
+.cart__table Th {
+	font-family: "Bebas Neue";
+	font-size: 18px;
 }
 
 .cartTable__imageTd > p {
@@ -42,6 +46,8 @@
 
 .cartLeftDiv_buttons > Button {
 	margin-top: 20px;
+	padding: 15px 90px 15px 90px;
+	background-color: #ff4f4f;
 }
 /* Right Div Section  */
 
@@ -52,10 +58,9 @@
 	background-color: #fff;
 	height: auto;
 	width: 100%;
-	margin: 50px 0px 0px 20px;
-	padding: 40px 0;
+	margin: 50px 30px 30px 20px;
+	padding: 40px 30px;
 }
-
 .cartRightDivCoupon_child {
 	display: flex;
 	align-items: center;
@@ -65,23 +70,62 @@
 
 .cartRightDivCoupon_child > Button {
 	margin-left: 20px;
+	background-color: #ff4f4f;
+	padding-right: 150px;
 }
 
+.cartLeftDiv_buttons > Button:hover {
+	background-color: #002347;
+}
+.cartRightDivCoupon_child > Button:hover {
+	background-color: #002347;
+}
+
+.cartRightDivRecentView_child_btn {
+	width: 80% !important;
+	background: #ff4f4f !important;
+}
+.cartRightDivRecentView_child_btn:hover {
+	background-color: #002347 !important;
+}
 .cartRightDivSummary_child {
 	display: flex;
 	align-content: center;
 	align-items: center;
-	justify-content: space-around;
 	margin: 10px 0;
 }
-
 .cartRightDivSummary_lastChild {
-	background-color: #f50057;
 	height: 30px;
 	width: 90%;
-	margin: 10px auto;
 	color: white;
+	padding: 20px 0px 20px 5px;
+	background-color: #ff4f4f;
+	border-radius: 4px;
 }
+.wishlistRecentView__imageTd {
+	height: 150px;
+	width: 200px;
+}
+
+.wishlistRecentView__image {
+	width: 100%;
+	height: 100%;
+	transform: scale(1, 1);
+	transition: transform 0.8s ease;
+}
+
+/* .wishlistRecentView__image:hover {
+	transform: scale(2, 2);
+	cursor: pointer;
+	z-index: 9999;
+} */
+
+.wishlistRecentView__TdWrapper {
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+}
+
 /* Media Query */
 
 @media screen and (max-width: 40em) {

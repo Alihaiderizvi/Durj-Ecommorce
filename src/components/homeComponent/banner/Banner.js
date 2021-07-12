@@ -26,7 +26,7 @@ const images = [
 	},
 	{
 		id: 5,
-		img: banner1,
+		img: "https://laz-img-cdn.alicdn.com/images/ims-web/TB1rgiuWlr0gK0jSZFnXXbRRXXa.jpg_2200x2200Q100.jpg_.webp",
 	},
 	{
 		id: 6,
@@ -43,22 +43,22 @@ const Categories = [
 	{
 		id: 2,
 		title: "Electronic Devices",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 3,
 		title: "Home & Lifestyle",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 4,
 		title: "Womens Collection",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 5,
 		title: "Mens Collection",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 6,
@@ -72,7 +72,7 @@ const Banner = () => {
 		<div className='banner'>
 			<div className='banner__category'>
 				<List className='bannerCategory__list'>
-					<h3>Categories</h3>
+					<h3 style={{ fontSize: "2rem" }}>CATEGORIES</h3>
 					{Categories.map((category) => (
 						<ListItemText key={category.id}>
 							<Link to={category.link} className='bannerCategoryList__content'>

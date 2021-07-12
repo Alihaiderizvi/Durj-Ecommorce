@@ -1,21 +1,22 @@
 .shopByCategory {
-	height: auto;
-	margin: 50px;
+	width: 90%;
+	margin: auto;
+	margin-bottom: 4rem;
 }
 
 .shopByCategory__heading {
-	margin-left: 40px !important;
 	position: relative;
 	font-size: 35px !important;
 	padding-bottom: 2px;
 	margin-bottom: 19px !important;
 	font-weight: 500 !important;
+	font-family: "Oswald";
 }
 
 .shopByCategory__heading::after {
 	display: block;
 	content: "";
-	width: 13%;
+	width: 16.5rem;
 	height: 3px;
 	background: #fa5051;
 	position: absolute;

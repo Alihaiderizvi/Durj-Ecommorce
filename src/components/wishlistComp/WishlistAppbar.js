@@ -22,27 +22,27 @@ const Categories = [
 	{
 		id: 1,
 		title: "Kitechen Appliances",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 2,
 		title: "Electronic Devices",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 3,
 		title: "Home & Lifestyle",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 4,
 		title: "Womens Collection",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 5,
 		title: "Mens Collection",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 6,
@@ -154,16 +154,30 @@ const WishlistAppbar = (props) => {
 						}}
 					>
 						<Typography variant='h7' noWrap>
-							HOME
+							<Link to='/' style={{ color: "#fff", textDecoration: "none" }}>
+								HOME
+							</Link>
 						</Typography>
 						<Typography variant='h7' noWrap>
-							SALE
+							<Link
+								to='/products'
+								style={{ color: "#fff", textDecoration: "none" }}
+							>
+								SALE
+							</Link>
 						</Typography>
 						<Typography variant='h7' noWrap>
-							FEATURED
+							<Link
+								to='/products'
+								style={{ color: "#fff", textDecoration: "none" }}
+							>
+								FEATURED
+							</Link>
 						</Typography>
 						<Typography variant='h7' noWrap>
-							CONTACT US
+							<Link to='/' style={{ color: "#fff", textDecoration: "none" }}>
+								CONTACT US
+							</Link>
 						</Typography>
 					</div>
 				</Toolbar>
@@ -201,6 +215,7 @@ const WishlistAppbar = (props) => {
 			</nav>
 			<main className={classes.content}>
 				<div className={classes.toolbar} />
+				{/* WishList Products */}
 				<WishlistMain />
 			</main>
 		</div>

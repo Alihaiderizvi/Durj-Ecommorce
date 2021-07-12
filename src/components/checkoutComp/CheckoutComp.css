@@ -5,8 +5,9 @@
 	color: #fa5051;
 	font-weight: 550 !important;
 	margin-bottom: 10px !important;
+	font-family: "Bebas Neue" !important;
+	font-size: 1.8rem !important;
 }
-
 .checkout__subHeading {
 	color: #21557c;
 	font-weight: 600 !important;
@@ -66,11 +67,14 @@
 }
 
 .checkout__orderTotal {
-	padding-left: 90px;
+	padding-left: 25px;
 	display: flex;
 	justify-content: space-between;
 }
 
+.checkoutOrderTotal__headings {
+	font-weight: 600 !important;
+}
 /* Checkout Method Center Div */
 .checkoutMethod__main {
 	height: 100%;

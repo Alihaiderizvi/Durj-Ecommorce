@@ -5,3 +5,13 @@
 	/* border: 2px solid red; */
 }
 
+.regForm h4 {
+	font-weight: 400 !important;
+	font-family: "Bebas Neue";
+	font-size: 45px;
+	color: #5e6b7b;
+}
+
+.form__btn {
+	margin-top: 1rem;
+}

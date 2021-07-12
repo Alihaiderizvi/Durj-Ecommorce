@@ -76,6 +76,17 @@ const UserInfo = () => {
 				</StyledMenuItem>
 				<StyledMenuItem>
 					<ListItemIcon>
+						<PersonIcon fontSize='small' style={{ color: "black" }} />
+					</ListItemIcon>
+					<Link
+						to='/register'
+						style={{ color: "#16243e", textDecoration: "none" }}
+					>
+						Register
+					</Link>
+				</StyledMenuItem>
+				<StyledMenuItem>
+					<ListItemIcon>
 						<FormatListBulletedRoundedIcon
 							fontSize='small'
 							style={{ color: "black" }}
@@ -92,7 +103,10 @@ const UserInfo = () => {
 					<ListItemIcon>
 						<InboxIcon fontSize='small' style={{ color: "black" }} />
 					</ListItemIcon>
-					<Link to='/' style={{ color: "#16243e", textDecoration: "none" }}>
+					<Link
+						to='/reservation'
+						style={{ color: "#16243e", textDecoration: "none" }}
+					>
 						Reservations
 					</Link>
 				</StyledMenuItem>

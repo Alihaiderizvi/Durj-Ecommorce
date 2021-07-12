@@ -155,16 +155,24 @@ const CheckoutForm = () => {
 									/>
 								</Grid>
 
-								{/* Submit Btn */}
-								<Grid item style={{ marginTop: 16 }}>
-									<Button
-										variant='contained'
-										color='Secondary'
-										type='submit'
-										disabled={submitting}
-									>
-										Place Order
-									</Button>
+								<Grid item style={{ marginTop: 16, width: "100%" }}>
+									<div>
+										<Button
+											variant='contained'
+											color='Secondary'
+											type='submit'
+											disabled={submitting}
+											fullWidth
+											style={{
+												background: "#ff4f4f",
+												padding: "10px 0px",
+												fontSize: "1.4rem",
+												fontFamily: "Bebas Neue",
+											}}
+										>
+											Place Order
+										</Button>
+									</div>
 								</Grid>
 							</Grid>
 						</div>

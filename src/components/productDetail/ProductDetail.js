@@ -92,7 +92,12 @@ const ProductDetail = () => {
 						<Typography
 							variant='h5'
 							gutterBottom
-							style={{ color: "#16243e", fontWeight: "550", marginTop: "20px" }}
+							style={{
+								color: "#16243e",
+								fontWeight: "550",
+								marginTop: "20px",
+								fontFamily: "Bebas Neue",
+							}}
 						>
 							{title}
 						</Typography>
@@ -124,26 +129,33 @@ const ProductDetail = () => {
 
 						{/* Color */}
 						<Typography gutterBottom>Color:</Typography>
-						<div style={{ margin: "10px auto" }}>
+						<div style={{}}>
 							{["black", "#2C6193", "#B73A49", "#F60300"].map((item) => (
 								<span className='dot' style={{ backgroundColor: item }}></span>
 							))}
 						</div>
 
 						{/* Size  */}
-						<Typography gutterBottom>Size:</Typography>
+						<Typography>Size:</Typography>
 						<div className='productDetail__sizeBtn'>
 							<button className='btn'>S</button>
+							<button className='btn'>XS</button>
 							<button className='btn'>M</button>
 							<button className='btn'>L</button>
+							<button className='btn'>XL</button>
 						</div>
 
 						{/* Product Price */}
 						<Typography
 							gutterBottom
-							style={{ color: "#16243e", fontWeight: "600", margin: "10px 0" }}
+							style={{
+								color: "#ff4f4f",
+								fontSize: "22px",
+								margin: "10px 0",
+								fontFamily: "Bebas Neue",
+							}}
 						>
-							Rs{price}
+							RS. {price} PKR
 						</Typography>
 
 						{/* Product Quantity */}
@@ -169,13 +181,16 @@ const ProductDetail = () => {
 								variant='contained'
 								color='secondary'
 								startIcon={<ShopIcon />}
+								style={{
+									backgroundColor: "#ff4f4f",
+								}}
 							>
 								<Link
 									to='/cart'
 									style={{
+										color: "#fff",
 										textDecoration: "none",
 										fontWeight: "500",
-										color: "#fff",
 									}}
 								>
 									Buy Now
@@ -184,7 +199,7 @@ const ProductDetail = () => {
 							<Button
 								variant='contained'
 								style={{
-									backgroundColor: "#16243e",
+									backgroundColor: "#002347",
 									color: "#fff",
 									fontWeight: "500",
 									marginLeft: "15px",

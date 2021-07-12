@@ -79,21 +79,7 @@ const TopSellingComp = () => {
 		<>
 			<div className='topSellingComp'>
 				<h1 className='topSellings__heading'>Top Sellings</h1>
-				<Box className='box rightBox' component='span' m={1}>
-					<Button
-						className='topSellingComp__SeeMorebtn'
-						variant='contained'
-						size='medium'
-						style={{ background: "#16243e" }}
-					>
-						<Link
-							to='/products'
-							style={{ textDecoration: "none", color: "#fff" }}
-						>
-							See More
-						</Link>
-					</Button>
-				</Box>
+
 				<div className='topSelling__Products'>
 					{products.map((product) => (
 						<div className='topSelling__ProductWrapper' key={product.id}>
@@ -204,6 +190,22 @@ const TopSellingComp = () => {
 						</div>
 					))}
 				</div>
+
+				<Box className='box rightBox topSelling__rightbox' component='span'>
+					<Button
+						className='topSellingComp__SeeMorebtn'
+						variant='contained'
+						size='medium'
+						style={{ background: "#16243e" }}
+					>
+						<Link
+							to='/products'
+							style={{ textDecoration: "none", color: "#fff" }}
+						>
+							See More
+						</Link>
+					</Button>
+				</Box>
 			</div>
 		</>
 	);

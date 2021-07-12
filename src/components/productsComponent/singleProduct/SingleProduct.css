@@ -1,6 +1,7 @@
 .singleProduct__cart {
 	max-width: 200px !important;
 	max-height: 250px;
+	margin: 1rem 0;
 }
 
 .singleProduct_IconBtnDiv {
@@ -21,4 +22,13 @@
 	font-size: 16px;
 	font-weight: 500;
 	cursor: pointer;
+}
+
+.ejXxNI {
+	background-color: #fff !important;
+	box-shadow: 0 0 1px 3px #16243e !important;
+}
+
+.jLgnwX {
+	background-color: #fa5051 !important;
 }

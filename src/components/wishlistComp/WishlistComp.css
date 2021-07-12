@@ -13,9 +13,10 @@
 .wishlistMain__heading {
 	color: rgb(20 43 87);
 	font-weight: 550;
-	font-size: 2em;
+	font-size: 3em;
 	border-bottom: 4px solid red;
 	width: 100px;
+	font-family: "Oswald";
 }
 
 .wishlist__product {
@@ -93,6 +94,27 @@
 	background-color: rgb(20 43 87) !important;
 	color: #fff;
 }
+
+.wishlist__threeBtns {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 1rem;
+}
+
+.wishlist__threeBtns > Button:nth-child(2) {
+	margin: 0 5rem;
+}
+
+.WishlistBtns {
+	font-family: "Bebas Neue" !important;
+	background: #ff4f4f !important;
+	color: #fff !important;
+	padding: 12px 0 !important;
+	font-size: 16px !important;
+	/* font-weight: 600 !important; */
+	/* letter-spacing: 5px !important; */
+}
+
 /* --------Wishlist Modal--------  */
 
 .wishlist__modal {

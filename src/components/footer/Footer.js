@@ -11,27 +11,27 @@ const Footer = () => {
 		{
 			id: 1,
 			title: "Kitechen Appliances",
-			link: "/",
+			link: "/products",
 		},
 		{
 			id: 2,
 			title: "Electronic Devices",
-			link: "/",
+			link: "/products",
 		},
 		{
 			id: 3,
 			title: "Home & Lifestyle",
-			link: "/",
+			link: "/products",
 		},
 		{
 			id: 4,
 			title: "Womens Collection",
-			link: "/",
+			link: "/products",
 		},
 		{
 			id: 5,
 			title: "Mens Collection",
-			link: "/",
+			link: "/products",
 		},
 		{
 			id: 6,
@@ -82,25 +82,28 @@ const Footer = () => {
 		{
 			id: 1,
 			title: "+92 900 78601",
-			logo: <PhoneIcon />,
+			svgIcon: <PhoneIcon />,
 		},
 		{
 			id: 2,
 			title: "durj@gmail.com",
-			logo: <EmailIcon />,
+			svgIcon: <EmailIcon />,
 		},
 		{
 			id: 3,
 			title: "Lal kothi, Bus Stop, Main Shahra-e-faisal,Karachi",
-			logo: <LocationOnIcon />,
+			svgIcon: <LocationOnIcon />,
 		},
 	];
 	return (
 		<div className='footer'>
-			<Grid container justify='space-around'>
-				<div className='footer__div footer__logo'>
-					<img src={footerlogo} alt='Durj Logo' />
-				</div>
+			<Grid
+				container
+				justify='space-around'
+				style={{ width: "90%", margin: "auto" }}
+			>
+				{/* <div className='footer__div footer__logo'></div> */}
+				<img src={footerlogo} alt='Durj Logo' className='footerDiv__logoImg' />
 				<div className='footer__div footer__categories'>
 					<Typography className='footer__heading footerCategories_heading'>
 						Categories
@@ -165,17 +168,15 @@ const Footer = () => {
 						Contact Us
 					</Typography>
 					{Contact.map((cart) => (
-						<Button
+						<div
+							className='footer__content footerCategories_content footerContact__Content'
 							key={cart.id}
-							style={{ display: "flex" }}
-							size='small'
-							variant='text'
 						>
-							<Typography className='footer__content footerCategories_content'>
-								{cart.logo}
-								{cart.title}
-							</Typography>
-						</Button>
+							<Button size='small' variant='text'>
+								{cart.svgIcon}
+							</Button>
+							<Typography style={{ color: "#fff" }}>{cart.title}</Typography>
+						</div>
 					))}
 				</div>
 			</Grid>

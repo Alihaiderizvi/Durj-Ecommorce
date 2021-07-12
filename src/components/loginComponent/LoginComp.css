@@ -8,7 +8,6 @@
 	background-size: 100% 100%;
 	position: relative;
 }
-
 .loginForm__container {
 	position: absolute;
 	top: 60px;
@@ -21,8 +20,9 @@
 .loginForm__mainHeading {
 	margin: 0.5rem 0 2rem 0 !important;
 	color: #626b77 !important;
-	font-weight: 600 !important;
-
+	font-weight: 400 !important;
+	font-family: "Bebas Neue" !important;
+	font-size: 40px !important;
 	letter-spacing: 0ch;
 }
 

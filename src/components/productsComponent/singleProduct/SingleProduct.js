@@ -61,12 +61,6 @@ const datas = [
 		price: "Rs 19.99$",
 	},
 	{
-		id: 8,
-		image: c1,
-		label: "Product Name",
-		price: "Rs 19.99$",
-	},
-	{
 		id: 9,
 		image: c1,
 		label: "Product Name",
@@ -109,25 +103,31 @@ const datas = [
 		price: "Rs 19.99$",
 	},
 	{
-		id: 8,
+		id: 16,
 		image: c1,
 		label: "Product Name",
 		price: "Rs 19.99$",
 	},
 	{
-		id: 8,
+		id: 17,
 		image: c1,
 		label: "Product Name",
 		price: "Rs 19.99$",
 	},
 	{
-		id: 8,
+		id: 18,
 		image: c1,
 		label: "Product Name",
 		price: "Rs 19.99$",
 	},
 	{
-		id: 8,
+		id: 19,
+		image: c1,
+		label: "Product Name",
+		price: "Rs 19.99$",
+	},
+	{
+		id: 20,
 		image: c1,
 		label: "Product Name",
 		price: "Rs 19.99$",

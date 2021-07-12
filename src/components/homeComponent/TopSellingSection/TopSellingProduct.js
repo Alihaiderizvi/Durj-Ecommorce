@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import "./TopSellingComp.css";
 // Assets
 import product1 from "../../../assets/TS1.jpg";
-import product2 from "../../../assets/TS2.jpg";
 // Material Ui Icons
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import StarOutlineIcon from "@material-ui/icons/StarOutline";
@@ -12,7 +11,7 @@ import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 
 // Material Ui Core
-import { Box, Button, Typography } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import { IconButton, Link } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import Rating from "@material-ui/lab/Rating";

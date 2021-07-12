@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { Button, CssBaseline, Typography } from "@material-ui/core";
+import { Button, CssBaseline } from "@material-ui/core";
 import React from "react";
 import Carousel from "react-elastic-carousel";
-import Item from "./Item";
 import "../featureCategory/FeatureCateogy.css";
 import addImage from "../../../assets/add.png";
 import featuredCategory1 from "../../../assets/Featured-Category1.png";
@@ -40,9 +39,9 @@ const FeatureCateogy = () => {
 	return (
 		<div className='featureCategory'>
 			<CssBaseline />
-			<Typography variant='h4' className='featureCategory__heading'>
+			<h4 variant='h4' className='featureCategory__heading'>
 				Feature Cateogy
-			</Typography>
+			</h4>
 
 			<div className='featureCategory__cartBanner'>
 				<div className='featureCategory__cartImage'>
@@ -53,8 +52,8 @@ const FeatureCateogy = () => {
 					breakPoints={breakPoints}
 					className='featureCategory__carousel'
 				>
-					{Products.map((product) => (
-						<div className='featuredCat__Images'>
+					{Products.map((product, index) => (
+						<div className='featuredCat__Images' key={index}>
 							<img
 								alt='img'
 								src={product.image}

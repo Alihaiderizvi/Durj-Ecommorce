@@ -21,7 +21,7 @@ const JustForYou = () => {
 		root: {
 			display: "flex",
 			flexWrap: "wrap",
-			justifyContent: "space-around",
+			justifyContent: "space-between",
 			overflow: "hidden",
 		},
 		grid: {
@@ -95,27 +95,28 @@ const JustForYou = () => {
 	return (
 		<div className='justForYou'>
 			<CssBaseline />
-			<Typography variant='h4' className='justForYou__heading'>
+			<h4 variant='h4' className='justForYou__heading'>
 				Just For You
-			</Typography>
+			</h4>
 
 			<div className={classes.root}>
-				<Grid container className={classes.grid} justify='center'>
+				<Grid container className={classes.grid}>
 					{cartData.map((cart) => (
 						<Card
 							key={cart.id}
 							className='justForYou__cart'
-							style={{ margin: "10px !important" }}
+							// style={{ margin: "10px !important" }}
 						>
 							<CardContent>
-								<img
-									src={cart.image}
-									alt={cart.title}
-									style={{ objectFit: "contain", height: "250px" }}
-								/>
+								<Link to='/products'>
+									<img
+										src={cart.image}
+										alt={cart.title}
+										style={{ height: "100%", width: "100%" }}
+									/>
+								</Link>
 								<Typography
 									align='center'
-									gutterBottom
 									variant='h5'
 									style={{ color: "#16243e" }}
 								>
@@ -131,7 +132,10 @@ const JustForYou = () => {
 			</div>
 			<Box className='box rightBox' component='span' m={1}>
 				<Button className='justForYou__btn' variant='contained' size='medium'>
-					<Link to='/' style={{ textDecoration: "none", color: "#fff" }}>
+					<Link
+						to='/products'
+						style={{ textDecoration: "none", color: "#fff" }}
+					>
 						See More
 					</Link>
 				</Button>

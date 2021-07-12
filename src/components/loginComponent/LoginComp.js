@@ -38,19 +38,30 @@ const LoginComp = () => {
 	return (
 		<>
 			<div className='loginForm'>
+				<div className='loginForm_BgImage'></div>
 				<form
 					className='loginForm__container'
 					onSubmit={handleSubmit(onSubmit)}
 				>
 					<Paper component={Box} p={4} elevation={3} className={classes.paper}>
-						<Typography variant='h5' className='loginForm__mainHeading'>
+						<h5 variant='h5' className='loginForm__mainHeading'>
 							WELCOME TO DURJ! PLEASE LOGIN
-						</Typography>
+						</h5>
 						<Box className='box rightBox' component='span' m={1}>
 							<Typography gutterBottom>
 								New Member?
 								<Link to='/register' style={{ textDecoration: "none" }}>
-									<span style={{ letterSpacing: "2px" }}>Register</span>
+									<span
+										style={{
+											fontFamily: "Minion Variable Concept",
+											letterSpacing: "1px",
+											fontWeight: "900",
+											color: "#ff4f4f",
+											marginLeft: ".3rem",
+										}}
+									>
+										Register
+									</span>
 								</Link>
 								here.
 							</Typography>
@@ -94,12 +105,12 @@ const LoginComp = () => {
 								fullWidth
 								className='loginForm__btn loginFormBtn__register'
 							>
-								<Typography align='center'>Register</Typography>
+								<Typography align='center'>Login</Typography>
 							</Button>
 						</div>
-						<hr />
+
 						<Typography align='center'>OR</Typography>
-						<hr />
+
 						<div className='form__btn'>
 							<Button
 								type='submit'
@@ -107,7 +118,7 @@ const LoginComp = () => {
 								color='primary'
 								style={{ textAlign: "center" }}
 								fullWidth
-								className='loginForm__btn loginFormBtn__facebook'
+								className='loginForm_btn loginFormBtn_facebook'
 							>
 								<Typography>Login With Facebook</Typography>
 							</Button>
@@ -116,10 +127,14 @@ const LoginComp = () => {
 							<Button
 								type='submit'
 								variant='contained'
-								color='secondary'
-								style={{ textAlign: "center" }}
+								style={{
+									textAlign: "center",
+									backgroundColor: "#ff4f4f",
+									color: "white",
+									marginTop: ".7rem",
+								}}
 								fullWidth
-								className='loginForm__btn loginFormBtn__google'
+								className='loginForm_btn loginFormBtn_google'
 							>
 								<Typography>Login With Google+</Typography>
 							</Button>

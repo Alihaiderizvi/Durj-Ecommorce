@@ -7,7 +7,7 @@ import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import MenuOutlinedIcon from "@material-ui/icons/MenuOutlined";
 // Material Ui
-import { Button, IconButton } from "@material-ui/core";
+import { Button, IconButton, List, ListItemText } from "@material-ui/core";
 import Badge from "@material-ui/core/Badge";
 // Css
 import "../navbarComponent/NavbarComponent.css";
@@ -15,7 +15,43 @@ import "../navbarComponent/NavbarComponent.css";
 import NavbarRes from "./NavbarRes";
 import UserInfo from "./UserInfo";
 
+const Categories = [
+	{
+		id: 1,
+		title: "Kitechen Appliances",
+		link: "/products",
+	},
+	{
+		id: 2,
+		title: "Electronic Devices",
+		link: "/products",
+	},
+	{
+		id: 3,
+		title: "Home & Lifestyle",
+		link: "/products",
+	},
+	{
+		id: 4,
+		title: "Womens Collection",
+		link: "/products",
+	},
+	{
+		id: 5,
+		title: "Mens Collection",
+		link: "/products",
+	},
+	{
+		id: 6,
+		title: "Kids Collection",
+		link: "/login",
+	},
+];
+
 const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
+	// Hamburger Content
+	const [showCategory, setShowCategory] = useState(false);
+	// DropDowns
 	const [resizeable, setResizeObserver] = useState(
 		window.innerWidth > 649 ? true : false
 	);
@@ -58,9 +94,11 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 					<IconButton
 						style={{ color: "black" }}
 						className='headerNav__HamburgerMenu'
+						onClick={() => setShowCategory(!showCategory)}
 					>
 						<MenuOutlinedIcon />
 					</IconButton>
+
 					{/* SearchBar */}
 					<div className='headerNav__SearchBar'>
 						<input type='text' placeholder='What are you looking for'></input>
@@ -90,7 +128,6 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 									vertical: "top",
 									horizontal: "left",
 								}}
-								max='10'
 							>
 								<ShoppingCartIcon className='headerNavLinks__icon' />
 							</Badge>
@@ -109,6 +146,27 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 					{resizeable && <UserInfo />}
 				</div>
 			</nav>
+
+			{/* Hamburger Content - Categories */}
+
+			{/* <div
+				className={
+					showCategory
+						? "bannerCategoryList__Hamburger bannerCategoryList__MobileView"
+						: "bannerCategoryList__Hamburger"
+				}
+			>
+				<div>
+					<h3>Categories</h3>
+					{Categories.map((category) => (
+						<ListItemText key={category.id}>
+							<Link to={category.link} className='bannerCategoryList__content'>
+								{category.title}
+							</Link>
+						</ListItemText>
+					))}
+				</div>
+			</div> */}
 		</>
 	);
 };

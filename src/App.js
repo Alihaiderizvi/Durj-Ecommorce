@@ -3,7 +3,6 @@ import { Route, Switch } from "react-router-dom";
 // Imports: Pages and Components
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
-
 import Checkout from "./pages/checkout/Checkout";
 import Error from "./components/error/Error";
 import Register from "./pages/register/Register";
@@ -11,6 +10,7 @@ import Products from "./pages/products/Products";
 import ProductDetails from "./pages/productDetailsPage/ProductDetailsPage";
 import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
+import Reservation from "./pages/reservation/Reservation";
 
 function App() {
 	return (
@@ -23,6 +23,7 @@ function App() {
 				<Route path='/product/:productId' component={ProductDetails} />
 				<Route path='/cart' component={Cart} />
 				<Route path='/wishlist' component={Wishlist} />
+				<Route path='/reservation' component={Reservation} />
 				<Route path='/checkout' component={Checkout} />
 				<Route component={Error} />
 			</Switch>

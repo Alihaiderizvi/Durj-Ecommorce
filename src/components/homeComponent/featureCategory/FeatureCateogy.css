@@ -2,7 +2,7 @@
 	height: auto;
 	width: 90%;
 	margin-top: 2rem !important;
-	margin: auto;
+	margin: 2rem auto 0.7rem auto;
 }
 
 .featureCategory__heading {
@@ -11,12 +11,13 @@
 	padding-bottom: 2px;
 	margin-bottom: 19px !important;
 	font-weight: 500 !important;
+	font-family: "Oswald";
 }
 
 .featureCategory__heading::after {
 	display: block;
 	content: "";
-	width: 13%;
+	width: 15rem;
 	height: 3px;
 	background: #fa5051;
 	position: absolute;
@@ -58,7 +59,7 @@
 
 .featureCategory__carousel {
 	padding: 2rem 1rem 1rem 1rem;
-	width: 80% !important;
+	width: 70% !important;
 	margin: auto;
 	background: #fff;
 }

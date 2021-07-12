@@ -47,25 +47,18 @@ const CheckoutComp = () => {
 	};
 	return (
 		<>
-			<br />
-			<Divider
-				style={{
-					height: "4px",
-					backgroundColor: "#16243e",
-				}}
-			/>
 			<div className='checkout__title'>
-				<h1>CHECKOUT</h1>
-				<p>
+				<h1 style={{ fontFamily: "Oswald", fontSize: "40px" }}>CHECKOUT</h1>
+				<p style={{ marginTop: "15px" }}>
 					Please fill in the fields below and click 'Place Order' to complete
 					your purchase
 				</p>
 			</div>
 			<Grid container justify='center' className='checkout'>
 				<CheckoutForm />
+				{/* Checkout Parent */}
 				<div className='checkoutMethod__main'>
 					{/* Shipping method */}
-
 					<div className='checkoutMethod__shipping'>
 						<Typography variant='h6' className='checkout_headings'>
 							SHIPPING METHOD
@@ -78,14 +71,12 @@ const CheckoutComp = () => {
 							<Typography>
 								<span style={{ letterSpacing: "1px", color: "gray" }}>
 									Fixed
-								</span>{" "}
+								</span>
 								Rs.200
 							</Typography>
 						</div>
 					</div>
-
 					{/* Payment method */}
-
 					<div item className='checkoutMethod__payment'>
 						<Typography variant='h6' className='checkout_headings'>
 							PAYMENT METHOD
@@ -127,7 +118,6 @@ const CheckoutComp = () => {
 						</div>
 					</div>
 				</div>
-
 				{/* Order Review */}
 				<Grid
 					item
@@ -159,7 +149,7 @@ const CheckoutComp = () => {
 										<Td className='cartTable__imageTd'>
 											<img
 												className='checkoutTable__image'
-												alt='cartImage'
+												alt='RecentViewedImage'
 												src={item.img}
 											/>
 										</Td>
@@ -192,16 +182,25 @@ const CheckoutComp = () => {
 					</div>
 					<hr />
 					<div style={{ margin: "10px 10px 0px 0px" }}>
-						<div className='checkout__orderTotal'>
-							<Typography align='left'>Sub Total</Typography>
+						<div
+							className='checkout__orderTotal'
+							style={{ fontFamily: "Minion Variable Concept" }}
+						>
+							<Typography align='left' className='checkoutOrderTotal__headings'>
+								Sub Total
+							</Typography>
 							<Typography>Rs 2,994</Typography>
 						</div>
 						<div className='checkout__orderTotal'>
-							<Typography>Shipping</Typography>
+							<Typography className='checkoutOrderTotal__headings'>
+								Shipping
+							</Typography>
 							<Typography>Rs. 200</Typography>
 						</div>
 						<div className='checkout__orderTotal'>
-							<Typography>Grand Total</Typography>
+							<Typography className='checkoutOrderTotal__headings'>
+								Grand Total
+							</Typography>
 							<Typography>Rs. 3,500</Typography>
 						</div>
 					</div>

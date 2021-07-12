@@ -61,6 +61,7 @@ const WishlistMain = (props) => {
 					display: "flex",
 					flexWrap: "wrap",
 					justifyContent: "space-evenly",
+					marginTop: "20px",
 					padding: "20px 0px",
 					// backgroundColor: "transparent",
 				}}
@@ -126,6 +127,19 @@ const WishlistMain = (props) => {
 					</Fade>
 				</Modal>
 			</Paper>
+			<div className='wishlist__threeBtns'>
+				<Button variant='contained' fullWidth className='WishlistBtns'>
+					Update Wishlist
+				</Button>
+				<Button variant='contained' fullWidth className='WishlistBtns'>
+					Share Wishlist
+				</Button>
+				<Button variant='contained' fullWidth className='WishlistBtns'>
+					<Link to='/cart' style={{ color: "#fff", textDecoration: "none" }}>
+						Add All To Cart
+					</Link>
+				</Button>
+			</div>
 		</>
 	);
 };

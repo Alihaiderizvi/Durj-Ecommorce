@@ -101,27 +101,27 @@ const Categories = [
 	{
 		id: 1,
 		title: "Kitechen Appliances",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 2,
 		title: "Electronic Devices",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 3,
 		title: "Home & Lifestyle",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 4,
 		title: "Womens Collection",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 5,
 		title: "Mens Collection",
-		link: "/",
+		link: "/products",
 	},
 	{
 		id: 6,
@@ -190,7 +190,7 @@ const ProductsMain = (props) => {
 							"#2CE4ED",
 						].map((item, index) => (
 							<span
-								class='dot'
+								className='dot'
 								style={{ backgroundColor: item }}
 								key={index}
 							></span>

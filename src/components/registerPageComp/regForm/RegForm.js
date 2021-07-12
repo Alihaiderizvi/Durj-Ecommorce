@@ -27,7 +27,7 @@ import "../regForm/RegForm.css";
 
 const RegForm = () => {
 	const [selectedDate, setDate] = useState(moment());
-	const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
+	const [inputValue, setInputValue] = useState();
 
 	const onDateChange = (date, value) => {
 		setDate(date);
@@ -103,10 +103,24 @@ const RegForm = () => {
 	return (
 		<div className='regForm'>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<Paper component={Box} p={3}>
-					<Typography>Create Your Durj Account</Typography>
-					<Typography align='right'>
-						Already a member <Link to='/login'>Login</Link> here
+				<Paper component={Box} p={3} style={{ marginTop: "1.5rem" }}>
+					<h4>Create Your Durj Account</h4>
+					<Typography gutterBottom align='right'>
+						Already a Member?
+						<Link to='/login' style={{ textDecoration: "none" }}>
+							<span
+								style={{
+									fontFamily: "Minion Variable Concept",
+									letterSpacing: "1px",
+									fontWeight: "1000",
+									color: "#ff4f4f",
+									marginLeft: ".7rem",
+								}}
+							>
+								Login
+							</span>
+						</Link>
+						here.
 					</Typography>
 					{formData.map((data) => (
 						<Controller
@@ -142,7 +156,7 @@ const RegForm = () => {
 									format='MM/dd/yyyy'
 									id='date-picker-inline'
 									label='Select your date of birth'
-									// ref={ref}
+									autocomplete='off'
 									inputRef={ref}
 									onChange={onDateChange}
 									inputValue={inputValue}
@@ -193,13 +207,17 @@ const RegForm = () => {
 						<Button
 							type='submit'
 							variant='contained'
-							color='secondary'
-							style={{ textAlign: "center" }}
+							style={{ textAlign: "center", color: "#626b77" }}
 							fullWidth
 						>
 							<Typography align='center'>Register</Typography>
 						</Button>
 					</div>
+
+					<Typography align='center' style={{ marginTop: "1rem" }}>
+						OR
+					</Typography>
+
 					<div className='form__btn'>
 						<Button
 							type='submit'
@@ -207,19 +225,24 @@ const RegForm = () => {
 							color='primary'
 							style={{ textAlign: "center" }}
 							fullWidth
+							className='loginForm_btn loginFormBtn_facebook'
 						>
-							<Typography>Login With Facebook</Typography>
+							<Typography>Register With Facebook</Typography>
 						</Button>
 					</div>
 					<div className='form__btn'>
 						<Button
 							type='submit'
 							variant='contained'
-							color='secondary'
-							style={{ textAlign: "center" }}
+							style={{
+								textAlign: "center",
+								backgroundColor: "#ff4f4f",
+								color: "white",
+							}}
 							fullWidth
+							className='loginForm_btn loginFormBtn_google'
 						>
-							<Typography>Login With Google+</Typography>
+							<Typography>Register With Google+</Typography>
 						</Button>
 					</div>
 				</Paper>
