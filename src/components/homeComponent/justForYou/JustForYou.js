@@ -57,7 +57,11 @@ const JustForYou = () => {
 			</h4>
 
 			<div className={classes.root}>
-				<Grid container className={classes.grid} justify='space-between'>
+				<Grid
+					container
+					// className={classes.grid}
+					className='justForYou__Wrapper'
+				>
 					{cartData.map((cart) => (
 						<Card
 							key={cart.id}

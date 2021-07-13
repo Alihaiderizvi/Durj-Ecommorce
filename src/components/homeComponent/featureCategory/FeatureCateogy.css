@@ -66,3 +66,12 @@
 	height: 90%;
 	width: 100%;
 }
+
+@media screen and (max-width: 1052px) {
+	.featureCategory__cartBanner {
+		justify-content: center !important;
+	}
+	.featureCategory__cartImage {
+		margin-bottom: 1rem;
+	}
+}
