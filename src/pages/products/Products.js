@@ -5,7 +5,7 @@ import logo from "../../assets/logo.png";
 import HomeTop from "../../components/homeComponent/homeTop/HomeTop";
 import ProductsHeader from "../../components/productsComponent/productsHeader/ProductsHeader";
 import ProductsMain from "../../components/productsComponent/productsMain/ProductsMain";
-import Trending from "../../components/trending/Trending";
+import ShopByCategory from "../../components/homeComponent/shopByCategory/ShopByCategory";
 
 const Products = () => {
 	return (
@@ -18,7 +18,12 @@ const Products = () => {
 			/>
 			<ProductsHeader />
 			<ProductsMain />
-			<Trending />
+			<br />
+			<br />
+			<ShopByCategory
+				Title='You May Also Like'
+				textAlignment={{ textAlign: "center", position: "unset" }}
+			/>
 			<Footer />
 		</div>
 	);

@@ -27,7 +27,7 @@ const Home = () => {
 			<FeatureCateogy />
 			<SubBanner />
 			<JustForYou />
-			<ShopByCategory />
+			<ShopByCategory Title='Shop By Category' />
 			<Footer />
 		</div>
 	);

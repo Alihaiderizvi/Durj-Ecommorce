@@ -53,7 +53,7 @@ const ReservationMain = (props) => {
 	return (
 		<>
 			<div className='wishlistMain'>
-				<h1 className='wishlistMain__heading'>Categories </h1>
+				<h1 className='wishlistMain__heading'>RESERVATIONS </h1>
 			</div>
 
 			<Paper

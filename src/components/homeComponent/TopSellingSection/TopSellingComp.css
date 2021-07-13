@@ -46,6 +46,11 @@
 	margin: 0px auto !important;
 }
 
+.topSellingComp__SeeMorebtn {
+	padding: 10px 35px !important;
+	font-family: "Poppins" !important;
+	font-size: 14px !important;
+}
 /* Top Selling Products */
 
 .topSelling__Products {

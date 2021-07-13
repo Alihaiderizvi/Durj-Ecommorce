@@ -58,8 +58,8 @@
 	background-color: #fff;
 	height: auto;
 	width: 100%;
-	margin: 50px 30px 30px 20px;
-	padding: 40px 30px;
+	margin: 40px 30px 16px 20px;
+	padding: 40px 30px 45px 30px;
 }
 .cartRightDivCoupon_child {
 	display: flex;
@@ -71,7 +71,7 @@
 .cartRightDivCoupon_child > Button {
 	margin-left: 20px;
 	background-color: #ff4f4f;
-	padding-right: 150px;
+	width: 10rem;
 }
 
 .cartLeftDiv_buttons > Button:hover {

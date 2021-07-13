@@ -98,36 +98,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Categories = [
-	{
-		id: 1,
-		title: "Kitechen Appliances",
-		link: "/products",
-	},
-	{
-		id: 2,
-		title: "Electronic Devices",
-		link: "/products",
-	},
-	{
-		id: 3,
-		title: "Home & Lifestyle",
-		link: "/products",
-	},
-	{
-		id: 4,
-		title: "Womens Collection",
-		link: "/products",
-	},
-	{
-		id: 5,
-		title: "Mens Collection",
-		link: "/products",
-	},
-	{
-		id: 6,
-		title: "Kids Collection",
-		link: "/login",
-	},
+	{ id: 1, title: "Kitechen Appliances", link: "/products" },
+	{ id: 2, title: "Electronic Devices", link: "/products" },
+	{ id: 3, title: "Home & Lifestyle", link: "/products" },
+	{ id: 4, title: "Womens Collection", link: "/products" },
+	{ id: 5, title: "Mens Collection", link: "/products" },
+	{ id: 6, title: "Kids Collection", link: "/products" },
 ];
 
 const ProductsMain = (props) => {

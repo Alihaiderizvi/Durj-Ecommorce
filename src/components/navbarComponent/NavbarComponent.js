@@ -7,7 +7,7 @@ import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import MenuOutlinedIcon from "@material-ui/icons/MenuOutlined";
 // Material Ui
-import { Button, IconButton, List, ListItemText } from "@material-ui/core";
+import { Button, IconButton } from "@material-ui/core";
 import Badge from "@material-ui/core/Badge";
 // Css
 import "../navbarComponent/NavbarComponent.css";
@@ -15,38 +15,38 @@ import "../navbarComponent/NavbarComponent.css";
 import NavbarRes from "./NavbarRes";
 import UserInfo from "./UserInfo";
 
-const Categories = [
-	{
-		id: 1,
-		title: "Kitechen Appliances",
-		link: "/products",
-	},
-	{
-		id: 2,
-		title: "Electronic Devices",
-		link: "/products",
-	},
-	{
-		id: 3,
-		title: "Home & Lifestyle",
-		link: "/products",
-	},
-	{
-		id: 4,
-		title: "Womens Collection",
-		link: "/products",
-	},
-	{
-		id: 5,
-		title: "Mens Collection",
-		link: "/products",
-	},
-	{
-		id: 6,
-		title: "Kids Collection",
-		link: "/login",
-	},
-];
+// const Categories = [
+// 	{
+// 		id: 1,
+// 		title: "Kitechen Appliances",
+// 		link: "/products",
+// 	},
+// 	{
+// 		id: 2,
+// 		title: "Electronic Devices",
+// 		link: "/products",
+// 	},
+// 	{
+// 		id: 3,
+// 		title: "Home & Lifestyle",
+// 		link: "/products",
+// 	},
+// 	{
+// 		id: 4,
+// 		title: "Womens Collection",
+// 		link: "/products",
+// 	},
+// 	{
+// 		id: 5,
+// 		title: "Mens Collection",
+// 		link: "/products",
+// 	},
+// 	{
+// 		id: 6,
+// 		title: "Kids Collection",
+// 		link: "/login",
+// 	},
+// ];
 
 const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 	// Hamburger Content

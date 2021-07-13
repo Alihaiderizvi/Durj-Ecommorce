@@ -37,7 +37,7 @@ const images = [
 const Categories = [
 	{
 		id: 1,
-		title: "Kitechen Appliances",
+		title: "Kitchen Appliances",
 		link: "/products",
 	},
 	{

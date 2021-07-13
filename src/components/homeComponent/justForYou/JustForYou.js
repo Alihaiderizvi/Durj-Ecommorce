@@ -11,9 +11,16 @@ import {
 import React from "react";
 import "../justForYou/JustForYou.css";
 
-import featuredCategory1 from "../../../assets/Featured-Category1.png";
-import featuredCategory2 from "../../../assets/Featured-Category2.png";
-import featuredCategory3 from "../../../assets/Featured-Category3.png";
+import p1 from "../../../assets/p1.jpg";
+import p2 from "../../../assets/p2.jpg";
+import p3 from "../../../assets/p3.jpg";
+import p4 from "../../../assets/p4.jpg";
+import p5 from "../../../assets/p5.jpg";
+import p6 from "../../../assets/p6.jpg";
+import p7 from "../../../assets/p7.jpg";
+import p8 from "../../../assets/p8.jpg";
+import p9 from "../../../assets/p9.jpg";
+import p10 from "../../../assets/p10.jpg";
 import { Link } from "react-router-dom";
 
 const JustForYou = () => {
@@ -29,66 +36,16 @@ const JustForYou = () => {
 		},
 	}));
 	const cartData = [
-		{
-			id: 1,
-			image: featuredCategory1,
-			title: "Product Name",
-			price: "$00.00",
-		},
-		{
-			id: 2,
-			image: featuredCategory2,
-			title: "Product Name",
-			price: "$00.00",
-		},
-		{
-			id: 3,
-			image: featuredCategory3,
-			title: "Product Name",
-			price: "$00.00",
-		},
-		{
-			id: 4,
-			image: featuredCategory1,
-			title: "Product Name",
-			price: "$00.00",
-		},
-		{
-			id: 5,
-			image: featuredCategory2,
-			title: "Product Name",
-			price: "$00.00",
-		},
-		{
-			id: 6,
-			image: featuredCategory3,
-			title: "Product Name",
-			price: "$00.00",
-		},
-		{
-			id: 7,
-			image: featuredCategory3,
-			title: "Product Name",
-			price: "$00.00",
-		},
-		{
-			id: 8,
-			image: featuredCategory3,
-			title: "Product Name",
-			price: "$00.00",
-		},
-		{
-			id: 9,
-			image: featuredCategory3,
-			title: "Product Name",
-			price: "$00.00",
-		},
-		{
-			id: 10,
-			image: featuredCategory3,
-			title: "Product Name",
-			price: "$00.00",
-		},
+		{ id: 1, image: p1, title: "Nike Air Force", price: "Rs.1,500 PKR" },
+		{ id: 2, image: p2, title: "Sony Go pro", price: "Rs.35,000 PKR" },
+		{ id: 3, image: p3, title: "Apple Watch 6", price: "Rs.20,000 PKR" },
+		{ id: 4, image: p4, title: "Sunglasses", price: "Rs.3,500 PKR" },
+		{ id: 5, image: p5, title: "Headset", price: "Rs.2,399 PKR" },
+		{ id: 6, image: p6, title: "Chanel perfume", price: "Rs.5,000 PKR" },
+		{ id: 7, image: p7, title: "Sony Xbox", price: "Rs.85,000 PKR" },
+		{ id: 8, image: p8, title: "Citizen Watch", price: "Rs.25,000 PKR" },
+		{ id: 9, image: p9, title: "Go Pro", price: "Rs.15,000 PKR" },
+		{ id: 10, image: p10, title: "Outfitter Shirt", price: "Rs.2,000 PKR" },
 	];
 
 	const classes = useStyles();
@@ -100,7 +57,7 @@ const JustForYou = () => {
 			</h4>
 
 			<div className={classes.root}>
-				<Grid container className={classes.grid}>
+				<Grid container className={classes.grid} justify='space-between'>
 					{cartData.map((cart) => (
 						<Card
 							key={cart.id}
@@ -108,17 +65,33 @@ const JustForYou = () => {
 							// style={{ margin: "10px !important" }}
 						>
 							<CardContent>
-								<Link to='/products'>
-									<img
-										src={cart.image}
-										alt={cart.title}
-										style={{ height: "100%", width: "100%" }}
-									/>
-								</Link>
+								<div
+									style={{
+										height: "230px",
+										width: "250px",
+									}}
+								>
+									<Link to='/products'>
+										<img
+											src={cart.image}
+											alt={cart.title}
+											style={{
+												height: "100%",
+												width: "100%",
+												objectFit: "cover",
+											}}
+										/>
+									</Link>
+								</div>
 								<Typography
 									align='center'
 									variant='h5'
-									style={{ color: "#16243e" }}
+									style={{
+										color: "#16243e",
+										fontFamily: "Bebas Neue",
+										fontSize: "1.8rem",
+										margin: "8px 0px",
+									}}
 								>
 									{cart.title}
 								</Typography>
@@ -130,7 +103,11 @@ const JustForYou = () => {
 					))}
 				</Grid>
 			</div>
-			<Box className='box rightBox' component='span' m={1}>
+			<Box
+				className='box JustForYou__rightBox'
+				component='span'
+				style={{ margin: "auto" }}
+			>
 				<Button className='justForYou__btn' variant='contained' size='medium'>
 					<Link
 						to='/products'

@@ -11,14 +11,25 @@
 /* --------Wishlist Main - content-------- */
 
 .wishlistMain__heading {
+	position: relative;
 	color: rgb(20 43 87);
 	font-weight: 550;
 	font-size: 3em;
-	border-bottom: 4px solid red;
+	margin-bottom: 2rem !important;
 	width: 100px;
 	font-family: "Oswald";
 }
 
+.wishlistMain__heading:after {
+	display: block;
+	content: "";
+	width: 10rem;
+	height: 3px;
+	background: #fa5051;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
 .wishlist__product {
 	height: 100%;
 	width: 250px;
@@ -110,7 +121,7 @@
 	background: #ff4f4f !important;
 	color: #fff !important;
 	padding: 12px 0 !important;
-	font-size: 16px !important;
+	font-size: 1.1rem !important;
 	/* font-weight: 600 !important; */
 	/* letter-spacing: 5px !important; */
 }

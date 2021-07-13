@@ -66,10 +66,12 @@ const MyCart = () => {
 							<br />
 							<Thead>
 								<Tr>
-									<Th style={{ textAlign: "left" }}>Product</Th>
-									<Th>Price</Th>
-									<Th>Quantity</Th>
-									<Th>TOTAL</Th>
+									<Th style={{ textAlign: "left", fontWeight: "500" }}>
+										Product
+									</Th>
+									<Th style={{ fontWeight: "500" }}>Price</Th>
+									<Th style={{ fontWeight: "500" }}>Quantity</Th>
+									<Th style={{ fontWeight: "500" }}>TOTAL</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
@@ -208,7 +210,7 @@ const MyCart = () => {
 											fontWeight: "600",
 											color: "#fff",
 											textAlign: "center",
-											letterSpacinf: "none",
+											letterSpacing: "none",
 										}}
 									>
 										Apply
@@ -281,7 +283,13 @@ const MyCart = () => {
 																className='cartRightDivRecentView_child_btn'
 																variant='contained'
 																color='secondary'
-																style={{}}
+																style={{
+																	textDecoration: "none",
+																	fontWeight: "600",
+																	color: "#fff",
+																	textAlign: "center",
+																	letterSpacing: "none",
+																}}
 															>
 																Add
 															</Button>

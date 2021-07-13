@@ -6,7 +6,7 @@ html {
 	font-family: "Poppins", sans-serif;
 	position: sticky;
 	top: 0;
-	z-index: 99;
+	z-index: 9999;
 	box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
 }
 
@@ -118,8 +118,9 @@ input:focus {
 	left: 4rem;
 }
 
-.bannerCategoryList__MobileView {
-	/* display: block; */
+/* User Info dropDown Icons Material Ui Class */
+.MuiMenu-paper {
+	top: 89px !important;
 }
 /* Media Quries */
 

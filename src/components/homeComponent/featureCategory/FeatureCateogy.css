@@ -9,7 +9,7 @@
 	position: relative;
 	font-size: 35px !important;
 	padding-bottom: 2px;
-	margin-bottom: 19px !important;
+	margin-bottom: 2.5rem !important;
 	font-weight: 500 !important;
 	font-family: "Oswald";
 }
@@ -29,7 +29,7 @@
 	display: flex;
 	align-items: center;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
@@ -59,8 +59,7 @@
 
 .featureCategory__carousel {
 	padding: 2rem 1rem 1rem 1rem;
-	width: 70% !important;
-	margin: auto;
+	width: 75% !important;
 	background: #fff;
 }
 .featureCategoryCarousel__images {
