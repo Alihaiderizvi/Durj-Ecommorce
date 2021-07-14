@@ -18,6 +18,7 @@ import {
 	selectedProduct,
 	removeSelectedProduct,
 } from "../../redux/actions/ProductActions";
+import { Skeleton } from "@material-ui/lab";
 
 const ProductDetail = () => {
 	// Fetching product
@@ -74,7 +75,9 @@ const ProductDetail = () => {
 	return (
 		<>
 			{Object.keys(product).length === 0 ? (
-				<div>Loading</div>
+				<h1 style={{ textAlign: "center", fontFamily: "Bebas Neue" }}>
+					Loading...
+				</h1>
 			) : (
 				<Grid container className='productDetail'>
 					<div item className='productDetail_leftSection'>

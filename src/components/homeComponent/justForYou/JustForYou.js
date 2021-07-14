@@ -23,32 +23,34 @@ import p9 from "../../../assets/p9.jpg";
 import p10 from "../../../assets/p10.jpg";
 import { Link } from "react-router-dom";
 
-const JustForYou = () => {
-	const useStyles = makeStyles((_) => ({
-		root: {
-			display: "flex",
-			flexWrap: "wrap",
-			justifyContent: "space-between",
-			overflow: "hidden",
-		},
-		grid: {
-			transform: "translateZ(0)",
-		},
-	}));
-	const cartData = [
-		{ id: 1, image: p1, title: "Nike Air Force", price: "Rs.1,500 PKR" },
-		{ id: 2, image: p2, title: "Sony Go pro", price: "Rs.35,000 PKR" },
-		{ id: 3, image: p3, title: "Apple Watch 6", price: "Rs.20,000 PKR" },
-		{ id: 4, image: p4, title: "Sunglasses", price: "Rs.3,500 PKR" },
-		{ id: 5, image: p5, title: "Headset", price: "Rs.2,399 PKR" },
-		{ id: 6, image: p6, title: "Chanel perfume", price: "Rs.5,000 PKR" },
-		{ id: 7, image: p7, title: "Sony Xbox", price: "Rs.85,000 PKR" },
-		{ id: 8, image: p8, title: "Citizen Watch", price: "Rs.25,000 PKR" },
-		{ id: 9, image: p9, title: "Go Pro", price: "Rs.15,000 PKR" },
-		{ id: 10, image: p10, title: "Outfitter Shirt", price: "Rs.2,000 PKR" },
-	];
+const cartData = [
+	{ id: 1, image: p1, title: "Nike Air Force", price: "Rs.1,500 PKR" },
+	{ id: 2, image: p2, title: "Sony Go pro", price: "Rs.35,000 PKR" },
+	{ id: 3, image: p3, title: "Apple Watch 6", price: "Rs.20,000 PKR" },
+	{ id: 4, image: p4, title: "Sunglasses", price: "Rs.3,500 PKR" },
+	{ id: 5, image: p5, title: "Headset", price: "Rs.2,399 PKR" },
+	{ id: 6, image: p6, title: "Chanel perfume", price: "Rs.5,000 PKR" },
+	{ id: 7, image: p7, title: "Sony Xbox", price: "Rs.85,000 PKR" },
+	{ id: 8, image: p8, title: "Citizen Watch", price: "Rs.25,000 PKR" },
+	{ id: 9, image: p9, title: "Go Pro", price: "Rs.15,000 PKR" },
+	{ id: 10, image: p10, title: "Outfitter Shirt", price: "Rs.2,000 PKR" },
+];
 
+const useStyles = makeStyles((_) => ({
+	root: {
+		display: "flex",
+		flexWrap: "wrap",
+		justifyContent: "space-between",
+		overflow: "hidden",
+	},
+	grid: {
+		transform: "translateZ(0)",
+	},
+}));
+
+const JustForYou = () => {
 	const classes = useStyles();
+
 	return (
 		<div className='justForYou'>
 			<CssBaseline />
@@ -75,7 +77,7 @@ const JustForYou = () => {
 										width: "250px",
 									}}
 								>
-									<Link to='/products'>
+									<Link to={`product/${cart.id}`}>
 										<img
 											src={cart.image}
 											alt={cart.title}
@@ -114,7 +116,7 @@ const JustForYou = () => {
 			>
 				<Button className='justForYou__btn' variant='contained' size='medium'>
 					<Link
-						to='/products'
+						// to='/products'
 						style={{ textDecoration: "none", color: "#fff" }}
 					>
 						See More

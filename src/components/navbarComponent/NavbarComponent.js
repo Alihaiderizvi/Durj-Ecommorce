@@ -14,47 +14,34 @@ import "../navbarComponent/NavbarComponent.css";
 
 import NavbarRes from "./NavbarRes";
 import UserInfo from "./UserInfo";
-
-// const Categories = [
-// 	{
-// 		id: 1,
-// 		title: "Kitechen Appliances",
-// 		link: "/products",
-// 	},
-// 	{
-// 		id: 2,
-// 		title: "Electronic Devices",
-// 		link: "/products",
-// 	},
-// 	{
-// 		id: 3,
-// 		title: "Home & Lifestyle",
-// 		link: "/products",
-// 	},
-// 	{
-// 		id: 4,
-// 		title: "Womens Collection",
-// 		link: "/products",
-// 	},
-// 	{
-// 		id: 5,
-// 		title: "Mens Collection",
-// 		link: "/products",
-// 	},
-// 	{
-// 		id: 6,
-// 		title: "Kids Collection",
-// 		link: "/login",
-// 	},
-// ];
+import Categories from "../homeComponent/banner/Categories";
 
 const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 	// Hamburger Content
 	const [showCategory, setShowCategory] = useState(false);
+
 	// DropDowns
 	const [resizeable, setResizeObserver] = useState(
 		window.innerWidth > 649 ? true : false
 	);
+
+	// Hamburger Icon
+	const [categoryHamburger, setCategoryHamburger] = useState(
+		window.innerWidth > 1165 ? false : true
+	);
+
+	useEffect(() => {
+		const eventHandler = () => {
+			if (window.innerWidth < 1165) {
+				setCategoryHamburger(true);
+				// console.log(window.scrollY);
+			} else {
+				setCategoryHamburger(false);
+			}
+		};
+		window.addEventListener("resize", eventHandler);
+		// window.addEventListener("scroll", eventHandler);
+	}, []);
 
 	useEffect(() => {
 		const eventHandler = () => {
@@ -91,13 +78,17 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 						</Link>
 					</div>
 					{/* Hamburger */}
-					<IconButton
-						style={{ color: "black" }}
-						className='headerNav__HamburgerMenu'
-						onClick={() => setShowCategory(!showCategory)}
-					>
-						<MenuOutlinedIcon />
-					</IconButton>
+					<div className='hamburger__menu'>
+						<IconButton
+							style={{ color: "black" }}
+							className='headerNav__HamburgerMenu'
+							onClick={() => {
+								setShowCategory(!showCategory);
+							}}
+						>
+							<MenuOutlinedIcon />
+						</IconButton>
+					</div>
 
 					{/* SearchBar */}
 					<div className='headerNav__SearchBar'>
@@ -145,6 +136,12 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 					</div>
 					{resizeable && <UserInfo />}
 				</div>
+
+				{showCategory
+					? categoryHamburger && <Categories customCateogry={customCss} />
+					: categoryHamburger && (
+							<Categories customCateogry={customCssResponsive} />
+					  )}
 			</nav>
 
 			{/* Hamburger Content - Categories */}
@@ -172,6 +169,26 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 };
 
 export default NavbarComponent;
+
+const customCss = {
+	position: "absolute",
+	top: "5.9rem",
+	display: "flex",
+	justifyContent: "flex-start",
+	zIndex: "1",
+	width: "100%",
+	backgroundColor: "#fff",
+	padding: "1rem 0 .2rem 5rem",
+	borderBottom: "0.5rem solid rgb(255, 79, 79)",
+	boxShadow: "1px -5px 17px 1px rgba(0,0,0,0.05)",
+};
+
+const customCssResponsive = {
+	display: "none",
+	width: "90%",
+	margin: "auto",
+	backgroundColor: "#fff",
+};
 
 // {navbar === false ? () : (
 // 	<ResponsiveNavbar

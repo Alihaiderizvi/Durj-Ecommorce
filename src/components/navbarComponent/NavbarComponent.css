@@ -114,8 +114,10 @@ input:focus {
 /* Hamburger Content */
 
 .bannerCategoryList__Hamburger {
-	position: absolute;
+	position: relative;
 	left: 4rem;
+	top: 5px;
+	margin-bottom: 10px;
 }
 
 /* User Info dropDown Icons Material Ui Class */

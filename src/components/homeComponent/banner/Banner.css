@@ -1,7 +1,7 @@
 .banner {
 	display: flex;
 	height: 330px;
-	background-color: #fff !important;
+	background-color: #fff;
 }
 
 .image__carousel {
@@ -14,13 +14,13 @@
 	overflow: hidden;
 }
 
-.banner__category {
+/* .banner__category {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	width: 25%;
-}
+} */
 
 .bannerCategory__list {
 	font-family: "Bebas Neue";
@@ -28,6 +28,7 @@
 	text-align: center;
 	letter-spacing: 6px;
 }
+
 .bannerCategoryList__content {
 	text-decoration: none !important;
 	color: #16243e !important;
@@ -45,9 +46,9 @@
 }
 
 @media screen and (max-width: 1165px) {
-	.banner__category {
+	/* .banner__category {
 		display: none;
-	}
+	} */
 	.image__carousel {
 		width: 100% !important;
 	}

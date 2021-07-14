@@ -9,7 +9,7 @@ import cat2 from "../../../assets/shopcategory2.png";
 import cat3 from "../../../assets/shopcategory3.png";
 import cat4 from "../../../assets/shopcategory4.png";
 
-const ShopByCategory = ({ Title, textAlignment, textAfter }) => {
+const ShopByCategory = ({ Title, textAlignment }) => {
 	const breakPoints = [
 		{ width: 1, itemsToShow: 1 },
 		{ width: 550, itemsToShow: 2 },

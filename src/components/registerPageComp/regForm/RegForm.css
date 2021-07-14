@@ -15,3 +15,9 @@
 .form__btn {
 	margin-top: 1rem;
 }
+
+.Form__Asterisk {
+	color: red;
+	margin-left: 2px;
+	opacity: 0.6;
+}

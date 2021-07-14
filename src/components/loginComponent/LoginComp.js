@@ -1,13 +1,7 @@
-import {
-	Box,
-	Button,
-	makeStyles,
-	Paper,
-	TextField,
-	Typography,
-} from "@material-ui/core";
+import { Box, Button, makeStyles, Paper, Typography } from "@material-ui/core";
 import React from "react";
-import { useForm } from "react-hook-form";
+import { Form, Field } from "react-final-form";
+import { TextField } from "final-form-material-ui";
 import { Link } from "react-router-dom";
 import "../loginComponent/LoginComp.css";
 
@@ -22,125 +16,152 @@ const useStyles = makeStyles((theme) => ({
 		maxWidth: "600px !important",
 	},
 }));
+
+const validate = (values) => {
+	const errors = {};
+
+	if (!values.email) {
+		errors.email = "Required";
+	}
+	if (!values.pass) {
+		errors.pass = "Required";
+	}
+	return errors;
+};
+
+const onSubmit = async (values) => {
+	const { email, pass } = values;
+	const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+	await sleep(300);
+	console.log(`Email: ${email}`);
+	console.log(`Password: ${pass}`);
+	window.alert(JSON.stringify(values, 0, 2));
+	console.log(values);
+};
+
+// const { register, handleSubmit } = useForm({ defaultValues });
 const LoginComp = () => {
-	const defaultValues = {
-		email_id: "",
-		pass: "",
-	};
-
-	const onSubmit = (data) => {
-		alert("Successfully Logged In! 😄");
-		console.log(data);
-	};
-
 	const classes = useStyles();
-	const { register, handleSubmit } = useForm({ defaultValues });
 	return (
 		<>
 			<div className='loginForm'>
 				<div className='loginForm_BgImage'></div>
-				<form
-					className='loginForm__container'
-					onSubmit={handleSubmit(onSubmit)}
-				>
-					<Paper component={Box} p={4} elevation={3} className={classes.paper}>
-						<h5 variant='h5' className='loginForm__mainHeading'>
-							WELCOME TO DURJ! PLEASE LOGIN
-						</h5>
-						<Box className='box rightBox' component='span' m={1}>
-							<Typography gutterBottom>
-								New Member?
-								<Link to='/register' style={{ textDecoration: "none" }}>
-									<span
-										style={{
-											fontFamily: "Minion Variable Concept",
-											letterSpacing: "1px",
-											fontWeight: "900",
-											color: "#ff4f4f",
-											marginLeft: ".3rem",
-										}}
+				<Form
+					onSubmit={onSubmit}
+					validate={validate}
+					render={({ handleSubmit, submitting }) => (
+						<form
+							className='loginForm__container'
+							onSubmit={handleSubmit}
+							noValidate
+						>
+							<Paper
+								component={Box}
+								p={4}
+								elevation={3}
+								className={classes.paper}
+							>
+								<h5 variant='h5' className='loginForm__mainHeading'>
+									WELCOME TO DURJ! PLEASE LOGIN
+								</h5>
+								<Box className='box rightBox' component='span' m={1}>
+									<Typography gutterBottom>
+										New Member?
+										<Link to='/register' style={{ textDecoration: "none" }}>
+											<span
+												style={{
+													fontFamily: "Minion Variable Concept",
+													letterSpacing: "1px",
+													fontWeight: "900",
+													color: "#ff4f4f",
+													marginLeft: ".3rem",
+												}}
+											>
+												Register
+											</span>
+										</Link>
+										here.
+									</Typography>
+								</Box>
+								<Field
+									name='email'
+									fullWidth
+									required
+									component={TextField}
+									type='email'
+									placeholder='Enter your email address'
+									className={classes.inputItem}
+								/>
+								<Field
+									name='pass'
+									fullWidth
+									required
+									component={TextField}
+									type='password'
+									placeholder='Enter Password'
+									className={classes.inputItem}
+								/>
+								<Typography gutterBottom align='right'>
+									<Link to='/login' style={{ textDecoration: "none" }}>
+										Forgot Password?
+									</Link>
+								</Typography>
+								<div className='form__btn'>
+									{/* <Button
+										form='myForm'
+										type='submit'
+										variant='contained'
+										style={{ textAlign: "center" }}
+										fullWidth
+										className='loginForm__btn loginFormBtn__register'
 									>
-										Register
-									</span>
-								</Link>
-								here.
-							</Typography>
-						</Box>
-						<TextField
-							id='filled-basic'
-							name='email_id'
-							label='Email address'
-							placeholder='Enter your email address'
-							variant='standard'
-							fullWidth
-							inputRef={register("test", { required: true })}
-							size='small'
-							className={classes.inputItem}
-							required
-						/>
-						<TextField
-							name='pass'
-							id='filled-basic'
-							label='Enter Password'
-							placeholder='Enter Password'
-							variant='standard'
-							size='small'
-							type='password'
-							fullWidth
-							inputRef={register("test", { required: true })}
-							className={classes.inputItem}
-							required
-						/>
-						<Typography gutterBottom align='right'>
-							<Link to='/login' style={{ textDecoration: "none" }}>
-								Forgot Password?
-							</Link>
-						</Typography>
-						<div className='form__btn'>
-							<Button
-								form='myForm'
-								type='submit'
-								variant='contained'
-								style={{ textAlign: "center" }}
-								fullWidth
-								className='loginForm__btn loginFormBtn__register'
-							>
-								<Typography align='center'>Login</Typography>
-							</Button>
-						</div>
+										<Typography align='center'>Login</Typography>
+									</Button> */}
+									<Button
+										variant='contained'
+										type='submit'
+										disabled={submitting}
+										fullWidth
+										className='loginForm__btn loginFormBtn__register'
+									>
+										Login
+									</Button>
+								</div>
 
-						<Typography align='center'>OR</Typography>
+								<Typography align='center'>OR</Typography>
 
-						<div className='form__btn'>
-							<Button
-								type='submit'
-								variant='contained'
-								color='primary'
-								style={{ textAlign: "center" }}
-								fullWidth
-								className='loginForm_btn loginFormBtn_facebook'
-							>
-								<Typography>Login With Facebook</Typography>
-							</Button>
-						</div>
-						<div className='form__btn'>
-							<Button
-								type='submit'
-								variant='contained'
-								style={{
-									textAlign: "center",
-									backgroundColor: "#ff4f4f",
-									color: "white",
-									marginTop: ".7rem",
-								}}
-								fullWidth
-								className='loginForm_btn loginFormBtn_google'
-							>
-								<Typography>Login With Google+</Typography>
-							</Button>
-						</div>
-					</Paper>
-				</form>
+								<div className='form__btn'>
+									<Button
+										type='submit'
+										variant='contained'
+										color='primary'
+										style={{ textAlign: "center" }}
+										fullWidth
+										className='loginForm_btn loginFormBtn_facebook'
+									>
+										<Typography>Login With Facebook</Typography>
+									</Button>
+								</div>
+								<div className='form__btn'>
+									<Button
+										type='submit'
+										variant='contained'
+										style={{
+											textAlign: "center",
+											backgroundColor: "#ff4f4f",
+											color: "white",
+											marginTop: ".7rem",
+										}}
+										fullWidth
+										className='loginForm_btn loginFormBtn_google'
+									>
+										<Typography>Login With Google+</Typography>
+									</Button>
+								</div>
+							</Paper>
+						</form>
+					)}
+				/>
 			</div>
 		</>
 	);

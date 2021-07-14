@@ -78,13 +78,11 @@ const DetailTabBar = ({ description, title }) => {
 				</AppBar>
 				<TabPanel value={value} index={0}>
 					<Typography variant='h4'>{title}</Typography>
-					<Typography paragraph style={{ width: "60%" }}>
-						{description}
-					</Typography>
+					<Typography paragraph>{description}</Typography>
 				</TabPanel>
 				<TabPanel value={value} index={1}>
 					<Typography variant='h4'>Product Reviews:</Typography>
-					<Typography paragraph style={{ width: "60%" }}>
+					<Typography paragraph>
 						Lorem Ipsum is simply dummy text of the printing and typesetting
 						industry. Lorem Ipsum has been the industry's standard dummy text
 						ever since the 1500s, when an unknown printer took a galley of type
@@ -98,7 +96,7 @@ const DetailTabBar = ({ description, title }) => {
 				</TabPanel>
 				<TabPanel value={value} index={2}>
 					<Typography variant='h4'>Ratings:</Typography>
-					<Typography paragraph style={{ width: "60%" }}>
+					<Typography paragraph>
 						Lorem Ipsum is simply dummy text of the printing and typesetting
 						industry. Lorem Ipsum has been the industry's standard dummy text
 						ever since the 1500s, when an unknown printer took a galley of type

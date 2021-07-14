@@ -132,6 +132,12 @@ const datas = [
 		label: "Product Name",
 		price: "Rs 19.99$",
 	},
+	{
+		id: 20,
+		image: c1,
+		label: "Product Name",
+		price: "Rs 19.99$",
+	},
 ];
 
 const useStyles = makeStyles((theme) => ({

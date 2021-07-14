@@ -88,9 +88,9 @@ const WishlistMain = (props) => {
 							className='wishlist__addToCartBtn'
 							fullWidth
 							justify='center'
-							onClick={() => {
-								dispatch(addProductToCart({ ...props.products }));
-							}}
+							// onClick={() => {
+							// 	dispatch(addProductToCart({ ...props.products }));
+							// }}
 						>
 							<Link className='link'>Add To Cart</Link>
 						</Button>
@@ -99,9 +99,9 @@ const WishlistMain = (props) => {
 							className='wishlist__productDetailBtn'
 							fullWidth
 							justify='center'
-							onClick={() => {
-								dispatch(addProductToCart({ ...props.product }));
-							}}
+							// onClick={() => {
+							// 	dispatch(addProductToCart({ ...props.product }));
+							// }}
 						>
 							<Link to={`/product/${id}`} className='link'>
 								Product Details
