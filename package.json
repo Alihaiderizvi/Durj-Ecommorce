@@ -33,6 +33,7 @@
 		"react-responsive-sidebar": "^0.1.16",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "4.0.3",
+		"react-spring": "^9.2.4",
 		"react-super-responsive-table": "^5.2.0",
 		"react-swipeable-views": "^0.14.0",
 		"redux": "^4.1.0",
