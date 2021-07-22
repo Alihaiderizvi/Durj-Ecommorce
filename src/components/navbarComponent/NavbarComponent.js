@@ -92,7 +92,7 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 
 					{/* SearchBar */}
 					<div className='headerNav__SearchBar'>
-						<input type='text' placeholder='What are you looking for'></input>
+						<input type='text' placeholder='What are you looking for?'></input>
 						<Button className='headerNavSearchBar__btn'>
 							<SearchRoundedIcon className='headerNavSearchBar__icon' />
 						</Button>
