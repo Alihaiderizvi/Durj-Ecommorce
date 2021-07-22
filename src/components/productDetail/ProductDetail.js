@@ -18,7 +18,6 @@ import {
 	selectedProduct,
 	removeSelectedProduct,
 } from "../../redux/actions/ProductActions";
-import { Skeleton } from "@material-ui/lab";
 
 const ProductDetail = () => {
 	// Fetching product

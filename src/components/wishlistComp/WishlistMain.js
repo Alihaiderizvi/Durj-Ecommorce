@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
 import {
-	addProductToCart,
+	// addProductToCart,
 	setProducts,
 } from "../../redux/actions/ProductActions";
 
