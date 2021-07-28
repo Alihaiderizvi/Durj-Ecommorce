@@ -1,5 +1,7 @@
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
+// Import : Browser Router
+import BrowserRouter from "react-router-dom/BrowserRouter";
 // Imports: Pages and Components
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
@@ -16,16 +18,18 @@ function App() {
 	return (
 		<>
 			<Switch>
-				<Route exact path='/' component={Home} />
-				<Route path='/login' component={Login} />
-				<Route path='/register' component={Register} />
-				<Route path='/products' component={Products} />
-				<Route path='/product/:productId' component={ProductDetails} />
-				<Route path='/cart' component={Cart} />
-				<Route path='/wishlist' component={Wishlist} />
-				<Route path='/reservation' component={Reservation} />
-				<Route path='/checkout' component={Checkout} />
-				<Route component={Error} />
+				<BrowserRouter basename={process.env.PUBLIC_URL}>
+					<Route exact path='/' component={Home} />
+					<Route path='/login' component={Login} />
+					<Route path='/register' component={Register} />
+					<Route path='/products' component={Products} />
+					<Route path='/product/:productId' component={ProductDetails} />
+					<Route path='/cart' component={Cart} />
+					<Route path='/wishlist' component={Wishlist} />
+					<Route path='/reservation' component={Reservation} />
+					<Route path='/checkout' component={Checkout} />
+					<Route component={Error} />
+				</BrowserRouter>
 			</Switch>
 		</>
 	);
