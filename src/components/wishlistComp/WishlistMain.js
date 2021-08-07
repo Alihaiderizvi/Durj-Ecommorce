@@ -5,7 +5,6 @@ import Backdrop from "@material-ui/core/Backdrop";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-
 import {
 	// addProductToCart,
 	setProducts,
@@ -66,13 +65,13 @@ const WishlistMain = (props) => {
 					// backgroundColor: "transparent",
 				}}
 			>
-				{products.map(({ id, title, image, price, category, description }) => (
-					<div className='wishlist__product' key={id}>
+				{products.map((product) => (
+					<div className='wishlist__product' key={product.id}>
 						<div id='wrapper'>
 							<img
 								className='wishlistProduct__image'
-								src={image}
-								alt={title}
+								src={product.image}
+								alt={product.title}
 								onClick={handleOpen}
 								// onClick={getId}
 							/>
@@ -80,17 +79,20 @@ const WishlistMain = (props) => {
 						</div>
 						<hr />
 						<div className='wishlist__productContent'>
-							<h4 className='wishlistProduct__title'>{title}</h4>
-							<h4 className='wishlistProduct__price'>Price:${price}</h4>
+							<h4 className='wishlistProduct__title'>{product.title}</h4>
+							<h4 className='wishlistProduct__price'>Price:${product.price}</h4>
 						</div>
 						<Button
 							variant='contained'
 							className='wishlist__addToCartBtn'
 							fullWidth
 							justify='center'
-							// onClick={() => {
-							// 	dispatch(addProductToCart({ ...props.products }));
-							// }}
+							onClick={() => {
+								dispatch({
+									type: "ADD_PRODUCT_TO_CART",
+									payload: { product },
+								});
+							}}
 						>
 							<Link className='link'>Add To Cart</Link>
 						</Button>
@@ -103,7 +105,7 @@ const WishlistMain = (props) => {
 							// 	dispatch(addProductToCart({ ...props.product }));
 							// }}
 						>
-							<Link to={`/product/${id}`} className='link'>
+							<Link to={`/product/${product.id}`} className='link'>
 								Product Details
 							</Link>
 						</Button>

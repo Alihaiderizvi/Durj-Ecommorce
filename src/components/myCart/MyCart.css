@@ -76,6 +76,7 @@
 
 .cartLeftDiv_buttons > Button:hover {
 	background-color: #002347;
+	transition: 0.5s;
 }
 .cartRightDivCoupon_child > Button:hover {
 	background-color: #002347;

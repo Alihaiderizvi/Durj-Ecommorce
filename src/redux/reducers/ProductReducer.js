@@ -13,6 +13,7 @@ const {
 	INCREMENT_CART_QUANTITY,
 } = ActionTypes;
 
+// action -> destructured to type and payload
 export const productReducer = (state = initialState, { type, payload }) => {
 	switch (type) {
 		case SET_PRODUCTS:
@@ -33,46 +34,41 @@ export const selectedProductReducer = (state = {}, { type, payload }) => {
 	}
 };
 
-export const shop = (state = initialState, action) => {
-	let updatedCart;
-	let updatedItemIndex;
-
-	switch (action.type) {
-		case INCREMENT_CART_QUANTITY:
-			updatedCart = [...state.cart];
-			updatedItemIndex = updatedCart.findOne(
-				(item) => item.id === action.payload
-			);
-
-			const incrementItem = {
-				...updatedCart[updatedItemIndex],
-			};
-
-			incrementItem.quantity++;
-
-			updatedCart[updatedItemIndex] = incrementItem;
-
-			return { ...state, cart: updatedCart };
-
+export const shop = (state = initialState, { type, payload }) => {
+	let findProd;
+	switch (type) {
 		case ADD_PRODUCT_TO_CART:
-			updatedCart = [...state.cart];
-			updatedItemIndex = updatedCart.findIndex(
-				(item) => item.id === action.payload.id
-			);
-			if (updatedItemIndex < 0) {
-				updatedCart.push({ ...action.payload, quantity: 1 });
-			} else {
-				const updatedItem = {
-					...updatedCart[updatedItemIndex],
+			const { product, quantity } = payload;
+			console.log(product);
+			const check = state.products.find((prod) => prod.id === product.id);
+			if (!check) {
+				return {
+					...state,
+					products: [...state.products, product],
 				};
-
-				updatedItem.quantity++;
-				updatedCart[updatedItemIndex] = updatedItem;
+			} else {
+				return state;
 			}
-
-			return { ...state, cart: updatedCart };
-
+		case INCREMENT_CART_QUANTITY:
+			findProd = state.products.find((prod) => prod.id === payload);
 		default:
 			return state;
 	}
 };
+
+// updatedCart = [...state.cart];
+// 			updatedItemIndex = updatedCart.findIndex(
+// 				(item) => item.id === action.payload.id
+// 			);
+// 			if (updatedItemIndex < 0) {
+// 				updatedCart.push({ ...action.payload, quantity: 1 });
+// 			} else {
+// 				const updatedItem = {
+// 					...updatedCart[updatedItemIndex],
+// 				};
+
+// 				updatedItem.quantity++;
+// 				updatedCart[updatedItemIndex] = updatedItem;
+// 			}
+
+// 			return { ...state, cart: updatedCart };

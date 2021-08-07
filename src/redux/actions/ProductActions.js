@@ -1,3 +1,5 @@
+// All Of the Actions that your app would ne performing should be mentioned in this file.
+
 import { ActionTypes } from "../constants/ActionTypes";
 
 const {
