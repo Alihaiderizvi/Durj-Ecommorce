@@ -2,7 +2,8 @@ import { ActionTypes } from "../constants/ActionTypes";
 
 const initialState = {
 	products: [],
-	cart: [],
+	totalPrice: 0,
+	totalQty: 0,
 };
 
 const {
@@ -36,6 +37,7 @@ export const selectedProductReducer = (state = {}, { type, payload }) => {
 
 export const shop = (state = initialState, { type, payload }) => {
 	let findProd;
+	let index;
 	switch (type) {
 		case ADD_PRODUCT_TO_CART:
 			const { product, quantity } = payload;
@@ -49,8 +51,20 @@ export const shop = (state = initialState, { type, payload }) => {
 			} else {
 				return state;
 			}
+
 		case INCREMENT_CART_QUANTITY:
 			findProd = state.products.find((prod) => prod.id === payload);
+			index = state.products.findIndex((prod) => prod.id === payload);
+
+			findProd.quantity += 1;
+			state.products[index] = findProd;
+
+			return {
+				...state,
+				totalPrice: state.totalPrice,
+				totalQty: state.totalQty + 1,
+			};
+
 		default:
 			return state;
 	}
