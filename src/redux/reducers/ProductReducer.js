@@ -44,9 +44,14 @@ export const shop = (state = initialState, { type, payload }) => {
 			console.log(product);
 			const check = state.products.find((prod) => prod.id === product.id);
 			if (!check) {
+				const tPrice = state.totalPrice * quantity;
+				const tQty = state.totalQty + quantity;
+				product.quantity = quantity;
 				return {
 					...state,
 					products: [...state.products, product],
+					totalPrice: tPrice,
+					totalQty: tQty,
 				};
 			} else {
 				return state;

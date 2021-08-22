@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
 	Box,
 	Button,
@@ -15,6 +16,7 @@ import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import mainImage from "../../assets/product1.jpg";
 import StarOutlineIcon from "@material-ui/icons/StarOutline";
+import { useSelector, useDispatch } from "react-redux";
 // Css import
 import "../myCart/MyCart.css";
 
@@ -44,6 +46,12 @@ const StyledRating = withStyles({
 })(Rating);
 
 const MyCart = () => {
+	const dispatch = useDispatch();
+	const products = useSelector((state) => state.shop.products);
+
+	console.log(products.totalPrice);
+
+	const [quantity, setQuantity] = useState(1);
 	return (
 		<>
 			<Grid className='cart' container justify='center'>
@@ -75,23 +83,22 @@ const MyCart = () => {
 								</Tr>
 							</Thead>
 							<Tbody>
-								{data.map((item) => (
+								{products.map((item) => (
 									<Tr key={item.id}>
 										<Td className='cartTable__imageTd'>
 											<img
 												className='cartTable__image'
 												alt='ProductImage'
-												src={item.img}
+												src={item.image}
 											/>
 											<p>
-												PHILIPS BLENDER <br /> (HR2104/03)
+												{/* PHILIPS BLENDER <br /> (HR2104/03) */}
+												{item.title}
 											</p>
 										</Td>
 										<Td>{item.price}</Td>
-										<Td>{item.qty}</Td>
-										<Td style={{ color: "red", fontWeight: "700" }}>
-											{item.Subtotal}
-										</Td>
+										<Td>0</Td>
+										<Td style={{ color: "red", fontWeight: "700" }}>0</Td>
 										<Td className='cartTable__delBtn'>
 											<IconButton>
 												<DeleteForeverIcon />
