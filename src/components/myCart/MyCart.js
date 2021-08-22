@@ -49,7 +49,7 @@ const MyCart = () => {
 	const dispatch = useDispatch();
 	const products = useSelector((state) => state.shop.products);
 
-	console.log(products.totalPrice);
+	// console.log(products.totalPrice);
 
 	const [quantity, setQuantity] = useState(1);
 	return (
@@ -83,24 +83,28 @@ const MyCart = () => {
 								</Tr>
 							</Thead>
 							<Tbody>
-								{products.map((item) => (
-									<Tr key={item.id}>
+								{products.map((product) => (
+									<Tr key={product.id}>
 										<Td className='cartTable__imageTd'>
 											<img
 												className='cartTable__image'
 												alt='ProductImage'
-												src={item.image}
+												src={product.image}
 											/>
-											<p>
-												{/* PHILIPS BLENDER <br /> (HR2104/03) */}
-												{item.title}
-											</p>
+											<p>{product.title}</p>
 										</Td>
-										<Td>{item.price}</Td>
+										<Td>{product.price}</Td>
 										<Td>0</Td>
 										<Td style={{ color: "red", fontWeight: "700" }}>0</Td>
 										<Td className='cartTable__delBtn'>
-											<IconButton>
+											<IconButton
+												onClick={() => {
+													dispatch({
+														type: "REMOVE_ITEM",
+														payload: product.id,
+													});
+												}}
+											>
 												<DeleteForeverIcon />
 											</IconButton>
 										</Td>

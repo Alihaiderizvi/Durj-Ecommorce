@@ -8,6 +8,7 @@ const {
 	REMOVE_SELECTED_PRODUCT,
 	ADD_PRODUCT_TO_CART,
 	INCREMENT_CART_QUANTITY,
+	REMOVE_ITEM,
 } = ActionTypes;
 
 export const setProducts = (products) => {
@@ -39,5 +40,11 @@ export const addProductToCart = () => {
 export const incrementCartQuantity = () => {
 	return {
 		type: INCREMENT_CART_QUANTITY,
+	};
+};
+
+export const removeItem = () => {
+	return {
+		type: REMOVE_ITEM,
 	};
 };

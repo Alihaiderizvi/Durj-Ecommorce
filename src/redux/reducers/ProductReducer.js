@@ -12,6 +12,7 @@ const {
 	REMOVE_SELECTED_PRODUCT,
 	ADD_PRODUCT_TO_CART,
 	INCREMENT_CART_QUANTITY,
+	REMOVE_ITEM,
 } = ActionTypes;
 
 // action -> destructured to type and payload
@@ -70,24 +71,18 @@ export const shop = (state = initialState, { type, payload }) => {
 				totalQty: state.totalQty + 1,
 			};
 
+		case REMOVE_ITEM:
+			const findProduct = state.products.find((prod) => prod.id === payload);
+			const filtered = state.products.filter((prod) => prod.id !== payload);
+			console.log(filtered);
+
+			return {
+				...state,
+				products: filtered,
+				// totalPrice: state.totalPrice - findProduct.price * findProduct.quantity,
+				// totalQty: state.totalQty - findProduct.quantity,
+			};
 		default:
 			return state;
 	}
 };
-
-// updatedCart = [...state.cart];
-// 			updatedItemIndex = updatedCart.findIndex(
-// 				(item) => item.id === action.payload.id
-// 			);
-// 			if (updatedItemIndex < 0) {
-// 				updatedCart.push({ ...action.payload, quantity: 1 });
-// 			} else {
-// 				const updatedItem = {
-// 					...updatedCart[updatedItemIndex],
-// 				};
-
-// 				updatedItem.quantity++;
-// 				updatedCart[updatedItemIndex] = updatedItem;
-// 			}
-
-// 			return { ...state, cart: updatedCart };
