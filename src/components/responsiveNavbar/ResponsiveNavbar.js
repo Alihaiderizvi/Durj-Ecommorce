@@ -19,11 +19,6 @@ const ResponsiveNavbar = ({ backgorundColor, logo, navLinksColor }) => {
 						<IconButton style={{ color: "black" }}>
 							<MenuOutlinedIcon />
 						</IconButton>
-						{/* <div className='headerNav__hamburgerMenu'>
-							<div className='hamburger'></div>
-							<div className='hamburger'></div>
-							<div className='hamburger'></div>
-						</div> */}
 					</div>
 					<div className='headerNav__SearchBar'>
 						<input type='text' placeholder='What are you looking for'></input>

@@ -66,7 +66,16 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 	// };
 
 	// window.addEventListener("scroll", addHamburgerMenu);
-
+	// user = {
+	// 	id: 1,
+	// 	cartID: 001,
+	// 	cartItem: [
+	// 		{
+	// 			pName: "Mens Clothing",
+	// 			price: 1222,
+	// 		},
+	// 	],
+	// };
 	return (
 		<>
 			<nav className='navbar' style={{ backgroundColor: backgorundColor }}>

@@ -74,8 +74,6 @@ export const shop = (state = initialState, { type, payload }) => {
 		case REMOVE_ITEM:
 			const findProduct = state.products.find((prod) => prod.id === payload);
 			const filtered = state.products.filter((prod) => prod.id !== payload);
-			console.log(filtered);
-
 			return {
 				...state,
 				products: filtered,
