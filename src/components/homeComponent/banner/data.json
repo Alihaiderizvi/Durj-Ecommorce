@@ -1,0 +1,974 @@
+[
+    {
+        "id": 0,
+        "KAID": 1,
+        "title": "Kitchen Appliances",
+        "link": "/products",
+        "subCateory": [
+            {
+                "KAID": 1,
+                "Mobile_id": "01",
+                "title": "Mobile",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Mobile_id": "01",
+                        "item_id": "001",
+                        "title": "Mobile Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Mobile_id": "01",
+                        "item_id": "002",
+                        "title": "Mobile Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Tablet_id": "02",
+                "title": "Tablet",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Tablet_id": "02",
+                        "item_id": "002",
+                        "title": "Tablet Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Tablet_id": "01",
+                        "item_id": "002",
+                        "title": "Tablet Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Laptop_id": "03",
+                "title": "Laptop",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Laptop_id": "01",
+                        "item_id": "001",
+                        "title": "Laptop Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Laptop_id": "01",
+                        "item_id": "002",
+                        "title": "Laptop Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Desktop_id": "04",
+                "title": "Desktop",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Desktop_id": "01",
+                        "item_id": "001",
+                        "title": "Desktop Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Desktop_id": "01",
+                        "item_id": "002",
+                        "title": "Desktop Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Cameras_id": "05",
+                "title": "Cameras",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Cameras_id": "01",
+                        "item_id": "001",
+                        "title": "Camera Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Cameras_id": "01",
+                        "item_id": "002",
+                        "title": "Camera Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Smart_Tv_id": "01",
+                "title": "Smart Television",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Smart_Tv_id": "01",
+                        "item_id": "001",
+                        "title": "Smart Televison Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Smart_Tv_id": "01",
+                        "item_id": "002",
+                        "title": "Smart Television Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Led_Tv_id": "01",
+                "title": "Led Television",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Led_Tv_id": "01",
+                        "item_id": "001",
+                        "title": "Led Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Led_Tv_id": "01",
+                        "item_id": "002",
+                        "title": "Led Accessories",
+                        "link": "/products"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "EDID": 2,
+        "title": "Electronic Devices",
+        "link": "/products",
+        "subCateory": [
+            {
+                "KAID": 1,
+                "Mobile_id": "01",
+                "title": "Mobile",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Mobile_id": "01",
+                        "item_id": "001",
+                        "title": "Mobile Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Mobile_id": "01",
+                        "item_id": "002",
+                        "title": "Mobile Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Tablet_id": "02",
+                "title": "Tablet",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Tablet_id": "02",
+                        "item_id": "002",
+                        "title": "Tablet Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Tablet_id": "01",
+                        "item_id": "002",
+                        "title": "Tablet Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Laptop_id": "03",
+                "title": "Laptop",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Laptop_id": "01",
+                        "item_id": "001",
+                        "title": "Laptop Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Laptop_id": "01",
+                        "item_id": "002",
+                        "title": "Laptop Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Desktop_id": "04",
+                "title": "Desktop",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Desktop_id": "01",
+                        "item_id": "001",
+                        "title": "Desktop Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Desktop_id": "01",
+                        "item_id": "002",
+                        "title": "Desktop Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Cameras_id": "05",
+                "title": "Cameras",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Cameras_id": "01",
+                        "item_id": "001",
+                        "title": "Camera Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Cameras_id": "01",
+                        "item_id": "002",
+                        "title": "Camera Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Smart_Tv_id": "01",
+                "title": "Smart Television",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Smart_Tv_id": "01",
+                        "item_id": "001",
+                        "title": "Smart Televison Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Smart_Tv_id": "01",
+                        "item_id": "002",
+                        "title": "Smart Television Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Led_Tv_id": "01",
+                "title": "Led Television",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Led_Tv_id": "01",
+                        "item_id": "001",
+                        "title": "Led Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Led_Tv_id": "01",
+                        "item_id": "002",
+                        "title": "Led Accessories",
+                        "link": "/products"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "HLID": 3,
+        "title": "Home And Life Styles",
+        "link": "/products",
+        "subCateory": [
+            {
+                "KAID": 1,
+                "Mobile_id": "01",
+                "title": "Heater",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Mobile_id": "01",
+                        "item_id": "001",
+                        "title": "Mobile Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Mobile_id": "01",
+                        "item_id": "002",
+                        "title": "Mobile Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Tablet_id": "02",
+                "title": "Tablet",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Tablet_id": "02",
+                        "item_id": "002",
+                        "title": "Tablet Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Tablet_id": "01",
+                        "item_id": "002",
+                        "title": "Tablet Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Laptop_id": "03",
+                "title": "Laptop",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Laptop_id": "01",
+                        "item_id": "001",
+                        "title": "Laptop Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Laptop_id": "01",
+                        "item_id": "002",
+                        "title": "Laptop Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Desktop_id": "04",
+                "title": "Desktop",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Desktop_id": "01",
+                        "item_id": "001",
+                        "title": "Desktop Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Desktop_id": "01",
+                        "item_id": "002",
+                        "title": "Desktop Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Cameras_id": "05",
+                "title": "Cameras",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Cameras_id": "01",
+                        "item_id": "001",
+                        "title": "Camera Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Cameras_id": "01",
+                        "item_id": "002",
+                        "title": "Camera Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Smart_Tv_id": "01",
+                "title": "Smart Television",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Smart_Tv_id": "01",
+                        "item_id": "001",
+                        "title": "Smart Televison Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Smart_Tv_id": "01",
+                        "item_id": "002",
+                        "title": "Smart Television Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Led_Tv_id": "01",
+                "title": "Led Television",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Led_Tv_id": "01",
+                        "item_id": "001",
+                        "title": "Led Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Led_Tv_id": "01",
+                        "item_id": "002",
+                        "title": "Led Accessories",
+                        "link": "/products"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "WCID": 4,
+        "title": "Womens Collection",
+        "link": "/products",
+        "subCateory": [
+            {
+                "KAID": 1,
+                "Mobile_id": "01",
+                "title": "Mobile",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Mobile_id": "01",
+                        "item_id": "001",
+                        "title": "Mobile Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Mobile_id": "01",
+                        "item_id": "002",
+                        "title": "Mobile Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Tablet_id": "02",
+                "title": "Tablet",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Tablet_id": "02",
+                        "item_id": "002",
+                        "title": "Tablet Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Tablet_id": "01",
+                        "item_id": "002",
+                        "title": "Tablet Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Laptop_id": "03",
+                "title": "Laptop",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Laptop_id": "01",
+                        "item_id": "001",
+                        "title": "Laptop Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Laptop_id": "01",
+                        "item_id": "002",
+                        "title": "Laptop Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Desktop_id": "04",
+                "title": "Desktop",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Desktop_id": "01",
+                        "item_id": "001",
+                        "title": "Desktop Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Desktop_id": "01",
+                        "item_id": "002",
+                        "title": "Desktop Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Cameras_id": "05",
+                "title": "Cameras",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Cameras_id": "01",
+                        "item_id": "001",
+                        "title": "Camera Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Cameras_id": "01",
+                        "item_id": "002",
+                        "title": "Camera Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Smart_Tv_id": "01",
+                "title": "Smart Television",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Smart_Tv_id": "01",
+                        "item_id": "001",
+                        "title": "Smart Televison Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Smart_Tv_id": "01",
+                        "item_id": "002",
+                        "title": "Smart Television Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Led_Tv_id": "01",
+                "title": "Led Television",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Led_Tv_id": "01",
+                        "item_id": "001",
+                        "title": "Led Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Led_Tv_id": "01",
+                        "item_id": "002",
+                        "title": "Led Accessories",
+                        "link": "/products"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "MCID": 5,
+        "title": "Mens Collection",
+        "link": "/products",
+        "subCateory": [
+            {
+                "KAID": 1,
+                "Mobile_id": "01",
+                "title": "Mobile",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Mobile_id": "01",
+                        "item_id": "001",
+                        "title": "Mobile Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Mobile_id": "01",
+                        "item_id": "002",
+                        "title": "Mobile Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Tablet_id": "02",
+                "title": "Tablet",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Tablet_id": "02",
+                        "item_id": "002",
+                        "title": "Tablet Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Tablet_id": "01",
+                        "item_id": "002",
+                        "title": "Tablet Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Laptop_id": "03",
+                "title": "Laptop",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Laptop_id": "01",
+                        "item_id": "001",
+                        "title": "Laptop Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Laptop_id": "01",
+                        "item_id": "002",
+                        "title": "Laptop Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Desktop_id": "04",
+                "title": "Desktop",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Desktop_id": "01",
+                        "item_id": "001",
+                        "title": "Desktop Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Desktop_id": "01",
+                        "item_id": "002",
+                        "title": "Desktop Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Cameras_id": "05",
+                "title": "Cameras",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Cameras_id": "01",
+                        "item_id": "001",
+                        "title": "Camera Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Cameras_id": "01",
+                        "item_id": "002",
+                        "title": "Camera Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Smart_Tv_id": "01",
+                "title": "Smart Television",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Smart_Tv_id": "01",
+                        "item_id": "001",
+                        "title": "Smart Televison Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Smart_Tv_id": "01",
+                        "item_id": "002",
+                        "title": "Smart Television Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Led_Tv_id": "01",
+                "title": "Led Television",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Led_Tv_id": "01",
+                        "item_id": "001",
+                        "title": "Led Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Led_Tv_id": "01",
+                        "item_id": "002",
+                        "title": "Led Accessories",
+                        "link": "/products"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "KCID": 6,
+        "title": "Kids Collection",
+        "link": "/products",
+        "subCateory": [
+            {
+                "KAID": 1,
+                "Mobile_id": "01",
+                "title": "Mobile",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Mobile_id": "01",
+                        "item_id": "001",
+                        "title": "Mobile Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Mobile_id": "01",
+                        "item_id": "002",
+                        "title": "Mobile Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Tablet_id": "02",
+                "title": "Tablet",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Tablet_id": "02",
+                        "item_id": "002",
+                        "title": "Tablet Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Tablet_id": "01",
+                        "item_id": "002",
+                        "title": "Tablet Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Laptop_id": "03",
+                "title": "Laptop",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Laptop_id": "01",
+                        "item_id": "001",
+                        "title": "Laptop Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Laptop_id": "01",
+                        "item_id": "002",
+                        "title": "Laptop Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Desktop_id": "04",
+                "title": "Desktop",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Desktop_id": "01",
+                        "item_id": "001",
+                        "title": "Desktop Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Desktop_id": "01",
+                        "item_id": "002",
+                        "title": "Desktop Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Cameras_id": "05",
+                "title": "Cameras",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Cameras_id": "01",
+                        "item_id": "001",
+                        "title": "Camera Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Cameras_id": "01",
+                        "item_id": "002",
+                        "title": "Camera Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Smart_Tv_id": "01",
+                "title": "Smart Television",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Smart_Tv_id": "01",
+                        "item_id": "001",
+                        "title": "Smart Televison Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Smart_Tv_id": "01",
+                        "item_id": "002",
+                        "title": "Smart Television Accessories",
+                        "link": "/products"
+                    }
+                ]
+            },
+            {
+                "KAID": 1,
+                "Led_Tv_id": "01",
+                "title": "Led Television",
+                "link": "/products",
+                "items": [
+                    {
+                        "KAID": 1,
+                        "Led_Tv_id": "01",
+                        "item_id": "001",
+                        "title": "Led Devices",
+                        "link": "/products"
+                    },
+                    {
+                        "KAID": 1,
+                        "Led_Tv_id": "01",
+                        "item_id": "002",
+                        "title": "Led Accessories",
+                        "link": "/products"
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -5,6 +5,8 @@ import banner2 from "../../../assets/slider.png";
 import banner1 from "../../../assets/category_Products_banner.png";
 import "../banner/Banner.css";
 import Categories from "./Categories";
+import name from "./data.json";
+import SubCategrories from "./SubCategrories";
 
 const images = [
 	{ id: 1, img: banner1 },
@@ -22,6 +24,23 @@ const images = [
 		id: 6,
 		img: "https://laz-img-cdn.alicdn.com/images/ims-web/TB18bZYWlr0gK0jSZFnXXbRRXXa.jpg_1200x1200.jpg",
 	},
+];
+
+const Category = [
+	{ id: 1, title: "Kitchen Appliances", link: "/products" },
+	{ id: 2, title: "Electronic Devices", link: "/products" },
+	{ id: 3, title: "Home & Lifestyle", link: "/products" },
+	{ id: 4, title: "Womens Collection", link: "/products" },
+	{ id: 5, title: "Mens Collection", link: "/products" },
+	{ id: 6, title: "Kids Collection", link: "/login" },
+];
+const SubCategory = [
+	{ id: 1, title: "Kitchen Appliances", link: "/products" },
+	{ id: 2, title: "Electronic Devices", link: "/products" },
+	{ id: 3, title: "Home & Lifestyle", link: "/products" },
+	{ id: 4, title: "Womens Collection", link: "/products" },
+	{ id: 5, title: "Mens Collection", link: "/products" },
+	{ id: 6, title: "Kids Collection", link: "/login" },
 ];
 
 const Banner = () => {
@@ -42,7 +61,13 @@ const Banner = () => {
 
 	return (
 		<div className='banner'>
-			{showCategory && <Categories customCateogry={customCss} />}
+			{showCategory && (
+				<Categories title='Categories' data={name} customCateogry={customCss} />
+			)}
+			{/* {showCategory && <SubCategrories customCateogry={customCssSubCategory} />} */}
+			{/* {showCategory && (
+				<Categories data={Category} customCateogry={customCssSubCategory} />
+			)} */}
 			<Carousel
 				className='image__carousel'
 				showArrows={false}
@@ -67,5 +92,5 @@ export default Banner;
 const customCss = {
 	display: "flex",
 	justifyContent: "center",
-	width: "25%",
+	width: "30%",
 };

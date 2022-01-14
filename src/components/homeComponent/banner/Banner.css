@@ -28,8 +28,19 @@
 	text-align: center;
 	letter-spacing: 6px;
 }
+.bannerCategory__listTwo {
+	font-family: "Bebas Neue";
+	font-size: 30px;
+	text-align: center;
+	letter-spacing: 6px;
+}
 
 .bannerCategoryList__content {
+	text-decoration: none !important;
+	color: #16243e !important;
+	font-family: "Roboto", sans-serif;
+}
+.bannerCategoryList__contentTwo {
 	text-decoration: none !important;
 	color: #16243e !important;
 	font-family: "Roboto", sans-serif;
@@ -43,6 +54,36 @@
 .MuiListItemText-root:hover {
 	color: #1a9cb7;
 	background-color: #eceff1;
+}
+
+/*  Custom Scroll bar */
+
+.customCssSubCategory {
+	display: flex;
+	justify-content: center;
+	padding: 0 2rem;
+	overflow-y: scroll;
+}
+
+.force-overflow {
+	min-height: 450px;
+}
+
+.customCssSubCategory::-webkit-scrollbar-track {
+	/* border: 5px solid #fa5051; */
+	padding: 2px 0;
+	background-color: #fff;
+}
+
+.customCssSubCategory::-webkit-scrollbar {
+	width: 6px;
+}
+
+.customCssSubCategory::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	box-shadow: inset 0 0 18px #16243e;
+	background-color: #fff;
+	border: 2px solid #16243e;
 }
 
 @media screen and (max-width: 1165px) {
