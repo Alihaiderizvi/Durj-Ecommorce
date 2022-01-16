@@ -4,6 +4,7 @@ import NavbarComponent from "../../components/navbarComponent/NavbarComponent";
 import logo from "../../assets/logo.png";
 import HomeTop from "../../components/homeComponent/homeTop/HomeTop";
 import LoginComp from "../../components/loginComponent/LoginComp";
+
 const Login = () => {
 	return (
 		<>

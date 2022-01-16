@@ -4,12 +4,6 @@ import { List, ListItemText } from "@material-ui/core";
 import name from "./data.json";
 import SubCategrories from "./SubCategrories";
 
-const test = name.map((a) => {
-	return a.subCateory.map((sub) => {
-		return sub;
-	});
-});
-
 const Categories = ({ customCateogry, title, data }) => {
 	console.log("data", data);
 	const [id, setId] = useState(null);

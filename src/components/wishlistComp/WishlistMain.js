@@ -12,10 +12,18 @@ import {
 
 const WishlistMain = (props) => {
 	// Data Fetch from api
-
+	const [counter, setCounter] = useState(0);
 	const products = useSelector((state) => state.allProducts.products);
 	const dispatch = useDispatch();
-
+	const addedProducts = useSelector((state) => state.shop.products);
+	console.log("addedProduct", addedProducts);
+	let arr = [];
+	addedProducts.map((a) => {
+		arr.push(a.price);
+		return Math.round(arr);
+	});
+	let total = arr.reduce((a, b) => a + b, 0);
+	// console.log(total);
 	const fetchProducts = async () => {
 		const res = await axios
 			.get("https://fakestoreapi.com/products")
@@ -27,6 +35,13 @@ const WishlistMain = (props) => {
 		dispatch(setProducts(res.data));
 	};
 
+	// const AddProduct = () => {
+	// 	setCounter(counter + 1);
+	// 	dispatch({
+	// 		type: "ADD_PRODUCT_TO_CART",
+	// 		payload: { product, total, counter },
+	// 	});
+	// }
 	useEffect(() => {
 		fetchProducts();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -65,7 +80,7 @@ const WishlistMain = (props) => {
 					// backgroundColor: "transparent",
 				}}
 			>
-				{products.map((product) => (
+				{products?.map((product) => (
 					<div className='wishlist__product' key={product.id}>
 						<div id='wrapper'>
 							<img
@@ -88,9 +103,10 @@ const WishlistMain = (props) => {
 							fullWidth
 							justify='center'
 							onClick={() => {
+								setCounter(counter + 1);
 								dispatch({
 									type: "ADD_PRODUCT_TO_CART",
-									payload: { product },
+									payload: { product, total, counter },
 								});
 							}}
 						>

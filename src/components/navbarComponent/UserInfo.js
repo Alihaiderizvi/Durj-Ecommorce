@@ -1,6 +1,7 @@
 // React Imports
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // Material icons
 import MoreVertIcon from "@material-ui/icons/MoreVert";
@@ -17,6 +18,9 @@ import MenuItem from "@material-ui/core/MenuItem";
 
 // Material Ui Style
 import { withStyles } from "@material-ui/styles";
+
+// Redux
+import { useDispatch, useSelector } from "react-redux";
 
 const StyledMenu = withStyles({
 	paper: {
@@ -43,6 +47,9 @@ const StyledMenuItem = MenuItem;
 const UserInfo = () => {
 	// User Info Responsive Menu Icon
 	const [anchorEl, setAnchorEl] = useState(null);
+	const history = useHistory();
+	const dispatch = useDispatch();
+
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
@@ -51,6 +58,10 @@ const UserInfo = () => {
 		setAnchorEl(null);
 	};
 
+	const handleLogout = () => {
+		history.push("/");
+		dispatch({ type: "LOGOUT" });
+	};
 	return (
 		<>
 			<IconButton onClick={handleClick}>
@@ -114,7 +125,11 @@ const UserInfo = () => {
 					<ListItemIcon>
 						<ExitToAppRoundedIcon fontSize='small' style={{ color: "black" }} />
 					</ListItemIcon>
-					<Link to='/' style={{ color: "#16243e", textDecoration: "none" }}>
+					<Link
+						to='/'
+						onClick={() => handleLogout()}
+						style={{ color: "#16243e", textDecoration: "none" }}
+					>
 						Logout
 					</Link>
 				</StyledMenuItem>

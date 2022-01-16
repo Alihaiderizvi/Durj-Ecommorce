@@ -16,10 +16,14 @@ import NavbarRes from "./NavbarRes";
 import UserInfo from "./UserInfo";
 import Categories from "../homeComponent/banner/Categories";
 
+// Redux
+import { useDispatch, useSelector } from "react-redux";
+
 const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 	// Hamburger Content
 	const [showCategory, setShowCategory] = useState(false);
-
+	const cart = useSelector((state) => state.shop.products);
+	// console.log("length", cart);
 	// DropDowns
 	const [resizeable, setResizeObserver] = useState(
 		window.innerWidth > 649 ? true : false
@@ -122,7 +126,7 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 								</Link>
 							</li>
 							<Badge
-								badgeContent={4}
+								badgeContent={cart.length > 0 ? cart.length : 0}
 								color='secondary'
 								anchorOrigin={{
 									vertical: "top",

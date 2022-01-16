@@ -14,7 +14,12 @@ import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
 import Reservation from "./pages/reservation/Reservation";
 
+// Redux
+import { useDispatch, useSelector } from "react-redux";
+
 function App() {
+	const isLogin = useSelector((state) => state.user.isLogin);
+	console.log("login ", isLogin);
 	return (
 		<>
 			<Switch>
@@ -25,10 +30,13 @@ function App() {
 					<Route path='/products' component={Products} />
 					<Route path='/product/:productId' component={ProductDetails} />
 					<Route path='/cart' component={Cart} />
-					<Route path='/wishlist' component={Wishlist} />
-					<Route path='/reservation' component={Reservation} />
+					<Route path='/wishlist' component={isLogin ? Wishlist : Login} />
+					<Route
+						path='/reservation'
+						component={isLogin ? Reservation : Login}
+					/>
 					<Route path='/checkout' component={Checkout} />
-					<Route component={Error} />
+					{/* <Route component={Error} /> */}
 				</BrowserRouter>
 			</Switch>
 		</>

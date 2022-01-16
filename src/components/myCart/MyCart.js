@@ -48,10 +48,16 @@ const StyledRating = withStyles({
 const MyCart = () => {
 	const dispatch = useDispatch();
 	const products = useSelector((state) => state.shop.products);
-
-	// console.log(products.totalPrice);
+	console.log(products);
+	const subTotalPrice = useSelector((state) => state.shop.subTotal);
+	const totalQuantity = useSelector((state) => state.shop.totalQty);
+	const totalPrice = useSelector((state) => state.shop.totalPrice);
+	console.log("toal", subTotalPrice);
 
 	const [quantity, setQuantity] = useState(1);
+
+	const CalculatePricePerItem = () => {};
+
 	return (
 		<>
 			<Grid className='cart' container justify='center'>
@@ -167,7 +173,7 @@ const MyCart = () => {
 										fontWeight: "600",
 									}}
 								>
-									Rs. 50,000
+									Rs. {Math.round(subTotalPrice)}
 								</Typography>
 							</div>
 							<div className='cartRightDivSummary_child '>
@@ -181,7 +187,7 @@ const MyCart = () => {
 										marginBottom: "10px",
 									}}
 								>
-									Rs. 2,500
+									Rs. 150
 								</Typography>
 							</div>
 							<Divider />
@@ -194,7 +200,7 @@ const MyCart = () => {
 										fontWeight: "600",
 									}}
 								>
-									Rs. 52,500
+									Rs. {Math.round(subTotalPrice + 150)}
 								</Typography>
 							</div>
 						</div>
