@@ -4,28 +4,20 @@ import { List, ListItemText } from "@material-ui/core";
 import name from "./data.json";
 import { useEffect } from "react";
 
-const Category = [
-	{ id: 1, title: "Kitchen Appliances", link: "/products" },
-	{ id: 2, title: "Electronic Devices", link: "/products" },
-	{ id: 3, title: "Home & Lifestyle", link: "/products" },
-	{ id: 4, title: "Womens Collection", link: "/products" },
-	{ id: 5, title: "Mens Collection", link: "/products" },
-	{ id: 6, title: "Kids Collection", link: "/login" },
-];
+const SubCategrories = ({ id, data }) => {
+	// const test2 = data.map((a) => {
+	// 	return a;
+	// });
 
-const test = name.map((a) => {
-	return a.subCateory.map((sub) => {
-		return sub;
-	});
-});
+	console.log("object", data);
+	console.log(id);
 
-console.log("test", test[0]);
-console.log("name", name);
-
-const SubCategrories = ({ id }) => {
+	// return;
+	const test2 = data.map((f) => f.subcategories.map((r) => r.subcategory_name));
+	console.log("object 2 ", test2[id]);
 	return (
 		<>
-			{id !== null ? (
+			{/* {id !== null ? (
 				<div className='customCssSubCategory'>
 					<List className='bannerCategory__listTwo'>
 						{id !== null ? (
@@ -47,7 +39,7 @@ const SubCategrories = ({ id }) => {
 				</div>
 			) : (
 				<></>
-			)}
+			)} */}
 		</>
 	);
 };

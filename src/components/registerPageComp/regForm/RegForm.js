@@ -55,7 +55,6 @@ const RegForm = () => {
 			phone: data?.number ? data?.number : "",
 			password: data?.pass ? data?.pass : "",
 		};
-		const URLs = "https://durj.api.magneetech.com/public/api/customer/create";
 		console.log("dta reg", dataToSend);
 		await post(URL.register, dataToSend)
 			.then((res) => {

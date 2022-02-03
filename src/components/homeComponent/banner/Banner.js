@@ -26,23 +26,6 @@ const images = [
 	},
 ];
 
-const Category = [
-	{ id: 1, title: "Kitchen Appliances", link: "/products" },
-	{ id: 2, title: "Electronic Devices", link: "/products" },
-	{ id: 3, title: "Home & Lifestyle", link: "/products" },
-	{ id: 4, title: "Womens Collection", link: "/products" },
-	{ id: 5, title: "Mens Collection", link: "/products" },
-	{ id: 6, title: "Kids Collection", link: "/login" },
-];
-const SubCategory = [
-	{ id: 1, title: "Kitchen Appliances", link: "/products" },
-	{ id: 2, title: "Electronic Devices", link: "/products" },
-	{ id: 3, title: "Home & Lifestyle", link: "/products" },
-	{ id: 4, title: "Womens Collection", link: "/products" },
-	{ id: 5, title: "Mens Collection", link: "/products" },
-	{ id: 6, title: "Kids Collection", link: "/login" },
-];
-
 const Banner = () => {
 	const [showCategory, setShowCategory] = useState(
 		window.innerWidth > 1165 ? true : false
