@@ -76,9 +76,10 @@ const UserInfo = () => {
 	};
 
 	const handleLogout = () => {
+		if (loginStatus === true) notify("Logged Out!");
 		history.push("/");
 		dispatch({ type: "LOGOUT" });
-		if (loginStatus === false) notify("Logged Out!");
+		if (loginStatus === false) notify("Already Logged Out!");
 	};
 	return (
 		<>
