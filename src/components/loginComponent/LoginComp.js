@@ -49,6 +49,7 @@ const LoginComp = () => {
 	const dispatch = useDispatch();
 	const history = useHistory();
 	const [loader, setLoader] = useState(false);
+	let login = useSelector((state) => state.user.isLogin);
 
 	const notify = (message) => {
 		toast.success(message, {
@@ -61,26 +62,45 @@ const LoginComp = () => {
 			progress: undefined,
 		});
 	};
+	const Error = (message) => {
+		toast.success(message, {
+			position: "bottom-left",
+			autoClose: 2000,
+			hideProgressBar: true,
+			closeOnClick: true,
+			pauseOnHover: false,
+			draggable: true,
+			progress: undefined,
+		});
+	};
+
+	useEffect(() => {
+		if (login) {
+			Error("Already Logged In!");
+			history.push("/");
+		}
+	}, []);
 
 	const postCredentials = async (data) => {
-		// console.log("post", data);
 		let dataToSend = {
 			email: data?.email ? data?.email : "",
 			password: data?.pass ? data?.pass : "",
 		};
 		console.log("dts", dataToSend);
+		console.log("URL", URL.login);
 		await post(URL.login, dataToSend)
 			.then((res) => {
-				console.log(res);
+				console.log("login", res);
 				if (res?.message === "success") {
-					notify("Success");
+					notify("Logged In! 😄");
 					dispatch({
 						type: "LOGIN",
 						payload: res?.data,
 					});
 					history.push("/");
-				} else {
-					alert("Invalid Credentials");
+				}
+				if (res?.status === 401) {
+					notify("Invalid ID/Password");
 				}
 			})
 			.catch((err) => console.log({ err }));
@@ -88,7 +108,7 @@ const LoginComp = () => {
 	};
 
 	const onSubmit = async (values) => {
-		// console.log("data", values);
+		console.log("data", values);
 		setLoader(true);
 		postCredentials(values);
 	};

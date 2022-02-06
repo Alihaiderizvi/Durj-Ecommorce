@@ -22,7 +22,7 @@ const Home = () => {
 				navLinksColor='#16243e'
 			/>
 			<Banner />
-			<DealSection />
+			{/* <DealSection /> */}
 			<TopSellingComp />
 			<FeatureCateogy />
 			<SubBanner />

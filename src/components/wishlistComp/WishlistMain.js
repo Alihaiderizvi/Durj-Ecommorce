@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import {
+	addProductToCart,
 	// addProductToCart,
 	setProducts,
 } from "../../redux/actions/ProductActions";
+import { post, URL } from "../../services/Api";
 
 const WishlistMain = (props) => {
 	// Data Fetch from api
@@ -30,6 +32,7 @@ const WishlistMain = (props) => {
 			.catch((err) => {
 				console.log("Error", err);
 			});
+		console.log("res wish", res?.data);
 		// Once we get the res we need to add this to our store
 		// For this we need to Dispatch & Action(SET_PRODUCT)
 		dispatch(setProducts(res.data));
@@ -44,7 +47,6 @@ const WishlistMain = (props) => {
 	// }
 	useEffect(() => {
 		fetchProducts();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	// Modal
@@ -64,6 +66,24 @@ const WishlistMain = (props) => {
 		return e.target.alt;
 	};
 
+	const addToCart = (product) => {
+		let postCart = async () => {
+			const dataToSend = {
+				customer_id: 1,
+				product_id: 1,
+				quantity: 2,
+			};
+			await post(URL.addToCart, dataToSend).then((res) => {
+				console.log("res add", res);
+			});
+		};
+		postCart();
+		setCounter(counter + 1);
+		dispatch({
+			type: "ADD_PRODUCT_TO_CART",
+			payload: { product, total, counter },
+		});
+	};
 	return (
 		<>
 			<div className='wishlistMain'>
@@ -102,13 +122,15 @@ const WishlistMain = (props) => {
 							className='wishlist__addToCartBtn'
 							fullWidth
 							justify='center'
-							onClick={() => {
-								setCounter(counter + 1);
-								dispatch({
-									type: "ADD_PRODUCT_TO_CART",
-									payload: { product, total, counter },
-								});
-							}}
+							onClick={() => addToCart(product)}
+							// onClick={() => {
+
+							// 	setCounter(counter + 1);
+							// 	dispatch({
+							// 		type: "ADD_PRODUCT_TO_CART",
+							// 		payload: { product, total, counter },
+							// 	});
+							// }}
 						>
 							<Link className='link'>Add To Cart</Link>
 						</Button>

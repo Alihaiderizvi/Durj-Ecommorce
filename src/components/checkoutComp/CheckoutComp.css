@@ -132,7 +132,7 @@
 }
 
 .checkoutTable__image:hover {
-	transform: scale(2, 2);
+	transform: scale(1.25, 1.25);
 	cursor: pointer;
 	z-index: 9999;
 }

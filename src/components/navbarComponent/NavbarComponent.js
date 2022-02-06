@@ -23,6 +23,9 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 	// Hamburger Content
 	const [showCategory, setShowCategory] = useState(false);
 	const cart = useSelector((state) => state.shop.products);
+	const userCartItem = useSelector(
+		(state) => state?.user?.user?.no_of_cart_items
+	);
 	// console.log("length", cart);
 	// DropDowns
 	const [resizeable, setResizeObserver] = useState(
@@ -126,7 +129,10 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 								</Link>
 							</li>
 							<Badge
-								badgeContent={cart.length > 0 ? cart.length : 0}
+								// badgeContent={cart.length > 0 ? cart.length : 0}
+								badgeContent={
+									userCartItem ? userCartItem + cart?.length : cart?.length
+								}
 								color='secondary'
 								anchorOrigin={{
 									vertical: "top",

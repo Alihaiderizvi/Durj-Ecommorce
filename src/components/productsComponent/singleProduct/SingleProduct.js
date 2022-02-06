@@ -11,6 +11,15 @@ import { ShoppingCart } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 import "../singleProduct/SingleProduct.css";
 import CartModal from "../singleProduct/CartModal";
+import axios from "axios";
+import { URL } from "../../../services/Api";
+import { Link, useHistory, useParams } from "react-router-dom";
+import {
+	selectedProduct,
+	// addProductToCart,
+	setProducts,
+} from "../../../redux/actions/ProductActions";
+import { useDispatch, useSelector } from "react-redux";
 const datas = [
 	{
 		id: 1,
@@ -174,6 +183,24 @@ const firstIndex = 0;
 
 const SingleProduct = () => {
 	const classes = useStyles();
+	const params = useParams();
+	const dispatch = useDispatch();
+	console.log("params", params.productId);
+	const [product, setProduct] = useState();
+	const getProduct = async () => {
+		await axios
+			.get(`${URL.product}/${params.productId}`)
+			.then((res) => {
+				console.log("res single", res?.data?.data[0]);
+				setProduct(res?.data?.data);
+				dispatch(selectedProduct(res?.data?.data[0]));
+			})
+			.catch((err) => console.log("Error", err));
+	};
+	console.log("pro", product);
+	useEffect(() => {
+		getProduct();
+	}, []);
 
 	// -----------------------Pagination
 
@@ -217,20 +244,28 @@ const SingleProduct = () => {
 					justifyContent: "space-evenly",
 				}}
 			>
-				{data.map((item) => (
-					<Card className='singleProduct__cart' key={item.id}>
-						<div className='singleProduct_IconBtnDiv'>
-							<IconButton style={{ zIndex: 1 }}>
-								<ShoppingCart />
-							</IconButton>
-						</div>
-						<img className={classes.media} src={item.image} alt={item.label} />
-						<CartModal />
-
-						<Typography align='center'>{item.label}</Typography>
-						<Typography align='center'>{item.price}</Typography>
-					</Card>
-				))}
+				{product?.length > 0 ? (
+					product?.map((item) => (
+						<Card className='singleProduct__cart' key={item.id}>
+							<div className='singleProduct_IconBtnDiv'>
+								<IconButton style={{ zIndex: 1 }}>
+									<ShoppingCart />
+								</IconButton>
+							</div>
+							<img
+								className={classes.media}
+								src={item?.image_url}
+								alt={item?.brand}
+							/>
+							<CartModal />
+							<Typography align='center'>{item?.brand}</Typography>
+							<Typography align='center'>{item.actual_price}</Typography>
+							<Link to={`/product/${item?.id}`}>details</Link>
+						</Card>
+					))
+				) : (
+					<h1 style={{ color: "#000000" }}>This Product is out of stock</h1>
+				)}
 			</div>
 			<Box className='box rightBox' style={{ marginTop: "15px" }}>
 				<Pagination

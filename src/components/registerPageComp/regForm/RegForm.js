@@ -30,6 +30,17 @@ const RegForm = () => {
 			progress: undefined,
 		});
 	};
+	const Error = (message) => {
+		toast.success(message, {
+			position: "bottom-left",
+			autoClose: 2000,
+			hideProgressBar: true,
+			closeOnClick: true,
+			pauseOnHover: false,
+			draggable: true,
+			progress: undefined,
+		});
+	};
 
 	const validate = (values) => {
 		const errors = {};
@@ -48,19 +59,22 @@ const RegForm = () => {
 	};
 
 	const PostForm = async (data) => {
-		console.log("data Post", data);
+		console.log("data Post", data?.Dob);
 		let dataToSend = {
 			user_name: data?.fullName ? data?.fullName : "",
 			email: data?.email ? data?.email : "",
 			phone: data?.number ? data?.number : "",
 			password: data?.pass ? data?.pass : "",
+			date_of_birth: data?.Dob ? data?.Dob : "",
+			gender: data?.gender ? data?.gender : "",
 		};
 		console.log("dta reg", dataToSend);
 		await post(URL.register, dataToSend)
 			.then((res) => {
-				notify("Success");
-				history.push("/Durj-Ecommorce/login");
-				if (res?.status === 200) {
+				console.log("res", res);
+				if (res?.data?.status === 200) {
+					notify("Success");
+					history.push("/Durj-Ecommorce/login");
 				} else {
 					alert("Invalid Credentials");
 				}
@@ -175,6 +189,7 @@ const RegForm = () => {
 										name='Dob'
 										margin='normal'
 										dateFunsUtils={DateFnsUtils}
+										dateFormat='Pp'
 									/>
 
 									{/* Gender */}

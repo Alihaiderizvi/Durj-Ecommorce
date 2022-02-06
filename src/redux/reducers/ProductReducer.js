@@ -92,6 +92,6 @@ export const shop = (state = initialState, { type, payload }) => {
 		// 	};
 
 		default:
-			return { ...state };
+			return state;
 	}
 };

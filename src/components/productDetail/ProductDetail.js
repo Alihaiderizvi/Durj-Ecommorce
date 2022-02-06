@@ -18,23 +18,25 @@ import {
 	selectedProduct,
 	removeSelectedProduct,
 } from "../../redux/actions/ProductActions";
+import { URL } from "../../services/Api";
 
 const ProductDetail = () => {
 	// Fetching product
 	const product = useSelector((state) => state.product);
-	const { image, title, price, description } = product;
+	console.log("product", product);
+	const { image_url, title, actual_price, description } = product;
 	const { productId } = useParams();
+
 	const dispatch = useDispatch();
-	// console.log(product);
 
 	const fetchProductDetail = async (id) => {
 		const res = await axios
-			.get(`https://fakestoreapi.com/products/${id}`)
+			// .get(`https://fakestoreapi.com/products/${id}`)
+			.get(`${URL.productDetails}/${id}`)
 			.catch((err) => {
 				console.log("Error:", err);
 			});
-
-		dispatch(selectedProduct(res.data));
+		console.log("res", res?.data?.data);
 	};
 
 	useEffect(() => {
@@ -42,7 +44,6 @@ const ProductDetail = () => {
 		return () => {
 			dispatch(removeSelectedProduct());
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [productId]);
 
 	// Product Ratings
@@ -81,13 +82,13 @@ const ProductDetail = () => {
 				<Grid container className='productDetail'>
 					<div item className='productDetail_leftSection'>
 						<div className='productDetail__mainImage'>
-							<img src={image} alt={title} />
+							<img src={image_url} alt={title} />
 						</div>
 						<div className='ProductDetail__imgs'>
-							<img src={image} alt={title} />
-							<img src={image} alt={title} />
-							<img src={image} alt={title} />
-							<img src={image} alt={title} />
+							<img src={image_url} alt={title} />
+							<img src={image_url} alt={title} />
+							<img src={image_url} alt={title} />
+							<img src={image_url} alt={title} />
 						</div>
 					</div>
 					<div item className='productDetail_RightSection'>
@@ -157,7 +158,7 @@ const ProductDetail = () => {
 								fontFamily: "Bebas Neue",
 							}}
 						>
-							RS. {price} PKR
+							RS. {actual_price} PKR
 						</Typography>
 
 						{/* Product Quantity */}

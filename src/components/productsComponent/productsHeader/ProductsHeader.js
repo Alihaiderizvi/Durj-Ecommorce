@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
 import banner1 from "../../../assets/category_Products_banner.png";
 import banner2 from "../../../assets/slider.png";
+import axios from "axios";
+import { URL } from "../../../services/Api";
+import { useEffect } from "react";
 const images = [
 	{
 		id: 1,
@@ -44,7 +47,7 @@ const ProductsHeader = () => {
 				infiniteLoop
 				autoPlay={true}
 			>
-				{images.map((item) => (
+				{images?.map((item) => (
 					<div className='image__slider' key={item.id}>
 						<img src={item.img} alt='img' />
 					</div>

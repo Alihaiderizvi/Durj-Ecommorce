@@ -22,6 +22,10 @@ import { withStyles } from "@material-ui/styles";
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 
+// Notistack
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const StyledMenu = withStyles({
 	paper: {
 		border: "1px solid #d3d4d5",
@@ -49,6 +53,19 @@ const UserInfo = () => {
 	const [anchorEl, setAnchorEl] = useState(null);
 	const history = useHistory();
 	const dispatch = useDispatch();
+	const loginStatus = useSelector((state) => state.user.isLogin);
+
+	const notify = (message) => {
+		toast.success(message, {
+			position: "bottom-left",
+			autoClose: 2000,
+			hideProgressBar: true,
+			closeOnClick: true,
+			pauseOnHover: false,
+			draggable: true,
+			progress: undefined,
+		});
+	};
 
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
@@ -61,6 +78,7 @@ const UserInfo = () => {
 	const handleLogout = () => {
 		history.push("/");
 		dispatch({ type: "LOGOUT" });
+		if (loginStatus === false) notify("Logged Out!");
 	};
 	return (
 		<>
