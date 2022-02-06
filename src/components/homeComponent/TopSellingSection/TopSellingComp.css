@@ -67,7 +67,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 }
 /* Top Selling Product  */
 .topSelling__Product {
@@ -97,11 +97,12 @@
 	justify-content: center;
 	cursor: pointer;
 	width: 100%;
-	position: relative;
+	/* position: relative; */
 	bottom: 15px;
 	background-color: #16243e;
 	margin: auto;
-	margin-top: -5px;
+	/* margin-top: -5px; */
+	border-bottom: 1.5px solid;
 }
 
 .topSellingQuickView__Btn {
