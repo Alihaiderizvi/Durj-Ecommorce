@@ -11,6 +11,11 @@ export const URL = {
 	productDetails: `${baseURL}/product`,
 	products: `${baseURL}/products`,
 	addToCart: `${baseURL}/cart/add`,
+	cart: `${baseURL}/cart`,
+	wishlist: `${baseURL}/wishlist`,
+	addWishlist: `${baseURL}/wishlist/add`,
+	reservation: `${baseURL}/reservation`,
+	addReservation: `${baseURL}/reservation/add`,
 };
 
 export const headers = {

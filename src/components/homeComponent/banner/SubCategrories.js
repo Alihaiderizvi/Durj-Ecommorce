@@ -1,43 +1,73 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { List, ListItemText } from "@material-ui/core";
+import { IconButton, List, ListItemText } from "@material-ui/core";
 import name from "./data.json";
 import { useEffect } from "react";
 import axios from "axios";
 import { URL } from "../../../services/Api";
 import { useHistory } from "react-router-dom";
+import { BiMobileAlt } from "react-icons/bi";
+import { SiDsautomobiles } from "react-icons/si";
+import { ImCross } from "react-icons/im";
 
-const SubCategrories = ({ id, data }) => {
-	// const test2 = data.map((a) => {
-	// 	return a;
-	// });
-
-	console.log("object", data);
-	console.log("id: ", id);
+const SubCategrories = ({ id, data, subCatShow, setSub }) => {
 	const [cat, setCat] = useState();
+	const [te, setTe] = useState(false);
 	const handleClick = (category) => {
 		setCat(category);
 	};
-	// return;
 	const test2 = data.map((f) => f.subcategories.map((r) => r));
-	console.log("object 2 ", cat);
+	console.log("reqqqqqqqq subCatShow", subCatShow);
+	// useEffect(() => {
+	// 	if (subCatShow === true) setTe(true);
+	// }, [subCatShow]);
+	// console.log("reqqqqqqqq te2", te);
 	return (
 		<>
-			{id !== null ? (
-				<div className='customCssSubCategory'>
+			{subCatShow === true && id !== null ? (
+				<div style={customCssSubCategory}>
 					<List className='bannerCategory__listTwo'>
+						{/* <h3 style={{ fontSize: "2rem" }}>Sub-Categories</h3> */}
+						<div style={{ textAlign: "end" }}>
+							<IconButton
+								onClick={() => {
+									setSub(false);
+									console.log("reqqqqqqqq te", te);
+								}}
+							>
+								<ImCross
+									style={{
+										fontSize: "15px",
+										color: "#f50057",
+										cursor: "pointer",
+									}}
+								/>
+							</IconButton>
+						</div>
 						{id !== null ? (
 							test2[id - 1].map((category) => (
 								<>
 									{console.log("cat", category)}
 									<ListItemText key={category?.id}>
-										<p
-											to={category?.link}
-											onClick={() => handleClick(category)}
-											className='bannerCategoryList__contentTwo'
+										<div
+											style={{
+												display: "flex",
+												// justifyContent: "center",
+												alignItems: "center",
+											}}
+											onClick={() => {
+												handleClick(category);
+												setTe(true);
+											}}
 										>
-											{category?.subcategory_name}
-										</p>
+											<BiMobileAlt style={{ marginRight: "2rem" }} />
+											<p
+												to={category?.link}
+												className='bannerCategoryList__contentTwo'
+											>
+												{category?.subcategory_name}
+											</p>
+										</div>
 									</ListItemText>
 								</>
 							))
@@ -49,12 +79,27 @@ const SubCategrories = ({ id, data }) => {
 			) : (
 				<></>
 			)}
-			<ProductType category={cat} />
+			{cat !== undefined && (
+				<ProductType category={cat} te={te} setTe={setTe} />
+			)}
 		</>
 	);
 };
 
-const ProductType = ({ category }) => {
+const customCssSubCategory = {
+	display: "flex",
+	justifyContent: "center",
+	overflowY: "scroll",
+	minWidth: "18%",
+};
+const customCssSubCategory2 = {
+	display: "flex",
+	justifyContent: "center",
+	overflowY: "scroll",
+	minWidth: "20%",
+};
+
+const ProductType = ({ category, te, setTe }) => {
 	// console.log("Category ID:", category?.subcategory_id);
 	// console.log("Product ID:", category?.product_types[0]?.sub_category_id);
 	// console.log(
@@ -66,22 +111,44 @@ const ProductType = ({ category }) => {
 		console.log("p", p);
 	};
 	return (
-		<div className='customCssSubCategory'>
-			<List className='bannerCategory__listTwo'>
-				{category?.subcategory_id ===
-					category?.product_types[0]?.sub_category_id &&
-					category?.product_types.map((product) => (
-						<ListItemText>
-							<p
-								className='bannerCategoryList__contentTwo'
-								onClick={handleProduct(product)}
-							>
-								<Product item={product} />
-							</p>
-						</ListItemText>
-					))}
-			</List>
-		</div>
+		<>
+			{te === true && (
+				<div style={customCssSubCategory2}>
+					<List className='bannerCategory__listTwo'>
+						{/* <h3 style={{ fontSize: "2rem" }}>Product Types</h3> */}
+						<div style={{ textAlign: "end" }}>
+							<IconButton onClick={() => setTe(false)}>
+								<ImCross
+									style={{
+										fontSize: "15px",
+										color: "#f50057",
+										cursor: "pointer",
+									}}
+								/>
+							</IconButton>
+						</div>
+						{category?.subcategory_id ===
+							category?.product_types[0]?.sub_category_id &&
+							category?.product_types.map((product) => (
+								<ListItemText>
+									<div
+										style={{
+											display: "flex",
+											alignItems: "center",
+										}}
+										onClick={handleProduct(product)}
+									>
+										<SiDsautomobiles style={{ marginRight: "2rem" }} />
+										<p className='bannerCategoryList__contentTwo'>
+											<Product item={product} />
+										</p>
+									</div>
+								</ListItemText>
+							))}
+					</List>
+				</div>
+			)}
+		</>
 	);
 };
 

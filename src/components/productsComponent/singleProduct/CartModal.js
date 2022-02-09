@@ -38,7 +38,7 @@ const CartModal = () => {
 	return (
 		<>
 			<div className='quickView__btn'>
-				<button onClick={handleOpen}>Quick View</button>
+				{/* <button onClick={handleOpen}>Quick View</button> */}
 
 				<Modal
 					aria-labelledby='transition-modal-title'

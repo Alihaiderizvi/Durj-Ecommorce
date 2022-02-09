@@ -5,11 +5,11 @@ import name from "./data.json";
 import SubCategrories from "./SubCategrories";
 import { get, post, URL } from "../../../services/Api";
 import axios from "axios";
-
+import { MdDevices } from "react-icons/md";
 const Categories = ({ customCateogry, title, data }) => {
 	console.log("navbar data", data);
 	const [categoryData, setCategoryData] = useState([]);
-	const [categoryData2, setCategoryData2] = useState([]);
+	const [subCatShow, setSubCatShow] = useState(false);
 	const [id, setId] = useState(null);
 	console.log("id", id);
 
@@ -33,13 +33,22 @@ const Categories = ({ customCateogry, title, data }) => {
 					<h3 style={{ fontSize: "2rem" }}>{title}</h3>
 					{categoryData?.map((category, index) => (
 						<ListItemText key={index}>
-							<p
-								onClick={() => setId(category.category_id)}
-								// onMouseOut={() => setId(null)}
-								className='bannerCategoryList__content'
+							<div
+								style={{
+									display: "flex",
+									alignItems: "center",
+								}}
+								onClick={() => {
+									setId(category.category_id);
+									setSubCatShow(true);
+								}}
 							>
-								{category.category_name}
-							</p>
+								<MdDevices style={{ marginRight: "25px" }} />
+								{/* <img src={category?.category_icon} alt='icon' /> */}
+								<p className='bannerCategoryList__content'>
+									{category.category_name}
+								</p>
+							</div>
 						</ListItemText>
 					))}
 				</List>
@@ -47,18 +56,11 @@ const Categories = ({ customCateogry, title, data }) => {
 			<SubCategrories
 				data={categoryData}
 				id={id}
-				customCssSubCategory={customCssSubCategory}
+				subCatShow={subCatShow}
+				setSub={setSubCatShow}
 			/>
 		</>
 	);
-};
-
-const customCssSubCategory = {
-	display: "flex",
-	justifyContent: "center",
-	paddingTop: "6rem",
-	overflowY: "scroll",
-	width: "30%",
 };
 
 export default Categories;

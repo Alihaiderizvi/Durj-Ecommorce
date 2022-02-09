@@ -101,6 +101,10 @@
 .productDetails__functionalbtns {
 	margin: 30px 0;
 }
+.productDetails__functionalbtns2 {
+	margin-top: -10px;
+	margin-bottom: 15px;
+}
 
 /* Media Quries */
 
