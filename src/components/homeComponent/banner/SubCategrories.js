@@ -89,14 +89,16 @@ const SubCategrories = ({ id, data, subCatShow, setSub }) => {
 const customCssSubCategory = {
 	display: "flex",
 	justifyContent: "center",
-	overflowY: "scroll",
+	overflowY: "auto",
 	minWidth: "18%",
+	borderLeft: "2px solid #000000",
 };
 const customCssSubCategory2 = {
 	display: "flex",
 	justifyContent: "center",
-	overflowY: "scroll",
+	overflowY: "auto",
 	minWidth: "20%",
+	borderLeft: "2px solid #000000",
 };
 
 const ProductType = ({ category, te, setTe }) => {
