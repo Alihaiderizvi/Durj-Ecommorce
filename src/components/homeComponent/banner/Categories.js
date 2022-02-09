@@ -43,8 +43,12 @@ const Categories = ({ customCateogry, title, data }) => {
 									setSubCatShow(true);
 								}}
 							>
-								<MdDevices style={{ marginRight: "25px" }} />
-								{/* <img src={category?.category_icon} alt='icon' /> */}
+								{/* <MdDevices style={{ marginRight: "25px" }} /> */}
+								<img
+									src={category?.category_icon}
+									alt=''
+									style={{ marginRight: "20px" }}
+								/>
 								<p className='bannerCategoryList__content'>
 									{category.category_name}
 								</p>
