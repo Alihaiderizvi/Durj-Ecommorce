@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Button, Fade, Modal } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Backdrop from "@material-ui/core/Backdrop";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
+import { URL } from "../../../services/Api";
 const useStyles = makeStyles((theme) => ({
 	modal: {
 		display: "flex",
@@ -20,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CartModal = () => {
 	const classes = useStyles();
+	const params = useParams();
 	// ----------------------Quick view Modal
 
 	const [open, setOpen] = useState(false);
@@ -35,7 +38,7 @@ const CartModal = () => {
 	return (
 		<>
 			<div className='quickView__btn'>
-				<button onClick={handleOpen}>Quick View</button>
+				{/* <button onClick={handleOpen}>Quick View</button> */}
 
 				<Modal
 					aria-labelledby='transition-modal-title'
@@ -54,7 +57,11 @@ const CartModal = () => {
 							<h2 id='transition-modal-title'>Transition modal</h2>
 							<p id='transition-modal-description'>
 								<Button>
-									<Link to='/productDetail'>View Full Details</Link>
+									<p
+									// onClick={handleClick()}
+									>
+										View Full Details
+									</p>
 								</Button>
 							</p>
 						</div>

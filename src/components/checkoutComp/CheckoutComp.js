@@ -13,6 +13,8 @@ import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import mainImage from "../../assets/product1.jpg";
 
 import "../checkoutComp/CheckoutComp.css";
+import { useDispatch, useSelector } from "react-redux";
+import { removeSelectedProduct } from "../../redux/actions/ProductActions";
 
 const data = [
 	{ id: 1, img: mainImage, price: "Rs.19.99 PKR", qty: 4, Subtotal: "10,000" },
@@ -23,15 +25,19 @@ const data = [
 const CheckoutComp = () => {
 	// Quantity Count
 	const [count, setCount] = useState(0);
-
+	const dispatch = useDispatch();
+	const cartProducts = useSelector((state) => state.shop.products);
+	const cartProductsSubTotal = useSelector((state) => state.shop.subTotal);
+	console.log("cart", cartProducts);
 	const handleIncrement = () => {
 		setCount((prevCount) => prevCount + 1);
 	};
 
 	const handleDecrement = () => {
 		setCount((prevCount) => prevCount - 1);
-		if (setCount < 0) {
-			return 0;
+		if (count <= 0) {
+			alert("Removed");
+			// return dispatch(removeSelectedProduct());
 		}
 	};
 
@@ -64,7 +70,11 @@ const CheckoutComp = () => {
 							SHIPPING METHOD
 						</Typography>
 						<hr />
-						<div style={{ margin: "10px 0px 0px 20px" }}>
+						<div
+							style={{
+								margin: "10px 0px 0px 20px",
+							}}
+						>
 							<Typography className='checkout__subHeading'>
 								Flat Rate
 							</Typography>
@@ -133,7 +143,13 @@ const CheckoutComp = () => {
 					</Typography>
 					<hr />
 
-					<div style={{ margin: "10px 0px 0px 20px" }}>
+					<div
+						style={{
+							margin: "10px 0px 0px 20px",
+							height: "550px",
+							overflowY: "scroll",
+						}}
+					>
 						<Table>
 							<br />
 							<Thead>
@@ -144,19 +160,19 @@ const CheckoutComp = () => {
 								</Tr>
 							</Thead>
 							<Tbody>
-								{data.map((item) => (
+								{cartProducts?.map((item) => (
 									<Tr key={item.id}>
 										<Td className='cartTable__imageTd'>
 											<img
 												className='checkoutTable__image'
 												alt='RecentViewedImage'
-												src={item.img}
+												src={item?.image}
 											/>
 										</Td>
 										<Td>
 											<div className='productDeatails__quantityBar'>
 												<button className='productDetails__qyualityBtn'>
-													<AddIcon onClick={handleIncrement} />
+													<AddIcon onClick={() => handleIncrement()} />
 												</button>
 												<Typography
 													style={{
@@ -167,12 +183,12 @@ const CheckoutComp = () => {
 													{count}
 												</Typography>
 												<button className='productDetails__qyualityBtn'>
-													<RemoveIcon onClick={handleDecrement} />
+													<RemoveIcon onClick={() => handleDecrement()} />
 												</button>
 											</div>
 										</Td>
 										<Td style={{ color: "red", fontWeight: "700" }}>
-											{item.Subtotal}
+											Rs.{item?.price}
 										</Td>
 										<Divider className='divider' />
 									</Tr>
@@ -189,19 +205,23 @@ const CheckoutComp = () => {
 							<Typography align='left' className='checkoutOrderTotal__headings'>
 								Sub Total
 							</Typography>
-							<Typography>Rs 2,994</Typography>
+							<Typography>
+								Rs.{cartProductsSubTotal ? cartProductsSubTotal : 0}
+							</Typography>
 						</div>
 						<div className='checkout__orderTotal'>
 							<Typography className='checkoutOrderTotal__headings'>
 								Shipping
 							</Typography>
-							<Typography>Rs. 200</Typography>
+							<Typography>Rs. 150</Typography>
 						</div>
 						<div className='checkout__orderTotal'>
 							<Typography className='checkoutOrderTotal__headings'>
 								Grand Total
 							</Typography>
-							<Typography>Rs. 3,500</Typography>
+							<Typography>
+								Rs.{cartProductsSubTotal ? cartProductsSubTotal + 150 : 150}
+							</Typography>
 						</div>
 					</div>
 				</Grid>

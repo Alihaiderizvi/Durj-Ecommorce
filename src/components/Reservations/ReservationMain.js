@@ -10,30 +10,41 @@ import {
 	addProductToCart,
 	setProducts,
 } from "../../redux/actions/ProductActions";
+import { post, URL } from "../../services/Api";
+import {
+	EmailShareButton,
+	WhatsappShareButton,
+	FacebookMessengerShareButton,
+} from "react-share";
 
 const ReservationMain = (props) => {
-	// Data Fetch from api
-
-	const products = useSelector((state) => state.allProducts.products);
+	// Hooks
 	const dispatch = useDispatch();
+	const [counter, setCounter] = useState(0);
+	const [products, setProducts] = useState();
+
+	// Redux selectors
+	const user = useSelector((state) => state?.user?.user);
+	const addedProducts = useSelector((state) => state?.shop?.products);
+
+	// consoles
+	console.log("user", user);
+	console.log("addedProduct", addedProducts);
+	console.log("p", products);
 
 	const fetchProducts = async () => {
-		const res = await axios
-			.get("https://fakestoreapi.com/products")
-			.catch((err) => {
-				console.log("Error", err);
-			});
-		// Once we get the res we need to add this to our store
-		// For this we need to Dispatch & Action(SET_PRODUCT)
-		dispatch(setProducts(res.data));
+		let dataToSend = {
+			customer_id: user?.id,
+		};
+		await post(URL.reservation, dataToSend)
+			.then((res) => setProducts(res?.customer_reserved_products))
+			.catch((err) => console.error("Error:", err));
 	};
 
 	useEffect(() => {
 		fetchProducts();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	// Modal
 	const [open, setOpen] = useState(false);
 
 	const handleOpen = () => {
@@ -56,7 +67,7 @@ const ReservationMain = (props) => {
 				<h1 className='wishlistMain__heading'>RESERVATIONS </h1>
 			</div>
 
-			<Paper
+			{/* <Paper
 				style={{
 					display: "flex",
 					flexWrap: "wrap",
@@ -125,13 +136,15 @@ const ReservationMain = (props) => {
 						</div>
 					</Fade>
 				</Modal>
-			</Paper>
+			</Paper> */}
 			<div className='wishlist__threeBtns'>
 				<Button variant='contained' fullWidth className='WishlistBtns'>
 					Update Reservation
 				</Button>
 				<Button variant='contained' fullWidth className='WishlistBtns'>
-					Share Reservation
+					<FacebookMessengerShareButton>
+						Share Reservation
+					</FacebookMessengerShareButton>
 				</Button>
 				<Button variant='contained' fullWidth className='WishlistBtns'>
 					<Link to='/cart' style={{ color: "#fff", textDecoration: "none" }}>

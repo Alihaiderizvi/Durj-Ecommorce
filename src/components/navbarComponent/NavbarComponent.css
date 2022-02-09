@@ -14,6 +14,13 @@ html {
 	display: none !important;
 }
 
+.dataResult {
+	height: 8rem;
+	overflow: hidden;
+	width: 65%;
+	overflow-y: auto;
+	margin: auto;
+}
 /*  Header Wrapper  */
 .headerNav__wrapper {
 	display: flex;
@@ -21,6 +28,7 @@ html {
 	justify-content: space-between;
 	width: 90%;
 	margin: auto;
+	padding: 10px 0;
 }
 
 /* Header Logo */
@@ -40,10 +48,13 @@ html {
 
 /* Header Search bar */
 .headerNav__SearchBar {
-	display: flex;
+	/* display: flex; */
 	justify-content: center;
 	align-items: center;
-	width: calc(100% + 200px) !important;
+	/* width: calc(100% + 200px) !important; */
+	margin-top: 1rem;
+	width: 100%;
+	text-align: center;
 }
 
 .headerNav__SearchBar > input {

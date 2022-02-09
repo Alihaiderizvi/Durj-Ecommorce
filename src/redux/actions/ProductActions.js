@@ -9,6 +9,7 @@ const {
 	ADD_PRODUCT_TO_CART,
 	INCREMENT_CART_QUANTITY,
 	REMOVE_ITEM,
+	SUB_TOTAL_OF_PRODUCTS,
 } = ActionTypes;
 
 export const setProducts = (products) => {
@@ -46,5 +47,11 @@ export const incrementCartQuantity = () => {
 export const removeItem = () => {
 	return {
 		type: REMOVE_ITEM,
+	};
+};
+
+export const subTotalOfProducts = () => {
+	return {
+		type: SUB_TOTAL_OF_PRODUCTS,
 	};
 };

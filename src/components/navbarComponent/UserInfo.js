@@ -1,6 +1,7 @@
 // React Imports
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // Material icons
 import MoreVertIcon from "@material-ui/icons/MoreVert";
@@ -17,6 +18,13 @@ import MenuItem from "@material-ui/core/MenuItem";
 
 // Material Ui Style
 import { withStyles } from "@material-ui/styles";
+
+// Redux
+import { useDispatch, useSelector } from "react-redux";
+
+// Notistack
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const StyledMenu = withStyles({
 	paper: {
@@ -43,6 +51,22 @@ const StyledMenuItem = MenuItem;
 const UserInfo = () => {
 	// User Info Responsive Menu Icon
 	const [anchorEl, setAnchorEl] = useState(null);
+	const history = useHistory();
+	const dispatch = useDispatch();
+	const loginStatus = useSelector((state) => state.user.isLogin);
+
+	const notify = (message) => {
+		toast.success(message, {
+			position: "bottom-left",
+			autoClose: 2000,
+			hideProgressBar: true,
+			closeOnClick: true,
+			pauseOnHover: false,
+			draggable: true,
+			progress: undefined,
+		});
+	};
+
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
@@ -51,6 +75,12 @@ const UserInfo = () => {
 		setAnchorEl(null);
 	};
 
+	const handleLogout = () => {
+		if (loginStatus === true) notify("Logged Out!");
+		history.push("/");
+		dispatch({ type: "LOGOUT" });
+		if (loginStatus === false) notify("Already Logged Out!");
+	};
 	return (
 		<>
 			<IconButton onClick={handleClick}>
@@ -114,7 +144,11 @@ const UserInfo = () => {
 					<ListItemIcon>
 						<ExitToAppRoundedIcon fontSize='small' style={{ color: "black" }} />
 					</ListItemIcon>
-					<Link to='/' style={{ color: "#16243e", textDecoration: "none" }}>
+					<Link
+						to='/'
+						onClick={() => handleLogout()}
+						style={{ color: "#16243e", textDecoration: "none" }}
+					>
 						Logout
 					</Link>
 				</StyledMenuItem>

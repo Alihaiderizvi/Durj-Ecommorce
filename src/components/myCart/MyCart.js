@@ -19,6 +19,9 @@ import StarOutlineIcon from "@material-ui/icons/StarOutline";
 import { useSelector, useDispatch } from "react-redux";
 // Css import
 import "../myCart/MyCart.css";
+import { useEffect } from "react";
+// Services
+import { post, URL } from "../../services/Api";
 
 const data = [
 	{ id: 1, img: mainImage, price: "Rs.19.99 PKR", qty: 4, Subtotal: "10,000" },
@@ -48,10 +51,34 @@ const StyledRating = withStyles({
 const MyCart = () => {
 	const dispatch = useDispatch();
 	const products = useSelector((state) => state.shop.products);
+	const user = useSelector((state) => state?.user?.user);
+	const subTotalPrice = useSelector((state) => state.shop.subTotal);
+	const totalQuantity = useSelector((state) => state.shop.totalQty);
+	const shopProducts = useSelector((state) => state.shop.products);
+	const totalPrice = useSelector((state) => state.shop.totalPrice);
+	console.log("toal", subTotalPrice);
 
-	// console.log(products.totalPrice);
-
+	console.log(products);
 	const [quantity, setQuantity] = useState(1);
+
+	const CalculatePricePerItem = () => {};
+	const [pro, setPro] = useState();
+	useEffect(() => {
+		const cartItems = async () => {
+			let dataToSend = {
+				customer_id: user?.id,
+			};
+			let data = [];
+			await post(URL.cart, dataToSend).then((res) => {
+				console.log("res cart", res?.customer_cart);
+				data = [...products, ...res?.customer_cart];
+				setPro(data);
+			});
+		};
+		cartItems();
+	}, []);
+
+	console.log("cart", pro);
 	return (
 		<>
 			<Grid className='cart' container justify='center'>
@@ -83,7 +110,7 @@ const MyCart = () => {
 								</Tr>
 							</Thead>
 							<Tbody>
-								{products.map((product) => (
+								{products?.map((product) => (
 									<Tr key={product.id}>
 										<Td className='cartTable__imageTd'>
 											<img
@@ -167,7 +194,7 @@ const MyCart = () => {
 										fontWeight: "600",
 									}}
 								>
-									Rs. 50,000
+									Rs. {Math.round(subTotalPrice)}
 								</Typography>
 							</div>
 							<div className='cartRightDivSummary_child '>
@@ -181,7 +208,7 @@ const MyCart = () => {
 										marginBottom: "10px",
 									}}
 								>
-									Rs. 2,500
+									Rs. 150
 								</Typography>
 							</div>
 							<Divider />
@@ -194,7 +221,7 @@ const MyCart = () => {
 										fontWeight: "600",
 									}}
 								>
-									Rs. 52,500
+									Rs. {Math.round(subTotalPrice + 150)}
 								</Typography>
 							</div>
 						</div>

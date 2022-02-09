@@ -13,36 +13,42 @@ import "../productDetail/ProductDetail.css";
 import { withStyles } from "@material-ui/styles";
 import DetailTabBar from "./DetailTabBar";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import {
 	selectedProduct,
 	removeSelectedProduct,
 } from "../../redux/actions/ProductActions";
+import { post, URL } from "../../services/Api";
 
 const ProductDetail = () => {
 	// Fetching product
 	const product = useSelector((state) => state.product);
-	const { image, title, price, description } = product;
+	const isLogin = useSelector((state) => state?.user?.isLogin);
+	const user = useSelector((state) => state?.user?.user);
+	console.log("product", product);
+	const { image_url, title, actual_price, description } = product;
 	const { productId } = useParams();
+	toast.configure();
 	const dispatch = useDispatch();
-	// console.log(product);
-
+	const [data, setData] = useState();
 	const fetchProductDetail = async (id) => {
 		const res = await axios
-			.get(`https://fakestoreapi.com/products/${id}`)
+			// .get(`https://fakestoreapi.com/products/${id}`)
+			.get(`${URL.product}/${productId}`)
 			.catch((err) => {
 				console.log("Error:", err);
 			});
-
-		dispatch(selectedProduct(res.data));
+		setData(res?.data?.data[0]);
+		console.log("res", res?.data?.data[0]);
 	};
+	console.log("result", data);
 
 	useEffect(() => {
 		if (productId && productId !== "") fetchProductDetail(productId);
 		return () => {
 			dispatch(removeSelectedProduct());
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [productId]);
 
 	// Product Ratings
@@ -57,7 +63,17 @@ const ProductDetail = () => {
 	})(Rating);
 
 	// Product: Quantity
-
+	const notify = (message) => {
+		toast.success(message, {
+			position: "bottom-left",
+			autoClose: 2000,
+			hideProgressBar: true,
+			closeOnClick: true,
+			pauseOnHover: false,
+			draggable: true,
+			progress: undefined,
+		});
+	};
 	const [count, setCount] = useState(0);
 
 	const handleIncrement = () => {
@@ -71,9 +87,34 @@ const ProductDetail = () => {
 		}
 	};
 
+	const handleWishList = () => {
+		let dataToSend = {
+			product_id: product?.id,
+			customer_id: user?.id,
+		};
+		post(URL.addWishlist, dataToSend)
+			.then((res) => {
+				console.log("res", res);
+				notify("Product Added To Wishlist");
+			})
+			.catch((err) => console.error(err));
+	};
+
+	const handleReservation = () => {
+		let dataToSend = {
+			product_id: product?.id,
+			customer_id: user?.id,
+		};
+		post(URL.addReservation, dataToSend)
+			.then((res) => {
+				console.log("res", res);
+				notify("Product Reserved For 30Days.");
+			})
+			.catch((err) => console.error(err));
+	};
 	return (
 		<>
-			{Object.keys(product).length === 0 ? (
+			{data?.length === 0 ? (
 				<h1 style={{ textAlign: "center", fontFamily: "Bebas Neue" }}>
 					Loading...
 				</h1>
@@ -81,13 +122,13 @@ const ProductDetail = () => {
 				<Grid container className='productDetail'>
 					<div item className='productDetail_leftSection'>
 						<div className='productDetail__mainImage'>
-							<img src={image} alt={title} />
+							<img src={data?.image_url} alt={data?.title} />
 						</div>
 						<div className='ProductDetail__imgs'>
-							<img src={image} alt={title} />
-							<img src={image} alt={title} />
-							<img src={image} alt={title} />
-							<img src={image} alt={title} />
+							<img src={data?.image_url} alt={data?.title} />
+							<img src={data?.image_url} alt={data?.title} />
+							<img src={data?.image_url} alt={data?.title} />
+							<img src={data?.image_url} alt={data?.title} />
 						</div>
 					</div>
 					<div item className='productDetail_RightSection'>
@@ -101,7 +142,7 @@ const ProductDetail = () => {
 								fontFamily: "Bebas Neue",
 							}}
 						>
-							{title}
+							{data?.title.substring(0, 55)}
 						</Typography>
 
 						{/* Ratings */}
@@ -157,7 +198,7 @@ const ProductDetail = () => {
 								fontFamily: "Bebas Neue",
 							}}
 						>
-							RS. {price} PKR
+							RS. {data?.actual_price} PKR
 						</Typography>
 
 						{/* Product Quantity */}
@@ -211,10 +252,46 @@ const ProductDetail = () => {
 								Add to cart
 							</Button>
 						</div>
+						{isLogin && (
+							<div className='productDetails__functionalbtns2'>
+								<Button
+									variant='contained'
+									color='secondary'
+									startIcon={<ShopIcon />}
+									style={{
+										backgroundColor: "#002347",
+									}}
+									onClick={handleWishList}
+								>
+									<Link
+										style={{
+											color: "#fff",
+											textDecoration: "none",
+											fontWeight: "500",
+										}}
+									>
+										Add To WishList
+									</Link>
+								</Button>
+								<Button
+									variant='contained'
+									style={{
+										backgroundColor: "#ff4f4f",
+										color: "#fff",
+										fontWeight: "500",
+										marginLeft: "15px",
+									}}
+									startIcon={<AddShoppingCartIcon />}
+									onClick={handleReservation}
+								>
+									Reserve
+								</Button>
+							</div>
+						)}
 					</div>
 				</Grid>
 			)}
-			<DetailTabBar title={title} description={description} />
+			<DetailTabBar title={data?.title} description={data?.description} />
 		</>
 	);
 };

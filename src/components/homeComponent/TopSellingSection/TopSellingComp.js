@@ -20,6 +20,9 @@ import Rating from "@material-ui/lab/Rating";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 
+// Redux
+import { useDispatch, useSelector } from "react-redux";
+
 const products = [
 	{
 		id: 1,
@@ -53,6 +56,8 @@ const StyledRating = withStyles({
 const TopSellingComp = () => {
 	// Modal
 	const [open, setOpen] = useState(false);
+	const [counter, setCounter] = useState();
+	const dispatch = useDispatch();
 
 	const handleOpen = () => {
 		setOpen(true);
@@ -87,7 +92,16 @@ const TopSellingComp = () => {
 							<section>
 								<div className='topSelling__Product'>
 									<IconButton className='topSellingCart__Icon'>
-										<ShoppingCartOutlinedIcon style={{ color: "Black" }} />
+										<ShoppingCartOutlinedIcon
+											style={{ color: "Black" }}
+											onClick={() => {
+												setCounter(counter + 1);
+												dispatch({
+													type: "ADD_PRODUCT_TO_CART",
+													payload: { product, counter },
+												});
+											}}
+										/>
 									</IconButton>
 									<div className='topSellingProduct__Image'>
 										<img src={product.image} alt={product.name} />

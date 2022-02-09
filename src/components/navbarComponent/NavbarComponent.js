@@ -6,6 +6,7 @@ import PersonAddRoundedIcon from "@material-ui/icons/PersonAddRounded";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import MenuOutlinedIcon from "@material-ui/icons/MenuOutlined";
+import CloseIcon from "@material-ui/icons/Close";
 // Material Ui
 import { Button, IconButton } from "@material-ui/core";
 import Badge from "@material-ui/core/Badge";
@@ -16,10 +17,21 @@ import NavbarRes from "./NavbarRes";
 import UserInfo from "./UserInfo";
 import Categories from "../homeComponent/banner/Categories";
 
+// Redux
+import { useDispatch, useSelector } from "react-redux";
+import { URL } from "../../services/Api";
+
 const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 	// Hamburger Content
 	const [showCategory, setShowCategory] = useState(false);
-
+	const cart = useSelector((state) => state.shop.products);
+	const products = useSelector((state) => state.allProducts.products);
+	const [filteredData, setFilteredData] = useState([]);
+	const [wordEntered, setWordEntered] = useState("");
+	const userCartItem = useSelector(
+		(state) => state?.user?.user?.total_cart_items
+	);
+	// console.log("length", cart);
 	// DropDowns
 	const [resizeable, setResizeObserver] = useState(
 		window.innerWidth > 649 ? true : false
@@ -29,7 +41,24 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 	const [categoryHamburger, setCategoryHamburger] = useState(
 		window.innerWidth > 1165 ? false : true
 	);
+	// Filter Data
+	const handleFilter = (event) => {
+		const searchedWord = event.target.value;
+		setWordEntered(searchedWord);
+		const newFilter = products.filter((value) => {
+			return value.title.toLowerCase().includes(wordEntered.toLowerCase());
+		});
+		if (searchedWord === "") {
+			setFilteredData([]);
+		} else {
+			setFilteredData(newFilter);
+		}
+	};
 
+	const handleClear = () => {
+		setFilteredData([]);
+		setWordEntered("");
+	};
 	useEffect(() => {
 		const eventHandler = () => {
 			if (window.innerWidth < 1165) {
@@ -54,28 +83,6 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 		window.addEventListener("resize", eventHandler);
 	}, []);
 
-	// Navbar Hamburger On Scroll
-	// const [navbar, setNavbar] = useState(false);
-
-	// const addHamburgerMenu = () => {
-	// 	if (window.scrollY >= 400) {
-	// 		setNavbar(true);
-	// 	} else {
-	// 		setNavbar(false);
-	// 	}
-	// };
-
-	// window.addEventListener("scroll", addHamburgerMenu);
-	// user = {
-	// 	id: 1,
-	// 	cartID: 001,
-	// 	cartItem: [
-	// 		{
-	// 			pName: "Mens Clothing",
-	// 			price: 1222,
-	// 		},
-	// 	],
-	// };
 	return (
 		<>
 			<nav className='navbar' style={{ backgroundColor: backgorundColor }}>
@@ -101,11 +108,56 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 
 					{/* SearchBar */}
 					<div className='headerNav__SearchBar'>
-						<input type='text' placeholder='What are you looking for?'></input>
-						<Button className='headerNavSearchBar__btn'>
-							<SearchRoundedIcon className='headerNavSearchBar__icon' />
-						</Button>
+						<input
+							type='text'
+							placeholder='What are you looking for?'
+							onChange={handleFilter}
+							value={wordEntered}
+						/>
+						{filteredData.length === 0 ? (
+							<Button className='headerNavSearchBar__btn'>
+								<SearchRoundedIcon className='headerNavSearchBar__icon' />
+							</Button>
+						) : (
+							<Button className='headerNavSearchBar__btn' onClick={handleClear}>
+								<CloseIcon className='headerNavSearchBar__icon' />
+							</Button>
+						)}
+						{filteredData.length !== 0 && (
+							<div className='dataResult'>
+								{filteredData.slice(0, 15).map((value, key) => (
+									<a
+										key={key}
+										className='dataItem'
+										href={`/product/${value?.id}`}
+										style={{
+											color: "#000000",
+											textDecoration: "none",
+											display: "flex",
+											alignItems: "center",
+											marginTop: "15px",
+											justifyContent: "space-around",
+										}}
+									>
+										<p
+											style={{
+												marginBottom: "10px",
+												width: "50%",
+											}}
+										>
+											{value.title}
+										</p>
+										<img
+											style={{ height: "85px", width: "115px" }}
+											src={value.image_url}
+											alt={value.brand}
+										/>
+									</a>
+								))}
+							</div>
+						)}
 					</div>
+
 					<Button className='headerNavSearchBar__ResBtn'>
 						<SearchRoundedIcon className='headerNavSearchBar__Resicon' />
 					</Button>
@@ -122,7 +174,10 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 								</Link>
 							</li>
 							<Badge
-								badgeContent={4}
+								// badgeContent={cart.length > 0 ? cart.length : 0}
+								badgeContent={
+									userCartItem ? userCartItem + cart?.length : cart?.length
+								}
 								color='secondary'
 								anchorOrigin={{
 									vertical: "top",

@@ -11,8 +11,28 @@ import logo from "../../assets/logo.png";
 import HomeTop from "../../components/homeComponent/homeTop/HomeTop";
 import TopSellingComp from "../../components/homeComponent/TopSellingSection/TopSellingComp";
 import DealSection from "../../components/homeComponent/dealSection/DealSection";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { setProducts } from "../../redux/actions/ProductActions";
+import { URL } from "../../services/Api";
 
 const Home = () => {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		const products = async () => {
+			const res = await axios.get(URL?.products).catch((err) => {
+				console.log("Error", err);
+			});
+			console.log("res wish", res?.data?.data);
+			// Once we get the res we need to add this to our store
+			// For this we need to Dispatch & Action(SET_PRODUCT)
+			dispatch(setProducts(res?.data?.data));
+		};
+		products();
+	}, []);
+
 	return (
 		<div>
 			<HomeTop />
@@ -22,7 +42,7 @@ const Home = () => {
 				navLinksColor='#16243e'
 			/>
 			<Banner />
-			<DealSection />
+			{/* <DealSection /> */}
 			<TopSellingComp />
 			<FeatureCateogy />
 			<SubBanner />
