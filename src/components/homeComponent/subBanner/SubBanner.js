@@ -11,7 +11,7 @@ const SubBanner = () => {
 		bannerImg: {
 			width: "100%",
 			height: "auto",
-			maxHeight: "300px",
+			maxHeight: "340px",
 		},
 	}));
 	const classes = useStyles();

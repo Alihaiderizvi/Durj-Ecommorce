@@ -22,7 +22,7 @@ import "../myCart/MyCart.css";
 import { useEffect } from "react";
 // Services
 import { post, URL } from "../../services/Api";
-
+import axios from "axios";
 const data = [
 	{ id: 1, img: mainImage, price: "Rs.19.99 PKR", qty: 4, Subtotal: "10,000" },
 	{ id: 2, img: mainImage, price: "Rs.19.99 PKR", qty: 4, Subtotal: "10,000" },
@@ -63,17 +63,21 @@ const MyCart = () => {
 
 	const CalculatePricePerItem = () => {};
 	const [pro, setPro] = useState();
+	console.log("user?.id", user?.id);
 	useEffect(() => {
 		const cartItems = async () => {
 			let dataToSend = {
 				customer_id: user?.id,
 			};
 			let data = [];
-			await post(URL.cart, dataToSend).then((res) => {
-				console.log("res cart", res?.customer_cart);
-				data = [...products, ...res?.customer_cart];
-				setPro(data);
-			});
+			await post(URL.cart, dataToSend)
+				.then((res) => {
+					console.log("res cart", res?.customer_cart[0]);
+					data = [...products, ...res?.customer_cart];
+					setPro(data);
+				})
+				.catch((err) => console.error(err));
+			console.log("data", data);
 		};
 		cartItems();
 	}, []);
@@ -110,19 +114,21 @@ const MyCart = () => {
 								</Tr>
 							</Thead>
 							<Tbody>
-								{products?.map((product) => (
+								{pro?.map((product) => (
 									<Tr key={product.id}>
 										<Td className='cartTable__imageTd'>
 											<img
 												className='cartTable__image'
 												alt='ProductImage'
-												src={product.image}
+												src={product.image_url}
 											/>
 											<p>{product.title}</p>
 										</Td>
-										<Td>{product.price}</Td>
-										<Td>0</Td>
-										<Td style={{ color: "red", fontWeight: "700" }}>0</Td>
+										<Td>Rs {parseFloat(product.actual_price).toFixed(2)}</Td>
+										<Td>1</Td>
+										<Td style={{ color: "red", fontWeight: "700" }}>
+											Rs {parseFloat(product.actual_price).toFixed(2)}
+										</Td>
 										<Td className='cartTable__delBtn'>
 											<IconButton
 												onClick={() => {

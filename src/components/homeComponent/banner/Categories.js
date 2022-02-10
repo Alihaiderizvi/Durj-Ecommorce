@@ -37,6 +37,7 @@ const Categories = ({ customCateogry, title, data }) => {
 								style={{
 									display: "flex",
 									alignItems: "center",
+									height: "30px",
 								}}
 								onClick={() => {
 									setId(category.category_id);

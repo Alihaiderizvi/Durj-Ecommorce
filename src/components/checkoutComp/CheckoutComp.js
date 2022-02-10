@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Divider, Grid, Typography } from "@material-ui/core";
 import CheckoutForm from "./CheckoutForm";
 import FormGroup from "@material-ui/core/FormGroup";
@@ -15,6 +15,7 @@ import mainImage from "../../assets/product1.jpg";
 import "../checkoutComp/CheckoutComp.css";
 import { useDispatch, useSelector } from "react-redux";
 import { removeSelectedProduct } from "../../redux/actions/ProductActions";
+import { post, URL } from "../../services/Api";
 
 const data = [
 	{ id: 1, img: mainImage, price: "Rs.19.99 PKR", qty: 4, Subtotal: "10,000" },
@@ -27,19 +28,40 @@ const CheckoutComp = () => {
 	const [count, setCount] = useState(0);
 	const dispatch = useDispatch();
 	const cartProducts = useSelector((state) => state.shop.products);
+	const products = useSelector((state) => state.shop.products);
+	const user = useSelector((state) => state?.user?.user);
 	const cartProductsSubTotal = useSelector((state) => state.shop.subTotal);
 	console.log("cart", cartProducts);
 	const handleIncrement = () => {
 		setCount((prevCount) => prevCount + 1);
 	};
 
-	const handleDecrement = () => {
+	const handleDecrement = (item) => {
 		setCount((prevCount) => prevCount - 1);
 		if (count <= 0) {
-			alert("Removed");
+			dispatch({
+				type: "REMOVE_ITEM",
+				payload: item.id,
+			});
 			// return dispatch(removeSelectedProduct());
 		}
 	};
+
+	const [pro, setPro] = useState();
+	useEffect(() => {
+		const cartItems = async () => {
+			let dataToSend = {
+				customer_id: user?.id,
+			};
+			let data = [];
+			await post(URL.cart, dataToSend).then((res) => {
+				console.log("res cart", res?.customer_cart);
+				data = [...products, ...res?.customer_cart];
+				setPro(data);
+			});
+		};
+		cartItems();
+	}, []);
 
 	// Check Box
 	const [state, setState] = useState({
@@ -160,13 +182,13 @@ const CheckoutComp = () => {
 								</Tr>
 							</Thead>
 							<Tbody>
-								{cartProducts?.map((item) => (
+								{pro?.map((item) => (
 									<Tr key={item.id}>
 										<Td className='cartTable__imageTd'>
 											<img
 												className='checkoutTable__image'
-												alt='RecentViewedImage'
-												src={item?.image}
+												alt='Img'
+												src={item?.image_url}
 											/>
 										</Td>
 										<Td>
@@ -183,12 +205,12 @@ const CheckoutComp = () => {
 													{count}
 												</Typography>
 												<button className='productDetails__qyualityBtn'>
-													<RemoveIcon onClick={() => handleDecrement()} />
+													<RemoveIcon onClick={() => handleDecrement(item)} />
 												</button>
 											</div>
 										</Td>
 										<Td style={{ color: "red", fontWeight: "700" }}>
-											Rs.{item?.price}
+											Rs.{parseFloat(item?.actual_price).toFixed(2)}
 										</Td>
 										<Divider className='divider' />
 									</Tr>

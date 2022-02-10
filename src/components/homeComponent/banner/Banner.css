@@ -1,6 +1,6 @@
 .banner {
 	display: flex;
-	height: 330px;
+	height: 350px;
 	background-color: #fff;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .image__slider > img {
-	height: 330px !important;
+	height: 350px !important;
 	width: 100% !important;
 	overflow: hidden;
 }

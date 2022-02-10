@@ -11,7 +11,7 @@
 
 .productDetail__mainImage {
 	height: 450px;
-	width: 300px;
+	width: 480px;
 	margin-bottom: 20px;
 }
 .productDetail__mainImage > img {
@@ -48,7 +48,7 @@
 	width: 20%;
 	display: flex;
 	justify-content: space-around;
-	background-color: #21557c;
+	background-color: #16243e;
 	color: #fff;
 	cursor: pointer;
 	font-weight: bold;

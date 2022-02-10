@@ -29,7 +29,7 @@ const NavbarComponent = ({ backgorundColor, logo, navLinksColor }) => {
 	const [filteredData, setFilteredData] = useState([]);
 	const [wordEntered, setWordEntered] = useState("");
 	const userCartItem = useSelector(
-		(state) => state?.user?.user?.total_cart_items
+		(state) => state?.user?.user?.user_cart_items
 	);
 	// console.log("length", cart);
 	// DropDowns

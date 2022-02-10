@@ -90,7 +90,7 @@ const WishlistMain = () => {
 				<h1 className='wishlistMain__heading'>WISHLIST {getId} </h1>
 			</div>
 
-			{/* <Paper
+			<Paper
 				style={{
 					display: "flex",
 					flexWrap: "wrap",
@@ -183,7 +183,7 @@ const WishlistMain = () => {
 						Add All To Cart
 					</Link>
 				</Button>
-			</div> */}
+			</div>
 		</>
 	);
 };

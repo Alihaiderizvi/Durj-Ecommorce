@@ -207,6 +207,7 @@ const SingleProduct = () => {
 	const [pageSize] = useState(16);
 	const [page, setPage] = useState(1);
 	const [data, setData] = useState(datas.slice(firstIndex, pageSize));
+	const [counter, setCounter] = useState();
 
 	useEffect(() => {
 		setData(datas.slice(0, pageSize));
@@ -236,35 +237,44 @@ const SingleProduct = () => {
 					</Select>
 				</FormControl>
 			</Box>
-
-			<div
-				style={{
-					display: "flex",
-					flexWrap: "wrap",
-					justifyContent: "space-evenly",
-				}}
-			>
+			<div className='Cart'>
 				{product?.length > 0 ? (
-					product?.map((item) => (
-						<Card className='singleProduct__cart' key={item.id}>
-							<div className='singleProduct_IconBtnDiv'>
-								<IconButton style={{ zIndex: 1 }}>
+					product.map((item) => (
+						<div className='cartItem_Wrapper'>
+							<div className='CartItem_Button'>
+								<IconButton
+									onClick={() => {
+										setCounter(counter + 1);
+										dispatch({
+											type: "ADD_PRODUCT_TO_CART",
+											payload: { product, counter },
+										});
+									}}
+								>
 									<ShoppingCart />
 								</IconButton>
 							</div>
-							<img
-								className={classes.media}
-								src={item?.image_url}
-								alt={item?.brand}
-							/>
+							<div className='cartItemImage_Wrapper'>
+								<img
+									className='cartItem_Image'
+									src={item?.image_url}
+									alt={item?.brand}
+								/>
+							</div>
 							<CartModal />
-							<Typography align='center'>{item?.brand}</Typography>
-							<Typography align='center'>{item.actual_price}</Typography>
-							<Link to={`/product/${item?.id}`}>details</Link>
-						</Card>
+							<div className='cartItem_Info'>
+								<h4 className='cartItem_name'> {item?.brand}</h4>
+								<p className='cartItem_price'>
+									Rs {parseFloat(item?.actual_price).toFixed(2)}
+								</p>
+								<Link className='cartItem_details' to={`/product/${item?.id}`}>
+									Get Deatils
+								</Link>
+							</div>
+						</div>
 					))
 				) : (
-					<h1 style={{ color: "#000000" }}>This Product is out of stock</h1>
+					<h2>This Product is out of stock</h2>
 				)}
 			</div>
 			<Box className='box rightBox' style={{ marginTop: "15px" }}>

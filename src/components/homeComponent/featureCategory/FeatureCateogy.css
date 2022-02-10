@@ -31,10 +31,12 @@
 	flex-direction: row;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	background: #fff;
 }
 
 .featureCategory__cartImage {
 	height: 350px;
+	margin-left: 10px;
 }
 
 .featuredCat__Images {

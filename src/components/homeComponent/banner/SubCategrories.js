@@ -26,19 +26,30 @@ const SubCategrories = ({ id, data, subCatShow, setSub }) => {
 		<>
 			{subCatShow === true && id !== null ? (
 				<div style={customCssSubCategory}>
-					<List className='bannerCategory__listTwo'>
+					<List
+						className='bannerCategory__listTwo'
+						style={{ marginTop: "3rem" }}
+					>
 						{/* <h3 style={{ fontSize: "2rem" }}>Sub-Categories</h3> */}
-						<div style={{ textAlign: "end" }}>
+						<div
+							style={{
+								textAlign: "end",
+								position: "absolute",
+								left: "9rem",
+								top: "-36px",
+							}}
+						>
 							<IconButton
 								onClick={() => {
 									setSub(false);
 									console.log("reqqqqqqqq te", te);
 								}}
+								// style={{ positon: "absolute", top: 0, left: "39px" }}
 							>
 								<ImCross
 									style={{
 										fontSize: "15px",
-										color: "#f50057",
+										color: "#000",
 										cursor: "pointer",
 									}}
 								/>
@@ -60,7 +71,7 @@ const SubCategrories = ({ id, data, subCatShow, setSub }) => {
 												setTe(true);
 											}}
 										>
-											<BiMobileAlt style={{ marginRight: "2rem" }} />
+											{/* <BiMobileAlt style={{ marginRight: "2rem" }} /> */}
 											<p
 												to={category?.link}
 												className='bannerCategoryList__contentTwo'
@@ -90,14 +101,14 @@ const customCssSubCategory = {
 	display: "flex",
 	justifyContent: "center",
 	overflowY: "auto",
-	minWidth: "18%",
+	minWidth: "16%",
 	borderLeft: "2px solid #000000",
 };
 const customCssSubCategory2 = {
 	display: "flex",
 	justifyContent: "center",
 	overflowY: "auto",
-	minWidth: "20%",
+	minWidth: "16%",
 	borderLeft: "2px solid #000000",
 };
 
@@ -116,14 +127,24 @@ const ProductType = ({ category, te, setTe }) => {
 		<>
 			{te === true && (
 				<div style={customCssSubCategory2}>
-					<List className='bannerCategory__listTwo'>
+					<List
+						className='bannerCategory__listTwo'
+						style={{ marginTop: "3rem" }}
+					>
 						{/* <h3 style={{ fontSize: "2rem" }}>Product Types</h3> */}
-						<div style={{ textAlign: "end" }}>
+						<div
+							style={{
+								textAlign: "end",
+								position: "absolute",
+								left: "8rem",
+								top: "-36px",
+							}}
+						>
 							<IconButton onClick={() => setTe(false)}>
 								<ImCross
 									style={{
 										fontSize: "15px",
-										color: "#f50057",
+										color: "#000",
 										cursor: "pointer",
 									}}
 								/>
@@ -140,7 +161,7 @@ const ProductType = ({ category, te, setTe }) => {
 										}}
 										onClick={handleProduct(product)}
 									>
-										<SiDsautomobiles style={{ marginRight: "2rem" }} />
+										{/* <SiDsautomobiles style={{ marginRight: "2rem" }} /> */}
 										<p className='bannerCategoryList__contentTwo'>
 											<Product item={product} />
 										</p>

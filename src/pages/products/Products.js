@@ -22,7 +22,7 @@ const Products = () => {
 			<br />
 			<ShopByCategory
 				Title='You May Also Like'
-				textAlignment={{ textAlign: "center", position: "unset" }}
+				// textAlignment={{ textAlign: "center", position: "unset" }}
 			/>
 			<Footer />
 		</div>

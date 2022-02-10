@@ -11,6 +11,8 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import StarOutlineIcon from "@material-ui/icons/StarOutline";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
+import { ImCross } from "react-icons/im";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
 // Material Ui Core
 import { Box, Button, Modal, Typography } from "@material-ui/core";
@@ -19,24 +21,29 @@ import { withStyles } from "@material-ui/core/styles";
 import Rating from "@material-ui/lab/Rating";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
+import ShopIcon from "@material-ui/icons/Shop";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
+import { post, URL } from "../../../services/Api";
+
+// Toast Notification
+import { toast } from "react-toastify";
 
 const products = [
 	{
 		id: 1,
 		name: "Macbook Pro 2020",
-		image: product1,
-		price: "$2999",
+		image_url: product1,
+		price: 130000,
 		type: "Laptop",
 		details: "8th Gen Intel Core i5 Processor 1.4GHz up to 3.9GHz Processor",
 	},
 	{
 		id: 2,
 		name: "Nikon D3200",
-		image: product2,
-		price: "$1600",
+		image_url: product2,
+		price: 50000,
 		type: "Camera",
 		details:
 			"Nikon D3200 24.2 MP CMOS Digital SLR with 18-55mm f/3.5-5.6 Auto Focus",
@@ -58,6 +65,21 @@ const TopSellingComp = () => {
 	const [open, setOpen] = useState(false);
 	const [counter, setCounter] = useState();
 	const dispatch = useDispatch();
+	const isLogin = useSelector((state) => state?.user?.isLogin);
+	const product = useSelector((state) => state.product);
+	const user = useSelector((state) => state?.user?.user);
+
+	const notify = (message) => {
+		toast.success(message, {
+			position: "bottom-left",
+			autoClose: 2000,
+			hideProgressBar: true,
+			closeOnClick: true,
+			pauseOnHover: false,
+			draggable: true,
+			progress: undefined,
+		});
+	};
 
 	const handleOpen = () => {
 		setOpen(true);
@@ -80,6 +102,33 @@ const TopSellingComp = () => {
 			return 0;
 		}
 	};
+
+	const handleWishList = () => {
+		let dataToSend = {
+			product_id: product?.id,
+			customer_id: user?.id,
+		};
+		post(URL.addWishlist, dataToSend)
+			.then((res) => {
+				console.log("res", res);
+				notify("Product Added To Wishlist");
+			})
+			.catch((err) => console.error(err));
+	};
+
+	const handleReservation = () => {
+		let dataToSend = {
+			product_id: product?.id,
+			customer_id: user?.id,
+		};
+		post(URL.addReservation, dataToSend)
+			.then((res) => {
+				console.log("res", res);
+				notify("Product Reserved For 30Days.");
+			})
+			.catch((err) => console.error(err));
+	};
+
 	return (
 		<>
 			<div className='topSellingComp'>
@@ -104,7 +153,7 @@ const TopSellingComp = () => {
 										/>
 									</IconButton>
 									<div className='topSellingProduct__Image'>
-										<img src={product.image} alt={product.name} />
+										<img src={product.image_url} alt={product.name} />
 									</div>
 								</div>
 								<div className='topSelling__QucikView'>
@@ -119,15 +168,101 @@ const TopSellingComp = () => {
 										}}
 									>
 										<Fade in={open}>
-											<div className='wishlistModal__paper'>
-												<h2>Quick View Modal</h2>
-												<p>Some Dummy Text.</p>
+											<div className='quickview'>
+												<div className='quickviewImage_Wrapper'>
+													<img
+														className='quickview_Image'
+														src={product?.image_url}
+														alt={product.name}
+													/>
+												</div>
+												<div className='quickview_info'>
+													<IconButton
+														className='quickviewInfo_cancelBtn'
+														onClick={handleClose}
+													>
+														<ImCross
+															style={{
+																fontSize: "20px",
+																color: "#f50057",
+																cursor: "pointer",
+															}}
+														/>
+													</IconButton>
+													<h1 className='quickviewInfo_name'>
+														{product?.name}
+													</h1>
+													<p className='quickviewInfo_details'>
+														{product?.details}
+													</p>
+													<p className='quickviewInfo_price'>
+														Rs.{parseFloat(product?.price).toFixed(2)}
+													</p>
+
+													<div className='quickviewButton'>
+														<Button
+															variant='contained'
+															style={{
+																backgroundColor: "#002347",
+																color: "#fff",
+																fontWeight: "500",
+															}}
+															startIcon={<AddShoppingCartIcon />}
+															onClick={() => {
+																setCounter(counter + 1);
+																dispatch({
+																	type: "ADD_PRODUCT_TO_CART",
+																	payload: { product, counter },
+																});
+															}}
+														>
+															Add to cart
+														</Button>
+													</div>
+													{isLogin && (
+														<div className='quickviewOptional_btns'>
+															<Button
+																variant='contained'
+																color='secondary'
+																startIcon={<ShopIcon />}
+																style={{
+																	backgroundColor: "#002347",
+																}}
+																onClick={handleWishList}
+															>
+																<Link
+																	style={{
+																		color: "#fff",
+																		textDecoration: "none",
+																		fontWeight: "500",
+																	}}
+																>
+																	Add To WishList
+																</Link>
+															</Button>
+															<Button
+																variant='contained'
+																style={{
+																	backgroundColor: "#ff4f4f",
+																	color: "#fff",
+																	fontWeight: "500",
+																	marginLeft: "15px",
+																}}
+																startIcon={<AddShoppingCartIcon />}
+																onClick={handleReservation}
+															>
+																Reserve
+															</Button>
+														</div>
+													)}
+												</div>
 											</div>
 										</Fade>
 									</Modal>
 									<Button
 										className='topSellingQuickView__Btn'
 										onClick={handleOpen}
+										fullWidth
 									>
 										Quick View
 									</Button>

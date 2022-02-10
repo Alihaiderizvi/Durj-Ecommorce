@@ -40,7 +40,7 @@ const FeatureCateogy = () => {
 		<div className='featureCategory'>
 			<CssBaseline />
 			<h4 variant='h4' className='featureCategory__heading'>
-				Feature Cateogy
+				Feature Category
 			</h4>
 
 			<div className='featureCategory__cartBanner'>

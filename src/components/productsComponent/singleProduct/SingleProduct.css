@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Source+Serif+Pro&display=swap");
+
 .singleProduct__cart {
 	max-width: 200px !important;
 	max-height: 250px;
@@ -31,4 +33,57 @@
 
 .jLgnwX {
 	background-color: #fa5051 !important;
+}
+
+/* Cart Item 2.0 css*/
+
+.Cart {
+	background-color: #fff;
+	width: 240px;
+	height: 340px;
+	cursor: pointer;
+}
+.cartItem_Wrapper {
+	position: relative;
+}
+.CartItem_Button {
+	position: absolute;
+	right: 0;
+}
+.cartItemImage_Wrapper {
+	height: 100%;
+	width: 100%;
+}
+.cartItem_Image {
+	height: 250px;
+	width: 240px;
+	object-fit: fill;
+}
+.cartItem_Info {
+	text-align: center;
+	color: black;
+}
+.cartItem_name {
+	color: #002347;
+	font-family: "Raleway", sans-serif;
+	font-size: 1.8rem;
+}
+.cartItem_price {
+	color: #ff4f4f;
+	font-family: "Source Serif Pro", serif;
+	font-size: 16px;
+}
+.cartItem_details {
+	font-family: "Raleway", sans-serif;
+	text-decoration: none;
+	color: #fff;
+	display: block;
+	background: #002347;
+	font-weight: 400;
+	padding: 8px 0;
+	transition: 0.2s ease-in-out;
+}
+
+.cartItem_details:hover {
+	background-color: #ff4f4f;
 }

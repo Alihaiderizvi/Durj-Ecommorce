@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Source+Serif+Pro&display=swap");
+
 /* Top Selling Main */
 .topSellingComp {
 	width: 100%;
@@ -193,4 +195,46 @@
 	.topSelling__ProductDetails {
 		max-width: 21.5rem;
 	}
+}
+
+/* Quick View css 2.0 */
+
+.quickview {
+	display: flex;
+	background: #fff;
+	width: 58%;
+	height: 55%;
+}
+.quickviewImage_Wrapper {
+}
+.quickview_Image {
+	width: 100%;
+	height: 100%;
+}
+.quickview_info {
+	margin-left: 20px;
+	position: relative;
+}
+.quickviewInfo_cancelBtn {
+	position: absolute !important;
+	top: 5px;
+	right: 5px;
+}
+.quickviewButton {
+	margin-top: 2rem;
+}
+.quickviewOptional_btns {
+	margin-top: 1rem;
+}
+.quickviewInfo_name {
+	font-family: serif;
+	margin-top: 3rem;
+}
+.quickviewInfo_details {
+	margin: 20px 0;
+	width: 80%;
+	text-transform: capitalize;
+}
+.quickviewInfo_price {
+	font-size: 25px;
 }
